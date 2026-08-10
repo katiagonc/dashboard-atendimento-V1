@@ -42,39 +42,31 @@ h1 em{font-style:italic;color:var(--accent);font-weight:400;}
 .hero-meta{margin-top:28px;display:flex;gap:32px;flex-wrap:wrap;font-family:var(--font-mono);font-size:12.5px;color:var(--muted);}
 .hero-meta b{color:var(--text);font-weight:600;}
 nav.tabs{position:sticky;top:0;z-index:50;background:rgba(14,20,32,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);margin:-1px 0 36px;}
-nav.tabs .wrap{display:flex;gap:4px;overflow-x:auto;padding-top:0;padding-bottom:0;scrollbar-width:none;}
+nav.tabs .wrap{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;}
 nav.tabs .wrap::-webkit-scrollbar{display:none;}
 .tab-btn{background:none;border:none;cursor:pointer;font-family:var(--font-body);font-weight:600;font-size:13.5px;color:var(--muted);padding:16px;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s;}
-.tab-btn:hover{color:var(--text);}
-.tab-btn.active{color:var(--accent);border-bottom-color:var(--accent);}
-section{display:none;animation:fadein .35s ease;}
-section.active{display:block;}
+.tab-btn:hover{color:var(--text);}.tab-btn.active{color:var(--accent);border-bottom-color:var(--accent);}
+section{display:none;animation:fadein .35s ease;}section.active{display:block;}
 @keyframes fadein{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
-.section-head{margin-bottom:28px;}
-.section-tag{font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-2);margin-bottom:8px;}
+.section-head{margin-bottom:28px;}.section-tag{font-family:var(--font-mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-2);margin-bottom:8px;}
 .section-title{font-family:var(--font-display);font-size:clamp(24px,3.4vw,34px);font-weight:600;margin-bottom:8px;}
 .section-desc{color:var(--muted);font-size:14.5px;max-width:780px;}
-.grid{display:grid;gap:16px;}
-.grid-4{grid-template-columns:repeat(4,1fr);}
-.grid-3{grid-template-columns:repeat(3,1fr);}
-.grid-2{grid-template-columns:repeat(2,1fr);}
-@media(max-width:1000px){.grid-4,.grid-3{grid-template-columns:repeat(2,1fr);}  .grid-2{grid-template-columns:1fr;}}
+.grid{display:grid;gap:16px;}.grid-4{grid-template-columns:repeat(4,1fr);}.grid-3{grid-template-columns:repeat(3,1fr);}.grid-2{grid-template-columns:repeat(2,1fr);}
+@media(max-width:1000px){.grid-4,.grid-3{grid-template-columns:repeat(2,1fr);}.grid-2{grid-template-columns:1fr;}}
 @media(max-width:620px){.grid-4,.grid-3{grid-template-columns:1fr;}}
 .card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:22px;}
-.kpi{display:flex;flex-direction:column;gap:6px;}
+.kpi{display:flex;flex-direction:column;gap:5px;}
 .kpi .label{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:600;}
 .kpi .value{font-family:var(--font-display);font-size:34px;font-weight:600;line-height:1.1;}
-.kpi .delta{font-family:var(--font-mono);font-size:12.5px;display:flex;align-items:center;gap:6px;}
-.delta.up{color:var(--good);}
-.delta.down{color:var(--bad);}
-.delta.flat{color:var(--muted);}
+.kpi .delta{font-family:var(--font-mono);font-size:12px;}
+.delta.up{color:var(--good);}.delta.down{color:var(--bad);}.delta.flat{color:var(--muted);}
 .kpi .note{font-size:12px;color:var(--muted);margin-top:2px;}
-/* farol de meta */
+/* faróis de meta */
 .meta-badge{display:inline-flex;align-items:center;gap:5px;font-family:var(--font-mono);font-size:10.5px;font-weight:700;padding:3px 9px;border-radius:999px;margin-top:4px;width:fit-content;}
-.meta-hit{background:rgba(111,207,151,.12);border:1px solid rgba(111,207,151,.4);color:var(--good);}
-.meta-miss{background:rgba(235,87,87,.10);border:1px solid rgba(235,87,87,.35);color:var(--bad);}
+.meta-hit {background:rgba(111,207,151,.12);border:1px solid rgba(111,207,151,.4);color:var(--good);}
 .meta-warn{background:rgba(242,201,76,.10);border:1px solid rgba(242,201,76,.35);color:var(--warn);}
-.badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:11px;letter-spacing:.04em;padding:4px 10px;border-radius:999px;border:1px solid var(--border);background:var(--panel-2);color:var(--muted);}
+.meta-miss{background:rgba(235,87,87,.10);border:1px solid rgba(235,87,87,.35);color:var(--bad);}
+.badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:11px;padding:4px 10px;border-radius:999px;border:1px solid var(--border);background:var(--panel-2);color:var(--muted);}
 .badge.good{color:var(--good);border-color:rgba(111,207,151,.35);background:rgba(111,207,151,.07);}
 .badge.warn{color:var(--warn);border-color:rgba(242,201,76,.35);background:rgba(242,201,76,.07);}
 .badge.bad{color:var(--bad);border-color:rgba(235,87,87,.35);background:rgba(235,87,87,.07);}
@@ -83,97 +75,85 @@ section.active{display:block;}
 .dot{width:6px;height:6px;border-radius:50%;background:currentColor;}
 .block-title{font-family:var(--font-display);font-size:19px;font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:10px;}
 .block-title .accent-bar{width:4px;height:18px;border-radius:2px;background:var(--accent);display:inline-block;}
-.chart-box{position:relative;height:240px;}
-.chart-box.tall{height:300px;}
+.chart-box{position:relative;height:240px;}.chart-box.tall{height:300px;}
 .read-panel{background:var(--panel-2);border:1px solid var(--border);border-radius:12px;padding:18px 20px;font-size:13.5px;color:var(--text);}
 .read-panel+.read-panel{margin-top:12px;}
 .read-panel .ptitle{font-weight:700;font-size:13px;margin-bottom:6px;display:flex;align-items:center;gap:8px;}
-.read-panel p{color:var(--muted);}
-.read-panel p+p{margin-top:8px;}
-.read-panel strong{color:var(--text);}
+.read-panel p{color:var(--muted);}.read-panel p+p{margin-top:8px;}.read-panel strong{color:var(--text);}
 table{width:100%;border-collapse:collapse;font-size:13px;}
 th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--border);}
 th{color:var(--muted);font-weight:600;text-transform:uppercase;font-size:11px;letter-spacing:.05em;}
-td.num{font-family:var(--font-mono);text-align:right;}
-th.num{text-align:right;}
+td.num{font-family:var(--font-mono);text-align:right;}th.num{text-align:right;}
 tr:last-child td{border-bottom:none;}
-.row-good{color:var(--good);}
-.row-bad{color:var(--bad);}
-.row-warn{color:var(--warn);}
-.timeline{display:flex;flex-direction:column;gap:0;border-left:2px solid var(--border);margin-left:10px;}
-.tl-item{position:relative;padding:0 0 28px 28px;}
-.tl-item:last-child{padding-bottom:0;}
+.row-good{color:var(--good);}.row-bad{color:var(--bad);}.row-warn{color:var(--warn);}
+.tl{display:flex;flex-direction:column;border-left:2px solid var(--border);margin-left:10px;}
+.tl-item{position:relative;padding:0 0 28px 28px;}.tl-item:last-child{padding-bottom:0;}
 .tl-item::before{content:"";position:absolute;left:-7px;top:2px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--accent-2);}
-.tl-date{font-family:var(--font-mono);font-size:11.5px;color:var(--accent-2);margin-bottom:4px;letter-spacing:.05em;}
+.tl-date{font-family:var(--font-mono);font-size:11.5px;color:var(--accent-2);margin-bottom:4px;}
 .tl-title{font-weight:700;font-size:15px;margin-bottom:6px;}
-.tl-body{color:var(--muted);font-size:13.5px;}
-.tl-body p+p{margin-top:6px;}
+.tl-body{color:var(--muted);font-size:13.5px;}.tl-body p+p{margin-top:6px;}
 .swot-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
 @media(max-width:760px){.swot-grid{grid-template-columns:1fr;}}
 .swot-card{border-radius:14px;padding:22px;border:1px solid var(--border);}
-.swot-card h3{font-family:var(--font-display);font-size:18px;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
-.swot-card ul{padding-left:18px;color:var(--muted);font-size:13.5px;}
-.swot-card li{margin-bottom:8px;}
-.swot-card li strong{color:var(--text);}
-.swot-s{background:rgba(111,207,151,.05);border-color:rgba(111,207,151,.25);}
-.swot-w{background:rgba(235,87,87,.05);border-color:rgba(235,87,87,.25);}
-.swot-o{background:rgba(108,155,242,.05);border-color:rgba(108,155,242,.25);}
-.swot-t{background:rgba(242,201,76,.05);border-color:rgba(242,201,76,.25);}
-.swot-s h3{color:var(--good);}
-.swot-w h3{color:var(--bad);}
-.swot-o h3{color:var(--blue);}
-.swot-t h3{color:var(--warn);}
-.footnote{margin-top:32px;padding-top:18px;border-top:1px solid var(--border);font-size:12px;color:var(--muted);display:flex;gap:10px;align-items:flex-start;}
+.swot-card h3{font-family:var(--font-display);font-size:18px;margin-bottom:12px;}
+.swot-card ul{padding-left:18px;color:var(--muted);font-size:13.5px;}.swot-card li{margin-bottom:8px;}.swot-card li strong{color:var(--text);}
+.swot-s{background:rgba(111,207,151,.05);border-color:rgba(111,207,151,.25);}.swot-s h3{color:var(--good);}
+.swot-w{background:rgba(235,87,87,.05);border-color:rgba(235,87,87,.25);}.swot-w h3{color:var(--bad);}
+.swot-o{background:rgba(108,155,242,.05);border-color:rgba(108,155,242,.25);}.swot-o h3{color:var(--blue);}
+.swot-t{background:rgba(242,201,76,.05);border-color:rgba(242,201,76,.25);}.swot-t h3{color:var(--warn);}
 .msg-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;}
 @media(max-width:760px){.msg-grid{grid-template-columns:1fr;}}
 .msg-card{border-radius:14px;border:1px solid var(--border);padding:20px;background:var(--panel);}
 .msg-card .mtag{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px;display:block;}
-.msg-card ul{padding-left:18px;color:var(--muted);font-size:13.5px;}
-.msg-card li{margin-bottom:6px;}
-.msg-card li strong{color:var(--text);}
+.msg-card ul{padding-left:18px;color:var(--muted);font-size:13.5px;}.msg-card li{margin-bottom:6px;}.msg-card li strong{color:var(--text);}
 .chip-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px;}
 .chip{font-family:var(--font-mono);font-size:11.5px;border:1px solid var(--border);border-radius:8px;padding:6px 10px;color:var(--text);background:var(--panel-2);}
 .stat-strip{display:flex;gap:0;margin-top:32px;flex-wrap:wrap;border:1px solid var(--border);border-radius:14px;overflow:hidden;}
 .stat-strip .stat{flex:1;min-width:150px;padding:18px 20px;border-right:1px solid var(--border);}
 .stat-strip .stat:last-child{border-right:none;}
-.stat .stat-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;}
-.stat .stat-val{font-family:var(--font-display);font-size:26px;font-weight:600;}
-.stat .stat-val small{font-size:14px;color:var(--muted);font-weight:400;font-family:var(--font-mono);}
-/* alerta destaque */
+.stat-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;}
+.stat-val{font-family:var(--font-display);font-size:26px;font-weight:600;}
+.stat-val small{font-size:14px;color:var(--muted);font-weight:400;font-family:var(--font-mono);}
 .alert-bar{background:rgba(235,87,87,.08);border:1px solid rgba(235,87,87,.3);border-radius:10px;padding:12px 16px;font-size:13px;color:var(--bad);margin-bottom:16px;display:flex;gap:10px;align-items:flex-start;}
 .alert-bar.good{background:rgba(111,207,151,.08);border-color:rgba(111,207,151,.3);color:var(--good);}
-/* marco badge */
-.marco{display:inline-flex;align-items:center;gap:6px;font-family:var(--font-mono);font-size:11px;font-weight:700;padding:5px 12px;border-radius:999px;background:rgba(95,212,196,.1);border:1px solid var(--accent);color:var(--accent);}
+.alert-bar.warn{background:rgba(242,201,76,.08);border-color:rgba(242,201,76,.3);color:var(--warn);}
+.footnote{margin-top:32px;padding-top:18px;border-top:1px solid var(--border);font-size:12px;color:var(--muted);display:flex;gap:10px;}
+/* Scorecard de metas */
+.meta-score{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px;}
+.meta-score .ms{display:flex;align-items:center;gap:8px;font-family:var(--font-mono);font-size:13px;font-weight:700;padding:8px 14px;border-radius:10px;}
+.ms-hit{background:rgba(111,207,151,.1);border:1px solid rgba(111,207,151,.3);color:var(--good);}
+.ms-warn{background:rgba(242,201,76,.1);border:1px solid rgba(242,201,76,.3);color:var(--warn);}
+.ms-miss{background:rgba(235,87,87,.1);border:1px solid rgba(235,87,87,.3);color:var(--bad);}
 </style>
 </head>
 <body>
 <div class="wrap">
   <header class="hero">
     <div class="eyebrow">Dashboard Executivo · Operação de Atendimento · 2026</div>
-    <h1>Eficiência em alta, <em>satisfação em ajuste.</em></h1>
-    <p class="hero-sub">Leitura analítica Jan–Jun/2026 com foco nos impactos das mudanças de junho: integração WhatsApp→URA, consolidação do status de sinistro na IA e primeiro mês completo com o BPO B4B.</p>
+    <h1>IA acima de 50%, <em>eficiência consolidada.</em></h1>
+    <p class="hero-sub">Leitura analítica Jan–Jul/2026 com metas e faróis em todos os indicadores. Julho confirma a estabilização pós-junho: abandono normaliza, satisfação recupera, NS de telefonia atinge 91%.</p>
     <div class="hero-meta">
-      <div>Período: <b>Jan–Jun 2026</b></div>
-      <div>Comparativo: <b>Jan–Jun 2025</b></div>
-      <div>Carteira Auto (jun): <b>35.679 veículos</b></div>
-      <div>Total de tickets (acum.): <b>64.677</b></div>
+      <div>Período: <b>Jan–Jul 2026</b></div>
+      <div>Comparativo: <b>Jan–Jul 2025</b></div>
+      <div>Carteira Auto (jul): <b>34.667 veículos</b></div>
+      <div>Total de tickets (acum.): <b>74.130</b></div>
     </div>
     <div class="stat-strip">
       <div class="stat">
-        <div class="stat-label">Retenção IA (Jun) 🏆</div>
-        <div class="stat-val">50,96% <small>META ATINGIDA</small></div>
+        <div class="stat-label">Retenção IA (Jul)</div>
+        <div class="stat-val">49% <small>meta: 50%</small></div>
       </div>
       <div class="stat">
-        <div class="stat-label">QA Precisão (Jun)</div>
-        <div class="stat-val">90,87% <small>recuperado</small></div>
+        <div class="stat-label">NS Geral Tel. (Jul)</div>
+        <div class="stat-val">91% <small>meta: 80% ✔</small></div>
       </div>
       <div class="stat">
-        <div class="stat-label">NS Geral Telefonia (Jun)</div>
-        <div class="stat-val">84,1% <small>acima da meta</small></div>
+        <div class="stat-label">Satisfação Geral (Jul)</div>
+        <div class="stat-val">88% <small>meta: 90%</small></div>
       </div>
       <div class="stat">
-        <div class="stat-label">Satisfação Geral (Jun)</div>
-        <div class="stat-val">76,5% <small>meta: 90%</small></div>
+        <div class="stat-label">QA Precisão (Jul)</div>
+        <div class="stat-val">91% <small>meta: 90% ✔</small></div>
       </div>
     </div>
   </header>
@@ -186,7 +166,7 @@ tr:last-child td{border-bottom:none;}
     <button class="tab-btn" data-tab="tecnologia">Tecnologia & IA</button>
     <button class="tab-btn" data-tab="qualidade">Qualidade</button>
     <button class="tab-btn" data-tab="pessoas">Pessoas</button>
-    <button class="tab-btn" data-tab="contexto">Contexto Jun</button>
+    <button class="tab-btn" data-tab="contexto">Contexto Jul</button>
     <button class="tab-btn" data-tab="swot">SWOT</button>
     <button class="tab-btn" data-tab="diretoria">Diretoria</button>
   </div>
@@ -200,54 +180,64 @@ document.getElementById('sections-root').innerHTML = `
   <div class="section-head">
     <div class="section-tag">Bloco 01 — O tamanho e o ritmo da operação</div>
     <div class="section-title">Visão Geral da Operação</div>
-    <p class="section-desc">Junho foi o mês de maior volume do semestre (11.926 tickets, +30,9% vs maio) e concentrou três mudanças simultâneas: integração WhatsApp→URA, consolidação do status de sinistro na IA e início do B4B. Os ganhos estruturais são claros — a satisfação sentiu o impacto da transição.</p>
+    <p class="section-desc">Julho consolida a estabilização pós-junho: volume normaliza (9.453 tickets), abandono de telefonia cai de 16,2% para 4,7%, satisfação recupera para 88%. Acumulado Jan–Jul atinge 74.130 tickets com custo médio de R$7,97/ticket.</p>
   </div>
-  <div class="alert-bar">⚠ Carteira Auto caiu de 41.243 (mai) para <strong>35.679 (jun) — queda de 5.564 veículos (-13,5%)</strong>. Verificar com área comercial: sazonalidade, ajuste de base ou perda real de carteira?</div>
+
+  <div class="meta-score">
+    <div class="ms ms-hit">✔ 13 metas atingidas</div>
+    <div class="ms ms-warn">≈ 4 próximas da meta</div>
+    <div class="ms ms-miss">✗ 7 abaixo da meta</div>
+  </div>
+
+  <div class="alert-bar warn">⚠ Carteira Auto segue em queda: <strong>34.667 (jul) vs 41.243 (mai)</strong>. Queda acumulada de 6.576 veículos em 2 meses. Confirmar com área comercial.</div>
+
   <div class="grid grid-4">
     <div class="card kpi">
-      <div class="label">Carteira Auto (Jun)</div>
-      <div class="value">35.679</div>
-      <div class="delta down">▼ vs 41.243 mai (-13,5%)</div>
-      <div class="note">Média Jan–Jun: 39.584 veículos</div>
+      <div class="label">Carteira Auto (Jul)</div>
+      <div class="value">34.667</div>
+      <div class="delta down">▼ vs 35.679 jun (-2,8%)</div>
+      <div class="note">Média Jan–Jul: 38.882 veículos</div>
     </div>
     <div class="card kpi">
-      <div class="label">Total de Tickets (Jun)</div>
-      <div class="value">11.926</div>
-      <div class="delta up">▲ +30,9% vs mai — maior do semestre</div>
-      <div class="note">Acumulado Jan–Jun: 64.677 (+3,1% vs 2025)</div>
+      <div class="label">Total de Tickets (Jul)</div>
+      <div class="value">9.453</div>
+      <div class="delta down">▼ vs 11.926 jun (normalização)</div>
+      <div class="note">Acumulado Jan–Jul: 74.130</div>
     </div>
     <div class="card kpi">
-      <div class="label">% Atendimento Digital (Jun)</div>
-      <div class="value">77,3%</div>
-      <div class="delta up">▲ vs 75,8% mai</div>
-      <span class="meta-badge meta-miss">● Meta: 80%</span>
+      <div class="label">% Atendimento Digital (Jul)</div>
+      <div class="value">67,1%</div>
+      <div class="delta down">▼ vs 77,3% jun</div>
+      <span class="meta-badge meta-miss">✗ Meta: 80% — gap -12,9pp</span>
     </div>
     <div class="card kpi">
-      <div class="label">TTR Geral (Jun)</div>
-      <div class="value">47 min</div>
-      <div class="delta down">▲ vs 38 min mai</div>
-      <div class="note">Acumulado Jan–Jun: 42 min</div>
+      <div class="label">Custo médio por ticket</div>
+      <div class="value">R$7,97</div>
+      <div class="delta flat">Custo total: R$84,4k/mês</div>
+      <div class="note">Acum. Jan–Jul: R$590,8k / 74.130 tickets</div>
     </div>
   </div>
+
   <div class="grid grid-2" style="margin-top:16px;">
     <div class="card">
       <div class="block-title"><span class="accent-bar"></span>Volume de Tickets por Mês — 2026</div>
       <div class="chart-box"><canvas id="chart-tickets-mes"></canvas></div>
     </div>
     <div class="card">
-      <div class="block-title"><span class="accent-bar"></span>Distribuição por Canal — Acumulado Jan–Jun</div>
+      <div class="block-title"><span class="accent-bar"></span>Distribuição por Canal — Acumulado Jan–Jul</div>
       <div class="chart-box"><canvas id="chart-canais"></canvas></div>
     </div>
   </div>
+
   <div class="grid grid-2" style="margin-top:16px;">
     <div class="card">
-      <div class="block-title"><span class="accent-bar"></span>Tickets YoY — 2025 vs 2026 (Jan–Jun)</div>
+      <div class="block-title"><span class="accent-bar"></span>Tickets YoY — 2025 vs 2026 (Jan–Jul)</div>
       <div class="chart-box"><canvas id="chart-yoy-tickets"></canvas></div>
     </div>
     <div class="read-panel" style="display:flex;flex-direction:column;justify-content:center;">
       <div class="ptitle"><span class="badge info"><span class="dot"></span>LEITURA EXECUTIVA</span></div>
-      <p>O salto de volume em junho (+2.814 tickets vs maio) está em parte relacionado à <strong>integração do WhatsApp na URA</strong>, que pode ter gerado novos registros de contato, e ao crescimento expressivo do canal e-mail (<strong>612 → 1.526, +149%</strong>) — possivelmente por notificações automáticas do novo fluxo de URA.</p>
-      <p>O acumulado Jan–Jun supera 2025 em +3,1%, mesmo com a oscilação da carteira Auto. A leitura é de operação em crescimento sustentado, com mudança relevante de composição de canais.</p>
+      <p>Julho normaliza após o pico de junho: volume retorna ao patamar de janeiro-maio. A queda de <strong>% atendimento digital para 67,1%</strong> (menor do ano, meta 80%) pode estar relacionada à migração de parte do volume para o canal telefone — que subiu de 1.954 (mai) para 2.252 (jul). Recomenda-se verificar se há contatos que saíram do fluxo URA/WhatsApp.</p>
+      <p>O custo médio por ticket de <strong>R$7,97</strong> é o indicador financeiro mais relevante para a diretoria: mostra que a operação se tornou mais eficiente à medida que a IA amadureceu.</p>
     </div>
   </div>
 </section>
@@ -257,35 +247,38 @@ document.getElementById('sections-root').innerHTML = `
   <div class="section-head">
     <div class="section-tag">Bloco 02 — Como o cliente está percebendo o atendimento</div>
     <div class="section-title">Experiência do Cliente</div>
-    <p class="section-desc">Junho apresenta queda generalizada de satisfação em todos os canais digitais — o sinal de maior atenção do mês. Causa identificável: novo fluxo WhatsApp→URA gerou fricção de experiência. Requer monitoramento para confirmar normalização em julho/agosto.</p>
+    <p class="section-desc">Julho sinaliza recuperação da satisfação após a queda de junho: satisfação geral sobe para 88% (vs 76,5% em jun), WhatsApp recupera para 89%. NPS de A24h e Vidros atingem 92,3%, acima da meta de 85%.</p>
   </div>
-  <div class="alert-bar">⚠ Satisfação caiu em todos os canais: Geral 76,5% (meta 90%), WhatsApp 76,6% (meta 90%), IA 64,1% (meta 85%). Causa identificável — monitorar recuperação em julho.</div>
+
+  <div class="alert-bar good">✔ Satisfação recuperando em julho: Geral 88% (+11,5pp vs jun), WhatsApp 89% (+12,4pp vs jun). A queda de junho era transitória — confirmado.</div>
+
   <div class="grid grid-4">
     <div class="card kpi">
-      <div class="label">Satisfação Geral (Jun)</div>
-      <div class="value">76,5%</div>
-      <div class="delta down">▼ -4,9 p.p. vs mai (81,4%)</div>
-      <span class="meta-badge meta-miss">● Meta: 90% — gap: -13,5 p.p.</span>
+      <div class="label">Satisfação Geral (Jul)</div>
+      <div class="value">88%</div>
+      <div class="delta up">▲ +11,5pp vs jun (76,5%)</div>
+      <span class="meta-badge meta-warn">≈ Meta: 90% — gap -2pp</span>
     </div>
     <div class="card kpi">
-      <div class="label">Csat Telefonia (Jun)</div>
-      <div class="value">89,3%</div>
-      <div class="delta down">▼ vs 92,2% mai</div>
-      <span class="meta-badge meta-miss">● Meta: 92% — acum. 90,0%</span>
+      <div class="label">Csat Telefonia (Jul)</div>
+      <div class="value">86%</div>
+      <div class="delta down">▼ vs 89,3% jun</div>
+      <span class="meta-badge meta-miss">✗ Meta: 92% — acum. 89,4%</span>
     </div>
     <div class="card kpi">
-      <div class="label">Satisfação WhatsApp (Jun)</div>
-      <div class="value">76,6%</div>
-      <div class="delta down">▼ -10,4 p.p. vs mai</div>
-      <span class="meta-badge meta-miss">● Meta: 90%</span>
+      <div class="label">Satisfação WhatsApp (Jul)</div>
+      <div class="value">89%</div>
+      <div class="delta up">▲ +12,4pp vs jun (76,6%)</div>
+      <span class="meta-badge meta-warn">≈ Meta: 90% — gap -1pp</span>
     </div>
     <div class="card kpi">
-      <div class="label">Satisfação IA (Jun)</div>
-      <div class="value">64,1%</div>
-      <div class="delta down">▼ -17,5 p.p. vs mai</div>
-      <span class="meta-badge meta-miss">● Meta: 85% — investigar</span>
+      <div class="label">Satisfação IA (Jul)</div>
+      <div class="value">70,8%</div>
+      <div class="delta up">▲ +6,7pp vs jun (64,1%)</div>
+      <span class="meta-badge meta-miss">✗ Meta: 85% — recuperando</span>
     </div>
   </div>
+
   <div class="grid grid-2" style="margin-top:16px;">
     <div class="card">
       <div class="block-title"><span class="accent-bar"></span>Satisfação Geral — 2025 vs 2026 + Meta</div>
@@ -296,19 +289,21 @@ document.getElementById('sections-root').innerHTML = `
       <div class="chart-box"><canvas id="chart-csat-tel-yoy"></canvas></div>
     </div>
   </div>
+
   <div class="grid grid-2" style="margin-top:16px;">
     <div class="card">
-      <div class="block-title"><span class="accent-bar"></span>NPS por Linha — Jun/2026 vs Metas</div>
+      <div class="block-title"><span class="accent-bar"></span>NPS por Linha — Jul/2026 vs Metas</div>
       <div class="chart-box tall"><canvas id="chart-nps"></canvas></div>
     </div>
     <div>
       <div class="read-panel">
-        <div class="ptitle"><span class="badge context"><span class="dot"></span>CONTEXTO — CHUTE WHATSAPP→URA</span></div>
-        <p>A queda simultânea em todos os canais digitais aponta para uma causa comum: o cliente do WhatsApp esperava resolução digital imediata; o novo fluxo via URA gerou fricção perceptível. A satisfação da IA pode ter um fator adicional: com retenção em 50,96%, a IA passou a reter contatos mais complexos (sinistro, reclamações) — que naturalmente geram notas mais baixas independentemente da qualidade da resposta.</p>
+        <div class="ptitle"><span class="badge good"><span class="dot"></span>RECUPERAÇÃO CONFIRMADA</span></div>
+        <p>A queda de satisfação em junho era efeito transitório da implementação do chute WhatsApp→URA. Julho confirma a normalização com <strong>satisfação geral em 88%</strong> — apenas 2pp abaixo da meta. O mesmo padrão se repete no WhatsApp (89%, 1pp da meta).</p>
+        <p>Destaque: <strong>NPS A24h (92,3%) e NPS Vidros (92,3%)</strong> ambos acima da meta de 85%. NPS Sinistro em 100%. O indicador mais preocupante continua sendo o <strong>NPS Darwin (45%, meta 75%)</strong> — problema estrutural de percepção de marca que extrapola a operação.</p>
       </div>
       <div class="read-panel">
-        <div class="ptitle"><span class="badge good"><span class="dot"></span>NPS — DESTAQUES POSITIVOS</span></div>
-        <p><strong>NPS de Atendimento voltou a 80%</strong> (sem dado em maio). <strong>NPS de Sinistro em 100%</strong>. NPS Darwin (23%) segue abaixo da meta de 75% — indicador de percepção de marca que transcende a operação de atendimento. Níveis de Serviço de Canais Digitais (TMPR Wpp: 84% atingindo meta em até 7 min; TTR Wpp: 96,99% em até 30 min).</p>
+        <div class="ptitle"><span class="badge warn"><span class="dot"></span>SATISFAÇÃO IA — TRAJETÓRIA DE RECUPERAÇÃO</span></div>
+        <p>A satisfação da IA saiu de 64,1% (jun) para 70,8% (jul), mas ainda distante da meta de 85%. A hipótese é que a IA está retendo contatos mais complexos (sinistro) — correto investigar o perfil dos contatos retidos para distinguir problema de ferramenta de problema de escopo.</p>
       </div>
     </div>
   </div>
@@ -319,34 +314,36 @@ document.getElementById('sections-root').innerHTML = `
   <div class="section-head">
     <div class="section-tag">Bloco 03 — Capacidade de resposta e absorção de demanda</div>
     <div class="section-title">Eficiência Operacional &amp; Telefonia</div>
-    <p class="section-desc">Junho apresenta dois movimentos contrários: NS Geral recuperou e ficou acima da meta pela primeira vez no ano, TME caiu — mas o abandono mais que dobrou e o TMA subiu 43%. A implementação do chute WhatsApp→URA e o início do B4B explicam ambos os lados.</p>
+    <p class="section-desc">Julho consolida os ganhos de NS e recupera o abandono: NS Geral sobe para 91% (acima da meta de 80%) e abandono cai de 16,2% para 4,7%. O TME atinge o menor valor do ano (20s). TMA segue alto (537s) — curva B4B ainda em curso.</p>
   </div>
+
   <div class="grid grid-4">
     <div class="card kpi">
-      <div class="label">NS Geral Telefonia (Jun)</div>
-      <div class="value">84,1%</div>
-      <div class="delta up">▲ +12,3 p.p. vs mai — 1º mês acima da meta</div>
+      <div class="label">NS Geral Telefonia (Jul)</div>
+      <div class="value">91%</div>
+      <div class="delta up">▲ vs 84,1% jun — melhor do ano</div>
       <span class="meta-badge meta-hit">✔ Meta: 80%</span>
     </div>
     <div class="card kpi">
-      <div class="label">TME (Jun)</div>
-      <div class="value">39s</div>
-      <div class="delta up">▼ -20s vs mai (59s)</div>
+      <div class="label">TME (Jul)</div>
+      <div class="value">20s</div>
+      <div class="delta up">▼ vs 39s jun — menor do ano</div>
       <span class="meta-badge meta-hit">✔ Meta: &lt;60s</span>
     </div>
     <div class="card kpi">
-      <div class="label">% Abandono (Jun)</div>
-      <div class="value">16,2%</div>
-      <div class="delta down">▲ vs 8,1% mai — pior do ano</div>
-      <span class="meta-badge meta-miss">● Meta: 3% — contexto: chute URA</span>
+      <div class="label">% Abandono (Jul)</div>
+      <div class="value">4,7%</div>
+      <div class="delta up">▼ vs 16,2% jun — forte queda</div>
+      <span class="meta-badge meta-warn">≈ Meta: 3% — gap +1,7pp</span>
     </div>
     <div class="card kpi">
-      <div class="label">TMA (Jun)</div>
-      <div class="value">550s</div>
-      <div class="delta down">▲ +167s vs mai (+43%)</div>
-      <div class="note">Curva de aprendizado B4B + mix mais complexo</div>
+      <div class="label">TMA (Jul)</div>
+      <div class="value">537s</div>
+      <div class="delta up">▼ vs 550s jun — estabilizando</div>
+      <div class="note">Curva B4B ainda em curso</div>
     </div>
   </div>
+
   <div class="grid grid-2" style="margin-top:16px;">
     <div class="card">
       <div class="block-title"><span class="accent-bar"></span>Nível de Serviço — Geral / CE / SAC / Ouvidoria + Metas</div>
@@ -357,39 +354,39 @@ document.getElementById('sections-root').innerHTML = `
       <div class="chart-box tall"><canvas id="chart-tme-abandono"></canvas></div>
     </div>
   </div>
+
   <div class="grid grid-2" style="margin-top:16px;">
     <div class="card">
-      <div class="block-title"><span class="accent-bar"></span>NS Canais Digitais — Jun vs Meta</div>
+      <div class="block-title"><span class="accent-bar"></span>NS Canais Digitais — Jul vs Metas</div>
       <div class="chart-box"><canvas id="chart-ns-digital"></canvas></div>
     </div>
     <div>
       <div class="read-panel">
-        <div class="ptitle"><span class="badge context"><span class="dot"></span>ABANDONO 16,2% — CONTEXTO ESSENCIAL</span></div>
-        <p>O abandono disparou porque clientes que chegam via URA (oriundos do WhatsApp) têm baixa tolerância de espera em fila telefônica — vieram do digital esperando agilidade. Com o aumento de volume na fila, mais abandonos foram inevitáveis neste primeiro mês de fluxo.</p>
-        <p>Não deve ser lido como colapso operacional. A leitura correta é: <strong>o fluxo está funcionando do ponto de vista técnico, mas ainda gerando fricção de experiência</strong>. Julho será o primeiro teste limpo após a adaptação inicial do cliente ao novo fluxo.</p>
+        <div class="ptitle"><span class="badge good"><span class="dot"></span>ABANDONO NORMALIZA</span></div>
+        <p>A queda de abandono de 16,2% → 4,7% confirma que o pico de junho era efeito de adaptação do cliente ao novo fluxo URA. Julho mostra que o cliente internalizou o novo caminho. O abandono ainda está acima da meta de 3%, mas a tendência é de queda contínua.</p>
       </div>
       <div class="read-panel">
-        <div class="ptitle"><span class="badge good"><span class="dot"></span>DESTAQUES NS</span></div>
-        <p>NS SAC: <strong>97,4%</strong> (meta 90%). NS Ouvidoria: <strong>100%</strong>. % Atendidos em até 60s: <strong>100%</strong> — máximo do ano. TMPR WhatsApp em <strong>2 min</strong> — tendência positiva contínua.</p>
+        <div class="ptitle"><span class="badge warn"><span class="dot"></span>TMA AINDA ALTO — B4B EM CURVA</span></div>
+        <p>O TMA de 537s (versus meta histórica próxima de 400s) reflete a curva de aprendizado do B4B. A estabilização de jun (550s) para jul (537s) é positiva. O indicador-alvo para confirmar maturidade do B4B é TMA abaixo de 450s — ainda não atingido.</p>
       </div>
     </div>
   </div>
+
   <div class="card" style="margin-top:16px;">
     <div class="block-title"><span class="accent-bar"></span>Telefonia — Tabela Consolidada 2026 (com metas e faróis)</div>
     <div style="overflow-x:auto;">
     <table>
-      <thead><tr><th>Indicador</th><th>Meta</th><th class="num">Jan</th><th class="num">Fev</th><th class="num">Mar</th><th class="num">Abr</th><th class="num">Mai</th><th class="num">Jun</th><th class="num">Consol.</th></tr></thead>
+      <thead><tr><th>Indicador</th><th>Meta</th><th class="num">Jan</th><th class="num">Fev</th><th class="num">Mar</th><th class="num">Abr</th><th class="num">Mai</th><th class="num">Jun</th><th class="num">Jul</th><th class="num">Acum.</th></tr></thead>
       <tbody>
-        <tr><td>Total de ligações</td><td>—</td><td class="num">2.045</td><td class="num">1.954</td><td class="num">2.434</td><td class="num">2.452</td><td class="num">1.954</td><td class="num">2.154</td><td class="num">12.993</td></tr>
-        <tr><td>NS Geral</td><td>80%</td><td class="num row-bad">64,0%</td><td class="num row-bad">75,0%</td><td class="num row-warn">79,0%</td><td class="num row-good">80,9%</td><td class="num row-bad">71,8%</td><td class="num row-good">84,1% ✔</td><td class="num">75,8%</td></tr>
-        <tr><td>NS CE</td><td>85%</td><td class="num row-bad">59,0%</td><td class="num row-bad">72,0%</td><td class="num row-bad">77,0%</td><td class="num row-bad">78,0%</td><td class="num row-bad">66,0%</td><td class="num row-warn">83,8%</td><td class="num">72,6%</td></tr>
-        <tr><td>NS SAC</td><td>90%</td><td class="num row-good">91,0%</td><td class="num row-good">92,0%</td><td class="num row-warn">89,0%</td><td class="num row-good">94,0%</td><td class="num row-good">90,0%</td><td class="num row-good">97,4% ✔</td><td class="num">92,2%</td></tr>
-        <tr><td>NS Ouvidoria</td><td>90%</td><td class="num row-warn">83,0%</td><td class="num row-good">91,0%</td><td class="num row-good">91,0%</td><td class="num row-good">100%</td><td class="num row-good">92,0%</td><td class="num row-good">100% ✔</td><td class="num">92,8%</td></tr>
-        <tr><td>TME (s)</td><td>&lt;60s</td><td class="num row-bad">83</td><td class="num row-good">50</td><td class="num row-good">43</td><td class="num row-good">38</td><td class="num row-warn">59</td><td class="num row-good">39 ✔</td><td class="num">52</td></tr>
-        <tr><td>TMA (s)</td><td>—</td><td class="num">424</td><td class="num">450</td><td class="num">433</td><td class="num">420</td><td class="num row-good">383</td><td class="num row-bad">550</td><td class="num">443</td></tr>
-        <tr><td>% Abandono</td><td>3%</td><td class="num row-bad">10,2%</td><td class="num row-bad">6,7%</td><td class="num row-bad">5,9%</td><td class="num row-bad">4,2%</td><td class="num row-bad">8,1%</td><td class="num row-bad">16,2%</td><td class="num row-bad">8,5%</td></tr>
-        <tr><td>% Atend. ≤60s</td><td>98%</td><td class="num row-bad">76,0%</td><td class="num row-bad">83,0%</td><td class="num row-bad">86,0%</td><td class="num row-bad">87,0%</td><td class="num row-bad">82,0%</td><td class="num row-good">100% ✔</td><td class="num">85,7%</td></tr>
-        <tr><td>Csat</td><td>92%</td><td class="num row-bad">87,3%</td><td class="num row-bad">87,3%</td><td class="num row-warn">90,9%</td><td class="num row-good">92,8%</td><td class="num row-good">92,2%</td><td class="num row-warn">89,3%</td><td class="num">90,0%</td></tr>
+        <tr><td>NS Geral</td><td>80%</td><td class="num row-bad">64%</td><td class="num row-bad">75%</td><td class="num row-warn">79%</td><td class="num row-good">80,9%</td><td class="num row-bad">71,8%</td><td class="num row-good">84,1%</td><td class="num row-good">91% ✔</td><td class="num">77,9%</td></tr>
+        <tr><td>NS CE</td><td>85%</td><td class="num row-bad">59%</td><td class="num row-bad">72%</td><td class="num row-bad">77%</td><td class="num row-bad">78%</td><td class="num row-bad">66%</td><td class="num row-bad">83,8%</td><td class="num row-good">85% ✔</td><td class="num">74,4%</td></tr>
+        <tr><td>NS SAC</td><td>90%</td><td class="num row-good">91%</td><td class="num row-good">92%</td><td class="num row-warn">89%</td><td class="num row-good">94%</td><td class="num row-good">90%</td><td class="num row-good">97,4%</td><td class="num row-good">96% ✔</td><td class="num">92,8%</td></tr>
+        <tr><td>NS Ouvidoria</td><td>90%</td><td class="num row-warn">83%</td><td class="num row-good">91%</td><td class="num row-good">91%</td><td class="num row-good">100%</td><td class="num row-good">92%</td><td class="num row-good">100%</td><td class="num row-good">100% ✔</td><td class="num">93,9%</td></tr>
+        <tr><td>TME (s)</td><td>&lt;60s</td><td class="num row-bad">83</td><td class="num row-good">50</td><td class="num row-good">43</td><td class="num row-good">38</td><td class="num row-warn">59</td><td class="num row-good">39</td><td class="num row-good">20 ✔</td><td class="num">47</td></tr>
+        <tr><td>TMA (s)</td><td>—</td><td class="num">424</td><td class="num">450</td><td class="num">433</td><td class="num">420</td><td class="num row-good">383</td><td class="num row-bad">550</td><td class="num row-bad">537</td><td class="num">457</td></tr>
+        <tr><td>% Abandono</td><td>3%</td><td class="num row-bad">10,2%</td><td class="num row-bad">6,7%</td><td class="num row-bad">5,9%</td><td class="num row-bad">4,2%</td><td class="num row-bad">8,1%</td><td class="num row-bad">16,2%</td><td class="num row-warn">4,7% ≈</td><td class="num row-bad">8,0%</td></tr>
+        <tr><td>% ≤60s</td><td>98%</td><td class="num row-bad">76%</td><td class="num row-bad">83%</td><td class="num row-bad">86%</td><td class="num row-bad">87%</td><td class="num row-bad">82%</td><td class="num row-good">100%</td><td class="num row-good">100% ✔</td><td class="num">87,7%</td></tr>
+        <tr><td>Csat</td><td>92%</td><td class="num row-bad">87,3%</td><td class="num row-bad">87,3%</td><td class="num row-warn">90,9%</td><td class="num row-good">92,8%</td><td class="num row-good">92,2%</td><td class="num row-warn">89,3%</td><td class="num row-bad">86% ✗</td><td class="num row-warn">89,4%</td></tr>
       </tbody>
     </table>
     </div>
@@ -401,38 +398,39 @@ document.getElementById('sections-root').innerHTML = `
   <div class="section-head">
     <div class="section-tag">Bloco 04 — O motor de eficiência da operação</div>
     <div class="section-title">Tecnologia &amp; Automação</div>
-    <p class="section-desc">Junho marca o resultado mais expressivo do semestre para a IA: retenção de 50,96% — primeira vez acima da meta de 50%. A sustentação do status de sinistro e o novo fluxo URA ampliaram o escopo de resolução autônoma. A queda de satisfação da IA merece investigação de causa raiz.</p>
+    <p class="section-desc">Julho mantém retenção IA em 49% — praticamente na meta de 50% — e acumula 47.736 tickets com assistência via Copilot no semestre. A satisfação da IA recupera (70,8% vs 64,1% em jun) mas segue abaixo da meta de 85%.</p>
   </div>
-  <div class="alert-bar good">🏆 Retenção Kat.IA atingiu 50,96% em junho — PRIMEIRA VEZ acima da meta de 50% no ano. Marco do semestre.</div>
+
   <div class="grid grid-4">
     <div class="card kpi">
-      <div class="label">Retenção Kat.IA (Jun)</div>
-      <div class="value">50,96%</div>
-      <div class="delta up">▲ +10,2 p.p. vs mai (40,75%)</div>
-      <span class="meta-badge meta-hit">✔ Meta: 50% — 1ª vez atingida no ano</span>
+      <div class="label">Retenção Kat.IA (Jul)</div>
+      <div class="value">49%</div>
+      <div class="delta flat">≈ vs 50,96% jun</div>
+      <span class="meta-badge meta-warn">≈ Meta: 50% — gap -1pp</span>
     </div>
     <div class="card kpi">
-      <div class="label">Tickets c/ Assist. Automática Copilot (acum.)</div>
-      <div class="value">40.899</div>
-      <div class="delta up">▲ Jun: 7.732</div>
+      <div class="label">Tickets Copilot (acum. Jan–Jul)</div>
+      <div class="value">47.736</div>
+      <div class="delta up">▲ Jul: 6.837</div>
       <div class="note">vs 1.322 em todo 2025</div>
     </div>
     <div class="card kpi">
-      <div class="label">% Tickets Enriquecidos Copilot (Jun)</div>
-      <div class="value">74,96%</div>
-      <div class="delta up">▲ vs 70,0% mai</div>
-      <span class="meta-badge meta-miss">● Meta: 85%</span>
+      <div class="label">% Enriquecidos Copilot (Jul)</div>
+      <div class="value">72,3%</div>
+      <div class="delta up">▲ vs 74,96% jun</div>
+      <span class="meta-badge meta-miss">✗ Meta: 85% — gap -12,7pp</span>
     </div>
     <div class="card kpi">
-      <div class="label">Satisfação Kat.IA (Jun)</div>
-      <div class="value">64,1%</div>
-      <div class="delta down">▼ -17,5 p.p. vs mai</div>
-      <span class="meta-badge meta-miss">● Meta: 85% — investigar causa raiz</span>
+      <div class="label">Satisfação Kat.IA (Jul)</div>
+      <div class="value">70,8%</div>
+      <div class="delta up">▲ +6,7pp vs jun (64,1%)</div>
+      <span class="meta-badge meta-miss">✗ Meta: 85% — recuperando</span>
     </div>
   </div>
+
   <div class="grid grid-2" style="margin-top:16px;">
     <div class="card">
-      <div class="block-title"><span class="accent-bar"></span>% Retenção Kat.IA — 2026 vs Meta (50%)</div>
+      <div class="block-title"><span class="accent-bar"></span>% Retenção Kat.IA — Jan–Jul/2026 vs Meta (50%)</div>
       <div class="chart-box"><canvas id="chart-retencao-ia"></canvas></div>
     </div>
     <div class="card">
@@ -440,16 +438,16 @@ document.getElementById('sections-root').innerHTML = `
       <div class="chart-box"><canvas id="chart-copilot"></canvas></div>
     </div>
   </div>
+
   <div class="grid grid-2" style="margin-top:16px;">
     <div class="read-panel">
-      <div class="ptitle"><span class="badge good"><span class="dot"></span>POR QUE A RETENÇÃO ATINGIU A META EM JUNHO</span></div>
-      <p>A combinação de dois fatores explica o salto: (1) <strong>sustentação do status de sinistro + última atualização do processo na IA</strong>, que manteve e ampliou a resolução autônoma de contatos de sinistro; e (2) <strong>integração WhatsApp→URA</strong>, que fez mais contatos passar pela IA antes de chegar ao humano.</p>
-      <p>Cada ponto percentual acima de 50% representa ~55–60 contatos/mês que não chegam ao atendente humano — <strong>eficiência operacional direta</strong>. Com base nessa trajetória, meta de 55–60% para o 2º semestre é plausível com expansão de escopo.</p>
+      <div class="ptitle"><span class="badge good"><span class="dot"></span>TRAJETÓRIA DA IA — JAN A JUL</span></div>
+      <p>A retenção cresceu de <strong>35% (jan) para o pico de 50,96% (jun)</strong>, sustentada pela funcionalidade de status de sinistro e pela integração WhatsApp→URA. Julho mantém 49% — praticamente na meta. A trajetória confirma que a IA está consolidada como motor de eficiência, não como piloto.</p>
+      <p>Com os 2 novos fluxos previstos (vistoria IA + link de pagamento Pix), a estimativa é de mais <strong>+5pp de retenção</strong>, levando a IA para 54–55% — o que representa ~2.750 contatos/mês adicionais resolvidos sem atendente humano.</p>
     </div>
     <div class="read-panel">
-      <div class="ptitle"><span class="badge warn"><span class="dot"></span>SATISFAÇÃO IA — HIPÓTESE E PRÓXIMOS PASSOS</span></div>
-      <p>A queda de 17,5 p.p. pode não indicar problema da IA. Hipótese principal: ao reter contatos de sinistro (alta carga emocional), a IA dá respostas tecnicamente corretas em situações onde o cliente espera mais do que informação — o que pressiona a nota de satisfação.</p>
-      <p><strong>O que investigar</strong>: (a) qual é o perfil dos contatos retidos em junho vs maio? (b) há aumento de contatos de sinistro e reclamação? Se sim, a queda de satisfação é esperada e não indica degradação da ferramenta.</p>
+      <div class="ptitle"><span class="badge warn"><span class="dot"></span>COPILOT — OPORTUNIDADE DE EXPANSÃO</span></div>
+      <p>O enriquecimento pelo Copilot (72,3%) segue abaixo da meta de 85%, mas com trajetória de crescimento. Com o B4B agora mais familiarizado com as ferramentas, há espaço para treinamento focado que pode elevar o enriquecimento para 85%+ nas próximas semanas — <strong>sem custo adicional</strong>.</p>
     </div>
   </div>
 </section>
@@ -459,33 +457,35 @@ document.getElementById('sections-root').innerHTML = `
   <div class="section-head">
     <div class="section-tag">Bloco 05 — Consistência e precisão do atendimento</div>
     <div class="section-title">Qualidade (QA)</div>
-    <p class="section-desc">Junho confirma a recuperação do QA: score de precisão voltou a 90,87% (acima da meta de 90%), volume de avaliações subiu +43%. O B4B demonstrou capacidade de absorção operacional acima do esperado no primeiro mês.</p>
+    <p class="section-desc">Score de precisão em 91% (acima da meta de 90%) pelo segundo mês consecutivo. Volume de conversas avaliadas segue em crescimento (3.628 em jul). IQI em 89% ainda abaixo da meta de 93% — ponto a acompanhar.</p>
   </div>
-  <div class="alert-bar good">✔ QA Precisão recuperou: 76,84% (mai) → 90,87% (jun). Confirma que a queda de maio era efeito de transição — não problema estrutural.</div>
+
   <div class="grid grid-4">
     <div class="card kpi">
-      <div class="label">Score de Precisão (Jun)</div>
-      <div class="value">90,87%</div>
-      <div class="delta up">▲ +14,0 p.p. vs mai — recuperação total</div>
-      <span class="meta-badge meta-hit">✔ Meta: 90%</span>
+      <div class="label">Score de Precisão (Jul)</div>
+      <div class="value">91%</div>
+      <div class="delta flat">≈ vs 90,87% jun — estável</div>
+      <span class="meta-badge meta-hit">✔ Meta: 90% — 2º mês consecutivo</span>
     </div>
     <div class="card kpi">
-      <div class="label">IQI (Jun)</div>
-      <div class="value">89,86%</div>
-      <div class="delta down">▼ vs 90,98% mai</div>
-      <span class="meta-badge meta-miss">● Meta: 93%</span>
+      <div class="label">IQI (Jul)</div>
+      <div class="value">89%</div>
+      <div class="delta flat">≈ vs 89,86% jun</div>
+      <span class="meta-badge meta-warn">≈ Meta: 93% — gap -4pp</span>
     </div>
     <div class="card kpi">
-      <div class="label">Conversas Avaliadas (Jun)</div>
-      <div class="value">3.493</div>
-      <div class="delta up">▲ +43% vs mai (2.443)</div>
+      <div class="label">Conversas Avaliadas (Jul)</div>
+      <div class="value">3.628</div>
+      <div class="delta up">▲ vs 3.493 jun</div>
+      <div class="note">Cobertura crescente</div>
     </div>
     <div class="card kpi">
       <div class="label">Conversas Avaliadas (acum.)</div>
-      <div class="value">26.406</div>
+      <div class="value">30.034</div>
       <div class="delta up">▲ vs 8.581 em todo 2025</div>
     </div>
   </div>
+
   <div class="grid grid-2" style="margin-top:16px;">
     <div class="card">
       <div class="block-title"><span class="accent-bar"></span>Score de Precisão e IQI — 2026 vs Metas</div>
@@ -496,9 +496,10 @@ document.getElementById('sections-root').innerHTML = `
       <div class="chart-box tall"><canvas id="chart-qa-volume"></canvas></div>
     </div>
   </div>
+
   <div class="read-panel" style="margin-top:16px;">
-    <div class="ptitle"><span class="badge good"><span class="dot"></span>B4B — DESEMPENHO NO PRIMEIRO MÊS</span></div>
-    <p>A recuperação do QA de precisão para <strong>90,87%</strong> no primeiro mês completo com o B4B é o sinal mais positivo sobre o novo parceiro. A velocidade de retomada superou a expectativa para um time em onboarding. O IQI (89,86%) ficou 3,1 p.p. abaixo da meta de 93%, mas dentro do padrão esperado para uma equipe em adaptação. O que monitorar: manutenção da precisão acima de 90% e recuperação do IQI para 93%+ nas próximas semanas.</p>
+    <div class="ptitle"><span class="badge good"><span class="dot"></span>B4B — MATURIDADE CONFIRMADA</span></div>
+    <p>Score de precisão em <strong>91% pelo segundo mês consecutivo</strong> com o B4B confirma que o novo parceiro atingiu maturidade operacional de qualidade em apenas 2 meses — acima do esperado. O IQI (89%) ainda está 4pp abaixo da meta de 93%, mas a trajetória é estável. O foco agora é elevar o IQI, que mede a qualidade percebida da interação além da aderência técnica.</p>
   </div>
 </section>
 
@@ -507,42 +508,45 @@ document.getElementById('sections-root').innerHTML = `
   <div class="section-head">
     <div class="section-tag">Bloco 06 — Estrutura e estabilidade do time</div>
     <div class="section-title">Pessoas</div>
-    <p class="section-desc">Junho é o primeiro mês com o B4B operando integralmente (8 agentes), substituindo a Plurismidia. Time total de 14 agentes (6 Darwin + 8 B4B). Zero faltas e zero turnover — base estável para a curva de maturidade do novo parceiro.</p>
+    <p class="section-desc">Julho mantém a estrutura de 14 agentes (6 Darwin + 8 B4B) com zero faltas e zero turnover pelo segundo mês consecutivo. Absenteísmo de 0% — muito abaixo da meta de 3%.</p>
   </div>
+
   <div class="grid grid-4">
     <div class="card kpi">
-      <div class="label">Total de Agentes (Jun)</div>
+      <div class="label">Total de Agentes (Jul)</div>
       <div class="value">14</div>
-      <div class="delta up">▲ vs 13 mai</div>
-      <div class="note">6 Darwin + 8 B4B (novo parceiro)</div>
+      <div class="delta flat">≈ estável desde jun</div>
+      <div class="note">6 Darwin + 8 B4B</div>
     </div>
     <div class="card kpi">
-      <div class="label">Agentes Darwin (Jun)</div>
-      <div class="value">6</div>
-      <div class="delta flat">≈ estável ao longo do semestre</div>
-    </div>
-    <div class="card kpi">
-      <div class="label">Agentes B4B (1º mês)</div>
-      <div class="value">8</div>
-      <div class="delta up">Substitui Plurismidia (média: 7,4/mês)</div>
-    </div>
-    <div class="card kpi">
-      <div class="label">% Absenteísmo (Jun)</div>
+      <div class="label">% Absenteísmo (Jul)</div>
       <div class="value">0%</div>
-      <div class="delta up">Zero faltas em junho</div>
+      <div class="delta up">✔ Zero faltas — 2º mês consecutivo</div>
       <span class="meta-badge meta-hit">✔ Meta: ≤3%</span>
     </div>
+    <div class="card kpi">
+      <div class="label">Turnover (Jul)</div>
+      <div class="value">0%</div>
+      <div class="delta up">✔ Sem saídas</div>
+      <span class="meta-badge meta-hit">✔ Meta: ≤2%</span>
+    </div>
+    <div class="card kpi">
+      <div class="label">Vol. por Agente (Jul)</div>
+      <div class="value">675</div>
+      <div class="delta down">▼ vs 852 jun</div>
+      <div class="note">Reflexo do menor volume do mês</div>
+    </div>
   </div>
+
   <div class="grid grid-2" style="margin-top:16px;">
     <div class="card">
       <div class="block-title"><span class="accent-bar"></span>Composição da Equipe — 2026</div>
       <div class="chart-box tall"><canvas id="chart-pessoas"></canvas></div>
     </div>
     <div class="read-panel" style="display:flex;flex-direction:column;justify-content:center;">
-      <div class="ptitle"><span class="badge context"><span class="dot"></span>LEITURA — PRIMEIRO MÊS B4B</span></div>
-      <p>O TMA de 550s (+43% vs maio) é o principal termômetro da curva de aprendizado do B4B. Espera-se queda progressiva nas próximas 4–8 semanas, conforme o time ganha familiaridade com processos, scripts e ferramentas (Copilot e Kat.IA).</p>
-      <p>Zero absenteísmo e zero turnover indicam <strong>engajamento e estabilidade do novo time desde o início</strong>. O QA já recuperado (90,87%) reforça que a capacidade técnica do B4B está dentro do esperado — acima, na verdade.</p>
-      <p><strong>Termômetro para julho:</strong> TMA abaixo de 450s confirmará que a curva de aprendizado está no ritmo adequado.</p>
+      <div class="ptitle"><span class="badge good"><span class="dot"></span>TIME ESTABILIZADO</span></div>
+      <p>Zero faltas e zero turnover pelo segundo mês consecutivo com um time novo (B4B) operando é um sinal forte de <strong>engajamento e estabilidade</strong>. A estrutura atual suporta crescimento de volume sem necessidade de novos agentes — graças à IA absorvendo ~49% dos contatos.</p>
+      <p><strong>TMA ainda alto (537s)</strong> é o indicador que melhor representa onde o B4B ainda está amadurecendo. A referência para confirmar maturidade completa é TMA abaixo de 450s.</p>
     </div>
   </div>
 </section>
@@ -550,44 +554,52 @@ document.getElementById('sections-root').innerHTML = `
 <!-- ===== 7. CONTEXTO ===== -->
 <section id="contexto">
   <div class="section-head">
-    <div class="section-tag">Bloco 07 — O que mudou em junho e o que isso explica</div>
-    <div class="section-title">Contexto e Transformação — Junho/2026</div>
-    <p class="section-desc">Junho concentrou três mudanças estruturais simultâneas. Esta seção conecta cada mudança aos indicadores observados, com leitura executiva de impacto esperado vs observado.</p>
+    <div class="section-tag">Bloco 07 — Leitura do semestre e perspectivas</div>
+    <div class="section-title">Contexto — Julho/2026</div>
+    <p class="section-desc">Julho é o primeiro mês de "regime normal" após as três mudanças estruturais de junho. Os indicadores que oscilaram em junho (abandono, satisfação) voltaram a patamares saudáveis, confirmando que os impactos eram transitórios.</p>
   </div>
+
   <div class="card">
-    <div class="timeline">
+    <div class="tl">
       <div class="tl-item">
-        <div class="tl-date">JUNHO/2026 — NOVO FLUXO</div>
-        <div class="tl-title">Implementação do "chute" WhatsApp → URA (A24h, Vidros, Sinistro)</div>
+        <div class="tl-date">JUNHO → JULHO — NORMALIZAÇÃO</div>
+        <div class="tl-title">Abandono de telefonia: 16,2% → 4,7%</div>
         <div class="tl-body">
-          <p><strong>Impactos positivos observados:</strong> mais contatos passam pela IA antes do humano (retenção dispara), NS Geral recupera, TME cai, % atendidos em até 60s atinge 100%.</p>
-          <p><strong>Impactos negativos observados:</strong> abandono de 16,2% (clientes do WhatsApp com baixa tolerância de espera), satisfação cai em todos os canais digitais, e-mail salta +149% (possíveis notificações automáticas do novo fluxo).</p>
-          <p><strong>Leitura executiva:</strong> o chute foi bem executado tecnicamente — o desafio agora é o ajuste de experiência. Julho é o primeiro mês de teste limpo após adaptação inicial do cliente ao novo fluxo.</p>
+          <p><strong>Confirmação:</strong> o pico de abandono em junho era efeito de adaptação do cliente ao novo fluxo URA. Com o cliente já familiarizado, o abandono retornou para próximo do patamar anterior (ainda acima da meta de 3%, mas tendência clara de queda).</p>
+          <p><strong>Leitura:</strong> o chute WhatsApp→URA está funcionando — o ajuste de experiência levou 30 dias, dentro do esperado.</p>
         </div>
       </div>
       <div class="tl-item">
-        <div class="tl-date">JUNHO/2026 — SUSTENTAÇÃO</div>
-        <div class="tl-title">Status de sinistro + última atualização do processo na IA</div>
+        <div class="tl-date">JUNHO → JULHO — RECUPERAÇÃO</div>
+        <div class="tl-title">Satisfação: 76,5% → 88% (+11,5pp)</div>
         <div class="tl-body">
-          <p><strong>Impacto consolidado:</strong> retenção IA em 50,96% — meta de 50% superada pela primeira vez. Salto de +10,2 p.p. vs maio, o maior do semestre.</p>
-          <p><strong>Hipótese sobre satisfação da IA:</strong> ao reter contatos de sinistro (alta carga emocional), a IA pode gerar respostas corretas para situações percebidas como insuficientes — o que pressiona a nota. Investigar perfil dos contatos retidos em junho.</p>
-          <p><strong>Próximo passo:</strong> expansão de escopo — CR (carro reserva) ou abertura de novos serviços — para buscar retenção de 55–60%.</p>
+          <p><strong>Confirmação:</strong> a queda de satisfação em junho era transitória. Julho já mostra recuperação expressiva em todos os canais: geral +11,5pp, WhatsApp +12,4pp, IA +6,7pp.</p>
+          <p><strong>Ponto de atenção:</strong> satisfação da IA (70,8%) ainda distante da meta de 85% — recuperação mais lenta que os outros canais. Pode estar relacionada ao perfil de contatos retidos (mais complexos).</p>
         </div>
       </div>
       <div class="tl-item">
-        <div class="tl-date">JUNHO/2026 — 1º MÊS COMPLETO</div>
-        <div class="tl-title">BPO B4B — Primeiro mês de operação integral</div>
+        <div class="tl-date">JULHO — CONSOLIDAÇÃO</div>
+        <div class="tl-title">NS Geral 91% — melhor resultado do ano</div>
         <div class="tl-body">
-          <p><strong>Sinais positivos:</strong> QA de precisão recuperado para 90,87% (meta atingida), zero absenteísmo, zero turnover — desempenho acima do esperado para onboarding.</p>
-          <p><strong>Ponto de atenção:</strong> TMA de 550s (+43% vs maio) reflete curva de aprendizado esperada. O time ainda está ganhando familiaridade com processos, casos atípicos e uso ativo do Copilot.</p>
-          <p><strong>Termômetro para julho:</strong> TMA abaixo de 450s confirmará que a curva está sendo vencida no ritmo adequado. Manutenção do QA acima de 90% confirmará consistência.</p>
+          <p><strong>Marco:</strong> NS Geral atingiu 91% em julho — acima da meta de 80% pelo segundo mês consecutivo. NS SAC (96%), NS Ouvidoria (100%) e NS CE (85%, exatamente na meta) todos em patamares positivos.</p>
+          <p><strong>Leitura:</strong> a combinação de nova operadora + reconfiguração de fluxos produziu ganho estrutural e duradouro de NS — não foi um efeito pontual.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-date">JULHO — ATENÇÃO</div>
+        <div class="tl-title">% Digital caiu para 67,1% (meta: 80%)</div>
+        <div class="tl-body">
+          <p><strong>Ponto de investigação:</strong> o percentual de atendimento digital caiu de 77,3% (jun) para 67,1% (jul) — menor valor do ano. Ao mesmo tempo, o canal telefone subiu de 2.154 para 2.252 conversas.</p>
+          <p><strong>Hipótese:</strong> parte dos contatos que vinham via WhatsApp pode ter migrado para o telefone — seja por ajuste no fluxo URA, seja por preferência do cliente após as mudanças. Recomenda-se cruzar com o motivo de contato para identificar origem.</p>
         </div>
       </div>
     </div>
   </div>
+
   <div class="read-panel" style="margin-top:16px;">
-    <div class="ptitle"><span class="badge info"><span class="dot"></span>LEITURA EXECUTIVA CONSOLIDADA</span></div>
-    <p>Junho entregou <strong>ganhos estruturais expressivos</strong> (retenção IA na meta, QA recuperado, NS de telefonia acima da meta pela primeira vez no ano) e <strong>pressão transitória na satisfação</strong> (causa identificável: novo fluxo de URA). O B4B mostrou capacidade operacional acima do esperado. A carteira Auto em queda é o único sinal que exige resposta fora da operação de atendimento.</p>
+    <div class="ptitle"><span class="badge info"><span class="dot"></span>LEITURA EXECUTIVA CONSOLIDADA — SEMESTRE</span></div>
+    <p>O semestre Jan–Jul/2026 entregou <strong>crescimento de volume (+3,1% vs 2025), estabilidade de satisfação (+1pp YoY), ganho expressivo de NS de telefonia e a IA atingindo a meta de 50% de retenção</strong> — tudo isso com custo médio de R$7,97/ticket e sem aumento de headcount. Julho confirma que as mudanças estruturais de junho produziram ganhos duradouros, não apenas picos.</p>
+    <p>Os pontos que merecem atenção para o 2º semestre: <strong>(1)</strong> queda da carteira Auto — confirmar natureza com comercial; <strong>(2)</strong> % atendimento digital abaixo da meta — investigar migração de canal; <strong>(3)</strong> satisfação da IA — investigar perfil dos contatos retidos; <strong>(4)</strong> Copilot enriquecimento — oportunidade com treinamento do B4B.</p>
   </div>
 </section>
 
@@ -595,48 +607,47 @@ document.getElementById('sections-root').innerHTML = `
 <section id="swot">
   <div class="section-head">
     <div class="section-tag">Bloco 08 — Leitura estratégica da operação</div>
-    <div class="section-title">Análise SWOT — Atualizada Jun/2026</div>
-    <p class="section-desc">Síntese estratégica conectando os resultados de junho ao contexto de transformação do semestre.</p>
+    <div class="section-title">Análise SWOT — Atualizada Jul/2026</div>
+    <p class="section-desc">Síntese estratégica do semestre Jan–Jul/2026.</p>
   </div>
   <div class="swot-grid">
     <div class="swot-card swot-s">
       <h3>Forças (Strengths)</h3>
       <ul>
-        <li><strong>Retenção IA acima da meta (50,96%)</strong> pela primeira vez — resultado de investimento contínuo em funcionalidades.</li>
-        <li><strong>QA de Precisão recuperado (90,87%)</strong> no primeiro mês com o B4B — absorção rápida do parceiro.</li>
-        <li><strong>NS Telefonia acima da meta</strong> (Geral 84,1%, SAC 97,4%, Ouvidoria 100%) pela primeira vez no ano.</li>
-        <li><strong>Maturidade tecnológica consolidada</strong>: Copilot estável, IA com escopo crescente mês a mês.</li>
-        <li><strong>Zero absenteísmo e zero turnover</strong> em junho com 14 agentes em transição.</li>
+        <li><strong>Retenção IA consolidada em ~50%</strong> — IA resolve metade dos contatos sem humano, trajetória consistente de jan (35%) a jul (49%).</li>
+        <li><strong>NS Telefonia acima da meta por 2 meses consecutivos</strong> (84,1% jun, 91% jul) — ganho estrutural e duradouro.</li>
+        <li><strong>QA Precisão acima de 90% por 2 meses com B4B</strong> — novo parceiro com absorção rápida.</li>
+        <li><strong>Zero absenteísmo e zero turnover</strong> por 2 meses com time de 14 agentes.</li>
+        <li><strong>Custo médio de R$7,97/ticket</strong> — operação se tornando mais eficiente à medida que a IA amadurece.</li>
       </ul>
     </div>
     <div class="swot-card swot-w">
       <h3>Fraquezas (Weaknesses)</h3>
       <ul>
-        <li><strong>Satisfação generalizada em queda</strong>: Geral (76,5%), WhatsApp (76,6%), IA (64,1%) — todas abaixo das metas.</li>
-        <li><strong>Abandono de telefonia em 16,2%</strong> (meta 3%) — exposição à percepção de inacessibilidade.</li>
-        <li><strong>TMA em 550s</strong> — curva de aprendizado do B4B ainda em curso.</li>
-        <li><strong>NPS Darwin cronicamente abaixo da meta</strong> (23%, meta 75%) — problema estrutural de percepção de marca.</li>
-        <li><strong>Copilot enriquecimento abaixo da meta</strong> (74,96% vs 85%) — potencial subutilizado pelo novo time.</li>
+        <li><strong>% Atendimento Digital abaixo da meta</strong> (67,1% vs 80%) — menor valor do ano, com possível migração para telefonia.</li>
+        <li><strong>Satisfação IA abaixo da meta</strong> (70,8% vs 85%) — recuperando, mas lenta.</li>
+        <li><strong>TMA alto (537s)</strong> — curva de aprendizado B4B ainda não concluída.</li>
+        <li><strong>NPS Darwin cronicamente abaixo</strong> (45% vs meta 75%) — problema estrutural de percepção de marca.</li>
+        <li><strong>Copilot enriquecimento abaixo da meta</strong> (72,3% vs 85%) — potencial subutilizado.</li>
       </ul>
     </div>
     <div class="swot-card swot-o">
       <h3>Oportunidades (Opportunities)</h3>
       <ul>
-        <li><strong>Estabilização do fluxo URA/WhatsApp</strong>: quando o cliente internalizar o novo fluxo, abandono deve cair e satisfação deve se recuperar.</li>
-        <li><strong>Expansão do escopo da IA</strong>: com retenção acima de 50%, há base para ampliar para 55–60% — CR, novos serviços, etc.</li>
-        <li><strong>Copilot como acelerador do B4B</strong>: treinamento focado pode elevar enriquecimento de 75% para 85% e reduzir TMA.</li>
-        <li><strong>Curva de maturidade do B4B</strong>: ganho de produtividade e qualidade simultâneos esperados para jul/ago.</li>
-        <li><strong>POC de ferramenta de NPS</strong>: qualificação da coleta pode revelar que satisfação da IA é impactada pelo perfil de contatos, não pela ferramenta.</li>
+        <li><strong>Novos fluxos de IA</strong> (vistoria + Pix) com potencial de +5pp de retenção — meta de 55–60% ao alcance.</li>
+        <li><strong>Treinamento B4B no Copilot</strong> pode elevar enriquecimento de 72% para 85%+ sem custo adicional.</li>
+        <li><strong>POC Zendesk (WFM + IA)</strong> pode automatizar gestão de workforce e ampliar eficiência operacional.</li>
+        <li><strong>WhatsApp A24h exclusivo Darwin</strong> pode recuperar % digital para acima da meta de 80%.</li>
+        <li><strong>Expansão das colaborações com áreas</strong> (garantia, inadimplência, MKT) como processos estruturados.</li>
       </ul>
     </div>
     <div class="swot-card swot-t">
       <h3>Riscos (Threats)</h3>
       <ul>
-        <li><strong>Queda de satisfação persistente</strong>: se não reverter até agosto, pode indicar problema estrutural com risco de impacto em churn.</li>
-        <li><strong>Abandono de telefonia elevado</strong>: clientes que abandonam podem buscar canais alternativos (redes sociais, ouvidoria regulatória).</li>
-        <li><strong>Carteira Auto em queda (-13,5%)</strong>: se confirmada como perda real, o modelo pode estar superdimensionado para demanda futura.</li>
-        <li><strong>Retenção IA x satisfação IA</strong>: crescer retenção às custas da satisfação não é sustentável — equação a resolver.</li>
-        <li><strong>Acúmulo de mudanças simultâneas</strong>: dificulta diagnóstico preciso de causas — risco de decisões baseadas em correlação.</li>
+        <li><strong>Queda da carteira Auto</strong> (-6.576 veículos em 2 meses): se confirmada como perda real, pode superdimensionar a operação.</li>
+        <li><strong>Satisfação IA vs retenção IA</strong>: se a retenção crescer às custas da satisfação, a equação não é sustentável.</li>
+        <li><strong>% Digital abaixo da meta</strong>: se a migração para telefonia for estrutural, aumenta custo operacional e pressão sobre o canal mais caro.</li>
+        <li><strong>NPS Darwin crônico</strong>: abaixo de 50% desde o início do ano — risco de percepção negativa acumulada impactando renovações.</li>
       </ul>
     </div>
   </div>
@@ -647,178 +658,195 @@ document.getElementById('sections-root').innerHTML = `
   <div class="section-head">
     <div class="section-tag">Bloco 09 — Síntese para apresentação executiva</div>
     <div class="section-title">Mensagens-Chave &amp; Recomendações</div>
-    <p class="section-desc">Síntese das mensagens que devem acompanhar o dashboard em apresentação à diretoria e recomendações de estruturação da leitura.</p>
+    <p class="section-desc">Síntese executiva do semestre Jan–Jul/2026 para apresentação à diretoria.</p>
   </div>
   <div class="msg-grid">
     <div class="msg-card">
       <span class="mtag" style="color:var(--blue);">O que a diretoria precisa saber</span>
       <ul>
-        <li>Junho foi o mês de maior transformação do semestre: <strong>três mudanças estruturais simultâneas</strong> (URA, IA, BPO novo).</li>
-        <li>A operação entregou <strong>ganhos expressivos de eficiência e qualidade</strong>, mas a satisfação sentiu o impacto do novo fluxo.</li>
-        <li>A <strong>queda da carteira Auto (-13,5%)</strong> exige resposta da área comercial.</li>
+        <li>A operação cresceu <strong>+3,1% em volume vs 2025</strong> sem adicionar headcount — a IA absorveu o crescimento.</li>
+        <li>Custo médio de <strong>R$7,97/ticket</strong> — operação se tornando mais eficiente estruturalmente.</li>
+        <li><strong>Carteira Auto caiu 6.576 veículos em 2 meses</strong> — ponto que exige resposta da área comercial.</li>
       </ul>
     </div>
     <div class="msg-card">
       <span class="mtag" style="color:var(--good);">O que merece reconhecimento</span>
       <ul>
-        <li><strong>Retenção IA em 50,96%</strong>: meta histórica atingida pela primeira vez.</li>
-        <li><strong>QA recuperado no primeiro mês do B4B</strong>: novo parceiro com capacidade acima do esperado.</li>
-        <li><strong>NS Geral acima da meta pela primeira vez no ano</strong> (84,1%).</li>
-        <li><strong>Zero absenteísmo</strong> com 14 agentes em plena transição operacional.</li>
+        <li><strong>IA em 49–51% de retenção</strong> por 2 meses — meta atingida e sustentada.</li>
+        <li><strong>NS Geral 91% em julho</strong> — melhor resultado do ano, 2º mês acima da meta.</li>
+        <li><strong>QA Precisão 91% por 2 meses com B4B</strong> — absorção acima do esperado.</li>
+        <li><strong>Satisfação recuperou 11,5pp em julho</strong> — confirma que a queda de junho era transitória.</li>
       </ul>
     </div>
     <div class="msg-card">
-      <span class="mtag" style="color:var(--warn);">O que exige monitoramento (30–60 dias)</span>
+      <span class="mtag" style="color:var(--warn);">O que exige monitoramento</span>
       <ul>
-        <li><strong>Recuperação da satisfação</strong> (geral, WhatsApp e IA) — termômetro do fluxo URA.</li>
-        <li><strong>Queda do abandono</strong> como confirmação de absorção do novo fluxo pelo cliente.</li>
-        <li><strong>TMA do B4B</strong> abaixo de 450s em julho.</li>
-        <li><strong>Esclarecimento sobre carteira Auto</strong>.</li>
-        <li><strong>Causa raiz da queda de satisfação da IA</strong>.</li>
+        <li><strong>% Atendimento Digital (67,1%)</strong> — menor do ano, investigar migração de canal.</li>
+        <li><strong>Satisfação IA (70,8%)</strong> — recuperando mas lenta, investigar perfil de contatos.</li>
+        <li><strong>TMA B4B (537s)</strong> — confirmação de maturidade exige TMA abaixo de 450s.</li>
+        <li><strong>Carteira Auto</strong> — esclarecimento sobre natureza da queda.</li>
       </ul>
     </div>
     <div class="msg-card">
-      <span class="mtag" style="color:var(--purple);">O que sinaliza potencial de ganho futuro</span>
+      <span class="mtag" style="color:var(--purple);">Potencial de ganho futuro</span>
       <ul>
-        <li><strong>Retenção IA acima de 50%</strong> abre espaço para meta de 55–60% com expansão de escopo.</li>
-        <li><strong>Fluxo URA integrado ao WhatsApp</strong>, quando estabilizado, reduz custo por contato.</li>
-        <li><strong>B4B com boa absorção inicial</strong>: potencial de melhora acelerada de produtividade.</li>
-        <li><strong>Copilot com potencial de expansão</strong>: treinamento B4B pode elevar enriquecimento para 85%+.</li>
+        <li><strong>+5pp de retenção IA</strong> com 2 novos fluxos (vistoria + Pix) = ~2.750 contatos/mês adicionais sem humano.</li>
+        <li><strong>Copilot para 85%</strong> de enriquecimento com treinamento B4B.</li>
+        <li><strong>WhatsApp A24h exclusivo</strong> pode recuperar % digital para acima de 80%.</li>
+        <li><strong>Colaborações estruturadas</strong> (garantia, inadimplência, MKT) escalam sem headcount.</li>
       </ul>
     </div>
   </div>
+
   <div class="card" style="margin-top:24px;">
-    <div class="block-title"><span class="accent-bar"></span>Recomendações para a Apresentação</div>
-    <p style="font-size:13.5px;color:var(--text);font-weight:700;margin-bottom:8px;">Indicadores de primeira página</p>
-    <div class="chip-list">
-      <span class="chip">🏆 Retenção IA — 50,96% (marco)</span>
-      <span class="chip">⚠ Satisfação Geral — 76,5% vs 90%</span>
-      <span class="chip">✔ NS Geral — 84,1% (acima da meta)</span>
-      <span class="chip">⚠ % Abandono — 16,2% (contexto URA)</span>
-      <span class="chip">✔ QA Precisão — 90,87% (recuperado)</span>
-    </div>
-    <p style="font-size:13.5px;color:var(--text);font-weight:700;margin:18px 0 8px;">Indicadores de apoio</p>
-    <div class="chip-list">
-      <span class="chip">TME / TMA / Csat</span>
-      <span class="chip">Copilot — enriquecimento</span>
-      <span class="chip">NPS por linha</span>
-      <span class="chip">Estrutura de pessoas</span>
-      <span class="chip">Carteira Auto — alerta</span>
-    </div>
-    <div class="read-panel" style="margin-top:18px;">
-      <div class="ptitle"><span class="badge warn"><span class="dot"></span>COMPARAÇÕES E LINGUAGEM A USAR COM CUIDADO</span></div>
-      <p>Retenção IA acima de 50% pode ser mencionada como <strong>"potencialmente competitiva para o segmento"</strong> — inferência qualitativa, sem benchmark confirmado. Abandono (16,2%) e queda de satisfação devem <strong>sempre vir com o contexto da implementação do chute URA</strong> — nunca apresentados de forma isolada. Carteira Auto deve ser destacada como ponto de <strong>investigação</strong>, não como fato consolidado de perda.</p>
+    <div class="block-title"><span class="accent-bar"></span>Scorecard de Metas — Julho/2026</div>
+    <div style="overflow-x:auto;">
+    <table>
+      <thead><tr><th>Indicador</th><th>Meta</th><th class="num">Resultado Jul</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td>% Atendimento Digital</td><td>80%</td><td class="num row-bad">67,1%</td><td><span class="meta-badge meta-miss">✗ Abaixo</span></td></tr>
+        <tr><td>Satisfação Geral</td><td>90%</td><td class="num row-warn">88%</td><td><span class="meta-badge meta-warn">≈ Próximo</span></td></tr>
+        <tr><td>NS Geral Telefonia</td><td>80%</td><td class="num row-good">91%</td><td><span class="meta-badge meta-hit">✔ Atingido</span></td></tr>
+        <tr><td>NS CE</td><td>85%</td><td class="num row-good">85%</td><td><span class="meta-badge meta-hit">✔ Atingido</span></td></tr>
+        <tr><td>NS SAC</td><td>90%</td><td class="num row-good">96%</td><td><span class="meta-badge meta-hit">✔ Atingido</span></td></tr>
+        <tr><td>NS Ouvidoria</td><td>90%</td><td class="num row-good">100%</td><td><span class="meta-badge meta-hit">✔ Atingido</span></td></tr>
+        <tr><td>TME (&lt;60s)</td><td>&lt;60s</td><td class="num row-good">20s</td><td><span class="meta-badge meta-hit">✔ Atingido</span></td></tr>
+        <tr><td>% Abandono</td><td>3%</td><td class="num row-warn">4,7%</td><td><span class="meta-badge meta-warn">≈ Próximo</span></td></tr>
+        <tr><td>% Atend. ≤60s</td><td>98%</td><td class="num row-good">100%</td><td><span class="meta-badge meta-hit">✔ Atingido</span></td></tr>
+        <tr><td>Csat Telefonia</td><td>92%</td><td class="num row-bad">86%</td><td><span class="meta-badge meta-miss">✗ Abaixo</span></td></tr>
+        <tr><td>TMPR WhatsApp</td><td>5 min</td><td class="num row-good">1min40</td><td><span class="meta-badge meta-hit">✔ Atingido</span></td></tr>
+        <tr><td>TTR WhatsApp</td><td>35 min</td><td class="num row-good">26 min</td><td><span class="meta-badge meta-hit">✔ Atingido</span></td></tr>
+        <tr><td>Satisfação WhatsApp</td><td>90%</td><td class="num row-warn">89%</td><td><span class="meta-badge meta-warn">≈ Próximo</span></td></tr>
+        <tr><td>Retenção Kat.IA</td><td>50%</td><td class="num row-warn">49%</td><td><span class="meta-badge meta-warn">≈ Próximo</span></td></tr>
+        <tr><td>Satisfação Kat.IA</td><td>85%</td><td class="num row-bad">70,8%</td><td><span class="meta-badge meta-miss">✗ Abaixo</span></td></tr>
+        <tr><td>Copilot Enriquecimento</td><td>85%</td><td class="num row-bad">72,3%</td><td><span class="meta-badge meta-miss">✗ Abaixo</span></td></tr>
+        <tr><td>QA Precisão</td><td>90%</td><td class="num row-good">91%</td><td><span class="meta-badge meta-hit">✔ Atingido</span></td></tr>
+        <tr><td>QA IQI</td><td>93%</td><td class="num row-warn">89%</td><td><span class="meta-badge meta-warn">≈ Próximo</span></td></tr>
+        <tr><td>NPS Darwin</td><td>75%</td><td class="num row-bad">45%</td><td><span class="meta-badge meta-miss">✗ Abaixo</span></td></tr>
+        <tr><td>NPS A24h</td><td>85%</td><td class="num row-good">92,3%</td><td><span class="meta-badge meta-hit">✔ Atingido</span></td></tr>
+        <tr><td>NPS Vidros</td><td>85%</td><td class="num row-good">92,3%</td><td><span class="meta-badge meta-hit">✔ Atingido</span></td></tr>
+        <tr><td>NPS Sinistro</td><td>75%</td><td class="num row-good">100%</td><td><span class="meta-badge meta-hit">✔ Atingido</span></td></tr>
+        <tr><td>NPS Carro Reserva</td><td>85%</td><td class="num row-bad">66,7%</td><td><span class="meta-badge meta-miss">✗ Abaixo</span></td></tr>
+        <tr><td>% Absenteísmo</td><td>3%</td><td class="num row-good">0%</td><td><span class="meta-badge meta-hit">✔ Atingido</span></td></tr>
+      </tbody>
+    </table>
     </div>
   </div>
+
   <div class="footnote">
     <span>ⓘ</span>
-    <span>Leitura de mercado: retenção por IA acima de 50% e Csat de telefonia acumulado em 90% são, em termos gerais, <strong>potencialmente acima da média</strong> para operações de assistência veicular/seguros sem IA conversacional madura. Inferência qualitativa — sem benchmark externo validado.</span>
+    <span>Custos: IA R$10k + BPO R$55k + Interno R$19,4k = R$84,4k/mês. Custo por ticket calculado sobre total de tickets mensais. Retenção IA acima de 50% potencialmente competitiva para o segmento — inferência qualitativa, sem benchmark externo validado.</span>
   </div>
 </section>
 `;
 
 </script>
 <script>
-const COL={accent:'#5fd4c4',accent2:'#f2b35c',good:'#6fcf97',warn:'#f2c94c',bad:'#eb5757',blue:'#6c9bf2',purple:'#b794f6',muted:'#9aa7c2',grid:'rgba(255,255,255,0.06)',text:'#eef1f7'};
-Chart.defaults.font.family="'Inter', sans-serif";
+const COL={accent:'#5fd4c4',accent2:'#f2b35c',good:'#6fcf97',warn:'#f2c94c',bad:'#eb5757',blue:'#6c9bf2',purple:'#b794f6',muted:'#9aa7c2',grid:'rgba(255,255,255,0.06)'};
+Chart.defaults.font.family="'Inter',sans-serif";
 Chart.defaults.color=COL.muted;
 Chart.defaults.font.size=11.5;
-const MESES=['Jan','Fev','Mar','Abr','Mai','Jun'];
+const M=['Jan','Fev','Mar','Abr','Mai','Jun','Jul'];
 const bG={grid:{color:COL.grid,drawBorder:false},ticks:{color:COL.muted}};
 const charts={};
 function mC(id,cfg){const el=document.getElementById(id);if(!el)return;if(charts[id]){charts[id].destroy();}charts[id]=new Chart(el,cfg);}
-// meta line helper
-function metaLine(val,label,color){return{type:'line',label:label||'Meta',data:[val,val,val,val,val,val],borderColor:color||COL.warn,borderDash:[6,4],borderWidth:1.5,pointRadius:0,fill:false};}
+function metaLine(v,lbl,c){return{type:'line',label:lbl||'Meta',data:[v,v,v,v,v,v,v],borderColor:c||COL.warn,borderDash:[6,4],borderWidth:1.5,pointRadius:0,fill:false};}
 
 function renderVisaoGeral(){
-  mC('chart-tickets-mes',{type:'bar',data:{labels:MESES,datasets:[
-    {label:'WhatsApp',data:[7664,6949,8551,7512,6294,7792],backgroundColor:COL.accent,borderRadius:4},
-    {label:'Telefone',data:[2045,1954,2434,2452,1954,2154],backgroundColor:COL.blue,borderRadius:4},
-    {label:'E-mail',data:[270,259,220,404,612,1526],backgroundColor:COL.accent2,borderRadius:4},
-    {label:'Interno',data:[951,795,839,340,252,554],backgroundColor:COL.purple,borderRadius:4},
+  mC('chart-tickets-mes',{type:'bar',data:{labels:M,datasets:[
+    {label:'WhatsApp',data:[7664,6949,8551,7512,6294,7692,5526],backgroundColor:COL.accent,borderRadius:4},
+    {label:'Telefone',data:[2045,1954,2434,2452,1954,2154,2252],backgroundColor:COL.blue,borderRadius:4},
+    {label:'E-mail',data:[270,259,220,404,612,1526,821],backgroundColor:COL.accent2,borderRadius:4},
+    {label:'Interno',data:[951,795,839,340,252,554,854],backgroundColor:COL.purple,borderRadius:4},
   ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{stacked:true,...bG,grid:{display:false}},y:{stacked:true,...bG}}}});
 
-  mC('chart-canais',{type:'doughnut',data:{labels:['WhatsApp (44.762)','Telefone (12.993)','Interno (3.731)','E-mail (3.291)'],datasets:[{data:[44762,12993,3731,3291],backgroundColor:[COL.accent,COL.blue,COL.purple,COL.accent2],borderColor:'#161e2e',borderWidth:3}]},options:{responsive:true,maintainAspectRatio:false,cutout:'62%',plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:12,font:{size:11}}}}}});
+  mC('chart-canais',{type:'doughnut',data:{labels:['WhatsApp (49.714)','Telefone (15.245)','Interno (5.439)','E-mail (4.933)'],datasets:[{data:[49714,15245,5439,4933],backgroundColor:[COL.accent,COL.blue,COL.purple,COL.accent2],borderColor:'#161e2e',borderWidth:3}]},options:{responsive:true,maintainAspectRatio:false,cutout:'62%',plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:12,font:{size:11}}}}}});
 
-  mC('chart-yoy-tickets',{type:'bar',data:{labels:MESES,datasets:[
-    {label:'2025',data:[7203,7072,10523,12432,12562,12934],backgroundColor:'rgba(154,167,194,0.35)',borderRadius:4},
-    {label:'2026',data:[10930,9957,12044,10708,9112,11926],backgroundColor:COL.accent,borderRadius:4},
+  mC('chart-yoy-tickets',{type:'bar',data:{labels:M,datasets:[
+    {label:'2025',data:[7203,7072,10523,12432,12562,12934,13870],backgroundColor:'rgba(154,167,194,0.35)',borderRadius:4},
+    {label:'2026',data:[10930,9957,12044,10708,9112,11926,9453],backgroundColor:COL.accent,borderRadius:4},
   ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{...bG,grid:{display:false}},y:{...bG}}}});
 }
 
 function renderExperiencia(){
-  mC('chart-satisfacao-yoy',{type:'line',data:{labels:MESES,datasets:[
-    {label:'2025',data:[86,85,81,81,77,81],borderColor:'rgba(154,167,194,0.6)',backgroundColor:'transparent',tension:0.35,borderDash:[5,4]},
-    {label:'2026',data:[84.6,85.4,84.4,81,81.4,76.5],borderColor:COL.bad,backgroundColor:'rgba(235,87,87,0.08)',tension:0.35,fill:true},
-    {type:'line',label:'Meta (90%)',data:[90,90,90,90,90,90],borderColor:COL.warn,borderDash:[6,4],borderWidth:1.5,pointRadius:0,fill:false},
+  mC('chart-satisfacao-yoy',{type:'line',data:{labels:M,datasets:[
+    {label:'2025',data:[86,85,81,81,77,81,80],borderColor:'rgba(154,167,194,0.6)',backgroundColor:'transparent',tension:0.35,borderDash:[5,4]},
+    {label:'2026',data:[84.6,85.4,84.4,81,81.4,76.5,88],borderColor:COL.accent,backgroundColor:'rgba(95,212,196,0.08)',tension:0.35,fill:true},
+    metaLine(90,'Meta (90%)',COL.warn),
   ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{...bG,grid:{display:false}},y:{...bG,min:65,max:95,ticks:{callback:v=>v+'%'}}}}});
 
-  mC('chart-csat-tel-yoy',{type:'line',data:{labels:MESES,datasets:[
-    {label:'2025',data:[72,76,57,82,68,55],borderColor:'rgba(154,167,194,0.6)',backgroundColor:'transparent',tension:0.35,borderDash:[5,4]},
-    {label:'2026',data:[87.3,87.3,90.9,92.8,92.2,89.3],borderColor:COL.good,backgroundColor:'rgba(111,207,151,0.1)',tension:0.35,fill:true},
-    {type:'line',label:'Meta (92%)',data:[92,92,92,92,92,92],borderColor:COL.warn,borderDash:[6,4],borderWidth:1.5,pointRadius:0,fill:false},
+  mC('chart-csat-tel-yoy',{type:'line',data:{labels:M,datasets:[
+    {label:'2025',data:[72,76,57,82,68,55,66],borderColor:'rgba(154,167,194,0.6)',backgroundColor:'transparent',tension:0.35,borderDash:[5,4]},
+    {label:'2026',data:[87.3,87.3,90.9,92.8,92.2,89.3,86],borderColor:COL.good,backgroundColor:'rgba(111,207,151,0.1)',tension:0.35,fill:true},
+    metaLine(92,'Meta (92%)',COL.warn),
   ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{...bG,grid:{display:false}},y:{...bG,min:45,max:100,ticks:{callback:v=>v+'%'}}}}});
 
-  mC('chart-nps',{type:'bar',data:{labels:['Darwin','Atend.','A24h','Vidros','Sinistro','CR'],datasets:[
-    {label:'Jun/26',data:[23,80,83,83,100,50],backgroundColor:COL.accent,borderRadius:4},
-    {label:'Meta',data:[75,80,85,85,75,85],backgroundColor:'rgba(242,201,76,0.2)',borderRadius:4,borderWidth:1,borderColor:COL.warn},
-  ]},options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{...bG,ticks:{callback:v=>v+'%'}},y:{...bG,grid:{display:false}}}}});
+  mC('chart-nps',{type:'bar',data:{
+    labels:['Darwin','Atend.','A24h','Vidros','Sinistro','CR'],
+    datasets:[
+      {label:'Jul/26',data:[45,null,92.31,92.31,100,66.67],backgroundColor:[COL.bad,COL.muted,COL.good,COL.good,COL.good,COL.warn],borderRadius:4},
+      {label:'Meta',data:[75,80,85,85,75,85],backgroundColor:'rgba(242,201,76,0.15)',borderRadius:4,borderWidth:1,borderColor:COL.warn},
+    ]
+  },options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{...bG,ticks:{callback:v=>v+'%'}},y:{...bG,grid:{display:false}}}}});
 }
 
 function renderEficiencia(){
-  mC('chart-ns',{type:'line',data:{labels:MESES,datasets:[
-    {label:'NS Geral',data:[64,75,79,80.9,71.8,84.1],borderColor:COL.accent,backgroundColor:'transparent',tension:0.3},
-    {label:'NS CE',data:[59,72,77,78,66,83.8],borderColor:COL.blue,backgroundColor:'transparent',tension:0.3},
-    {label:'NS SAC',data:[91,92,89,94,90,97.4],borderColor:COL.good,backgroundColor:'transparent',tension:0.3},
-    {label:'NS Ouvidoria',data:[83,91,91,100,92,100],borderColor:COL.accent2,backgroundColor:'transparent',tension:0.3},
-    {type:'line',label:'Meta Geral (80%)',data:[80,80,80,80,80,80],borderColor:'rgba(95,212,196,0.4)',borderDash:[6,4],borderWidth:1.2,pointRadius:0,fill:false},
-  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:12,font:{size:11}}}},scales:{x:{...bG,grid:{display:false}},y:{...bG,min:45,max:105,ticks:{callback:v=>v+'%'}}}}});
+  mC('chart-ns',{type:'line',data:{labels:M,datasets:[
+    {label:'NS Geral',data:[64,75,79,80.9,71.8,84.1,91],borderColor:COL.accent,backgroundColor:'transparent',tension:0.3},
+    {label:'NS CE',data:[59,72,77,78,66,83.8,85],borderColor:COL.blue,backgroundColor:'transparent',tension:0.3},
+    {label:'NS SAC',data:[91,92,89,94,90,97.4,96],borderColor:COL.good,backgroundColor:'transparent',tension:0.3},
+    {label:'NS Ouvidoria',data:[83,91,91,100,92,100,100],borderColor:COL.accent2,backgroundColor:'transparent',tension:0.3},
+    metaLine(80,'Meta Geral (80%)','rgba(95,212,196,0.5)'),
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:12,font:{size:11}}}},scales:{x:{...bG,grid:{display:false}},y:{...bG,min:45,max:108,ticks:{callback:v=>v+'%'}}}}});
 
-  mC('chart-tme-abandono',{type:'bar',data:{labels:MESES,datasets:[
-    {type:'bar',label:'TME (s)',data:[83,50,43,38,59,39],backgroundColor:COL.purple,borderRadius:4,yAxisID:'y'},
-    {type:'line',label:'% Abandono',data:[10.2,6.7,5.9,4.2,8.1,16.2],borderColor:COL.bad,backgroundColor:'transparent',tension:0.3,yAxisID:'y1'},
-    {type:'line',label:'Meta Abandono (3%)',data:[3,3,3,3,3,3],borderColor:COL.warn,borderDash:[6,4],borderWidth:1.5,pointRadius:0,fill:false,yAxisID:'y1'},
-  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{...bG,grid:{display:false}},y:{...bG,position:'left',title:{display:true,text:'TME (s)',color:COL.muted,font:{size:11}}},y1:{position:'right',grid:{display:false},ticks:{callback:v=>v+'%',color:COL.muted},title:{display:true,text:'% Abandono',color:COL.muted,font:{size:11}}}}}});
+  mC('chart-tme-abandono',{type:'bar',data:{labels:M,datasets:[
+    {type:'bar',label:'TME (s)',data:[83,50,43,38,59,39,20],backgroundColor:COL.purple,borderRadius:4,yAxisID:'y'},
+    {type:'line',label:'% Abandono',data:[10.2,6.7,5.9,4.2,8.1,16.2,4.73],borderColor:COL.bad,backgroundColor:'transparent',tension:0.3,yAxisID:'y1'},
+    {type:'line',label:'Meta Abandono (3%)',data:[3,3,3,3,3,3,3],borderColor:COL.warn,borderDash:[6,4],borderWidth:1.5,pointRadius:0,fill:false,yAxisID:'y1'},
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{...bG,grid:{display:false}},y:{...bG,position:'left'},y1:{position:'right',grid:{display:false},ticks:{callback:v=>v+'%',color:COL.muted}}}}});
 
-  // NS Canais Digitais Jun vs meta (barras comparativas)
   mC('chart-ns-digital',{type:'bar',data:{
-    labels:['TMPR E-mail\n(85% ≤59min)','TTR E-mail\n(80% ≤45min)','TMPR Wpp\n(85% ≤7min)','TTR Wpp\n(80% ≤30min)'],
+    labels:['TMPR E-mail','TTR E-mail','TMPR Wpp','TTR Wpp'],
     datasets:[
-      {label:'Jun/26',data:[15.6,69.7,84,97],backgroundColor:[COL.bad,COL.good,COL.accent,COL.good],borderRadius:4},
+      {label:'Jul/26 (%)',data:[10.76,75.93,89.57,97.68],backgroundColor:[COL.bad,COL.warn,COL.good,COL.good],borderRadius:4},
       {label:'Meta',data:[85,80,85,80],backgroundColor:'rgba(242,201,76,0.15)',borderRadius:4,borderWidth:1,borderColor:COL.warn},
     ]
   },options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{...bG,grid:{display:false}},y:{...bG,min:0,max:105,ticks:{callback:v=>v+'%'}}}}});
 }
 
 function renderTecnologia(){
-  mC('chart-retencao-ia',{type:'bar',data:{labels:MESES,datasets:[
-    {label:'% Retenção Kat.IA',data:[35,33,35.9,39,40.75,50.96],backgroundColor:MESES.map((_,i)=>i===5?COL.good:COL.accent),borderRadius:4},
-    {type:'line',label:'Meta (50%)',data:[50,50,50,50,50,50],borderColor:COL.warn,borderDash:[6,4],borderWidth:1.5,pointRadius:0,fill:false},
+  mC('chart-retencao-ia',{type:'bar',data:{labels:M,datasets:[
+    {label:'% Retenção Kat.IA',data:[35,33,35.9,39,40.75,50.96,49],
+      backgroundColor:['#5fd4c4','#5fd4c4','#5fd4c4','#5fd4c4','#5fd4c4','#6fcf97','#f2c94c'],
+      borderRadius:4},
+    metaLine(50,'Meta (50%)',COL.warn),
   ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{...bG,grid:{display:false}},y:{...bG,min:25,max:60,ticks:{callback:v=>v+'%'}}}}});
 
-  mC('chart-copilot',{type:'bar',data:{labels:MESES,datasets:[
-    {label:'Tickets c/ assistência automática',data:[683,7574,9247,8372,7291,7732],backgroundColor:COL.blue,borderRadius:4},
+  mC('chart-copilot',{type:'bar',data:{labels:M,datasets:[
+    {label:'Tickets c/ assistência automática',data:[683,7574,9247,8372,7291,7732,6837],backgroundColor:COL.blue,borderRadius:4},
   ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{...bG,grid:{display:false}},y:{...bG}}}});
 }
 
 function renderQualidade(){
-  mC('chart-qa',{type:'line',data:{labels:MESES,datasets:[
-    {label:'Score de Precisão',data:[93,91.5,92.3,93,76.84,90.87],borderColor:COL.accent,backgroundColor:'rgba(95,212,196,0.08)',fill:true,tension:0.3},
-    {label:'IQI',data:[96,93.2,96.6,92.3,90.98,89.86],borderColor:COL.accent2,backgroundColor:'transparent',tension:0.3},
-    {type:'line',label:'Meta Precisão (90%)',data:[90,90,90,90,90,90],borderColor:COL.warn,borderDash:[6,4],borderWidth:1.5,pointRadius:0,fill:false},
-    {type:'line',label:'Meta IQI (93%)',data:[93,93,93,93,93,93],borderColor:'rgba(183,148,246,0.6)',borderDash:[4,4],borderWidth:1.2,pointRadius:0,fill:false},
+  mC('chart-qa',{type:'line',data:{labels:M,datasets:[
+    {label:'Score de Precisão',data:[93,91.5,92.3,93,76.84,90.87,91],borderColor:COL.accent,backgroundColor:'rgba(95,212,196,0.08)',fill:true,tension:0.3},
+    {label:'IQI',data:[96,93.2,96.6,92.3,90.98,89.86,89],borderColor:COL.accent2,backgroundColor:'transparent',tension:0.3},
+    metaLine(90,'Meta Precisão (90%)',COL.warn),
+    {type:'line',label:'Meta IQI (93%)',data:[93,93,93,93,93,93,93],borderColor:'rgba(183,148,246,0.6)',borderDash:[4,4],borderWidth:1.2,pointRadius:0,fill:false},
   ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{...bG,grid:{display:false}},y:{...bG,min:65,max:100,ticks:{callback:v=>v+'%'}}}}});
 
-  mC('chart-qa-volume',{type:'bar',data:{labels:MESES,datasets:[
-    {label:'Conversas avaliadas',data:[5235,4576,5582,5077,2443,3493],backgroundColor:MESES.map((_,i)=>i===4?COL.bad:COL.purple),borderRadius:4},
+  mC('chart-qa-volume',{type:'bar',data:{labels:M,datasets:[
+    {label:'Conversas avaliadas',data:[5235,4576,5582,5077,2443,3493,3628],
+      backgroundColor:M.map((_,i)=>i===4?COL.bad:COL.purple),
+      borderRadius:4},
   ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{...bG,grid:{display:false}},y:{...bG}}}});
 }
 
 function renderPessoas(){
-  mC('chart-pessoas',{type:'bar',data:{labels:MESES,datasets:[
-    {label:'Agentes Darwin',data:[5,5,5,6,6,6],backgroundColor:COL.accent,borderRadius:4},
-    {label:'Agentes Pluris',data:[6,9,8,7,7,0],backgroundColor:COL.accent2,borderRadius:4},
-    {label:'Agentes B4B',data:[0,0,0,0,0,8],backgroundColor:COL.blue,borderRadius:4},
+  mC('chart-pessoas',{type:'bar',data:{labels:M,datasets:[
+    {label:'Agentes Darwin',data:[5,5,5,6,6,6,6],backgroundColor:COL.accent,borderRadius:4},
+    {label:'Agentes Pluris',data:[6,9,8,7,7,0,0],backgroundColor:COL.accent2,borderRadius:4},
+    {label:'Agentes B4B',data:[0,0,0,0,0,8,8],backgroundColor:COL.blue,borderRadius:4},
   ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{stacked:true,...bG,grid:{display:false}},y:{stacked:true,...bG}}}});
 }
 
@@ -827,25 +855,21 @@ window.renderChartsFor=function(tab){const fn=renderers[tab];if(fn)setTimeout(fn
 
 </script>
 <script>
-// Aguarda o DOM estar completamente pronto (sections já injetadas pelo script anterior)
-(function initTabs() {
-  const tabs = document.querySelectorAll('.tab-btn');
-  const allSections = document.querySelectorAll('section');
-  tabs.forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      tabs.forEach(function(b) { b.classList.remove('active'); });
-      allSections.forEach(function(s) { s.classList.remove('active'); });
+(function(){
+  var tabs=document.querySelectorAll('.tab-btn');
+  var secs=document.querySelectorAll('section');
+  tabs.forEach(function(btn){
+    btn.addEventListener('click',function(){
+      tabs.forEach(function(b){b.classList.remove('active');});
+      secs.forEach(function(s){s.classList.remove('active');});
       btn.classList.add('active');
-      var sec = document.getElementById(btn.dataset.tab);
-      if (sec) sec.classList.add('active');
+      var el=document.getElementById(btn.dataset.tab);
+      if(el)el.classList.add('active');
       window.scrollTo({top:0,behavior:'instant'});
-      if (window.renderChartsFor) window.renderChartsFor(btn.dataset.tab);
+      if(window.renderChartsFor)window.renderChartsFor(btn.dataset.tab);
     });
   });
-  // Renderizar gráficos da aba inicial com delay para garantir que canvas está visível
-  setTimeout(function() {
-    if (window.renderChartsFor) window.renderChartsFor('visao-geral');
-  }, 100);
+  setTimeout(function(){if(window.renderChartsFor)window.renderChartsFor('visao-geral');},120);
 })();
 </script>
 </body>
