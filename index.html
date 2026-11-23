@@ -175,7 +175,7 @@ tr:last-child td{border-bottom:none;}
 </nav>
 <div class="wrap"><div id="sections-root"></div></div>
 <script>
-document.getElementById('sections-root').innerHTML = `
+document.getElementById('sections-root').insertAdjacentHTML('afterbegin',`
 <!-- 1. VISÃO GERAL -->
 <section id="visao-geral" class="active">
   <div class="section-head">
@@ -692,7 +692,7 @@ document.getElementById('sections-root').innerHTML = `
     <span>Acumulado Jan–Out: 94.765 tickets. Novembro parcial: 6.901 tickets. Retenção Kat.IA: evolução de 35% (jan) → 73,1% (nov). Copilot: 61.068 tickets acumulados Jan–Out. NPS com base amostral variável — cautela em meses com poucos respondentes.</span>
   </div>
 </section>
-`;
+`);
 </script>
 <script>
 const COL={accent:'#5fd4c4',accent2:'#f2b35c',good:'#6fcf97',warn:'#f2c94c',bad:'#eb5757',blue:'#6c9bf2',purple:'#b794f6',muted:'#9aa7c2',grid:'rgba(255,255,255,0.06)'};
@@ -700,42 +700,45 @@ Chart.defaults.font.family="'Inter',sans-serif";
 Chart.defaults.color=COL.muted;
 Chart.defaults.font.size=11.5;
 const M=['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov⏳'];
-const bG={grid:{color:COL.grid,drawBorder:false},ticks:{color:COL.muted}};
+const gridColor=COL.grid;
 const charts={};
 function mC(id,cfg){const el=document.getElementById(id);if(!el)return;if(charts[id])charts[id].destroy();charts[id]=new Chart(el,cfg);}
 function ML(v,lbl,c,len){const d=Array(len||11).fill(v);return{type:'line',label:lbl||'Meta',data:d,borderColor:c||COL.warn,borderDash:[6,4],borderWidth:1.5,pointRadius:0,fill:false};}
+const scX={grid:{color:gridColor,drawBorder:false},ticks:{color:COL.muted}};
+const scY={grid:{color:gridColor,drawBorder:false},ticks:{color:COL.muted}};
+const leg={position:'bottom',labels:{boxWidth:10,padding:14}};
 
 function renderVisaoGeral(){
   mC('chart-tickets-mes',{type:'bar',data:{labels:M,datasets:[
     {label:'WhatsApp',data:[7664,6949,8551,7512,6294,7692,5526,4960,4731,4802,2592],backgroundColor:COL.accent,borderRadius:4},
     {label:'Telefone',data:[2045,1954,2434,2452,1954,2154,2252,2364,1719,1533,1923],backgroundColor:COL.blue,borderRadius:4},
     {label:'E-mail',data:[270,259,220,404,612,1526,821,707,637,625,322],backgroundColor:COL.accent2,borderRadius:4},
-    {label:'Interno',data:[951,795,839,340,252,554,854,427,620,478,0],backgroundColor:COL.purple,borderRadius:4},
-  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{stacked:true,...bG,grid:{display:false}},y:{stacked:true,...bG}}}});
-  mC('chart-canais',{type:'doughnut',data:{labels:['WhatsApp (64,681)','Telefone (20,861)','Interno (6,110)','E-mail (6,081)'],datasets:[{data:[64681,20861,6110,6081],backgroundColor:[COL.accent,COL.blue,COL.purple,COL.accent2],borderColor:'#161e2e',borderWidth:3}]},options:{responsive:true,maintainAspectRatio:false,cutout:'62%',plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:12,font:{size:11}}}}}}});
+    {label:'Interno',data:[951,795,839,340,252,554,854,427,620,478,0],backgroundColor:COL.purple,borderRadius:4}
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:leg},scales:{x:{stacked:true,grid:{color:gridColor,drawBorder:false},ticks:{color:COL.muted}},y:{stacked:true,grid:{color:gridColor,drawBorder:false},ticks:{color:COL.muted}}}}});
+  mC('chart-canais',{type:'doughnut',data:{labels:['WhatsApp (64.681)','Telefone (20.861)','Interno (6.110)','E-mail (6.081)'],datasets:[{data:[64681,20861,6110,6081],backgroundColor:[COL.accent,COL.blue,COL.purple,COL.accent2],borderColor:'#161e2e',borderWidth:3}]},options:{responsive:true,maintainAspectRatio:false,cutout:'62%',plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:12,font:{size:11}}}}}});
   mC('chart-yoy-tickets',{type:'bar',data:{labels:['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out'],datasets:[
     {label:'2025',data:[7203,7072,10523,12432,12562,12934,13870,12470,12568,14271],backgroundColor:'rgba(154,167,194,0.35)',borderRadius:4},
-    {label:'2026',data:[10930,9957,12044,10708,9112,11926,9453,8784,8123,7728],backgroundColor:COL.accent,borderRadius:4},
-  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{...bG,grid:{display:false}},y:{...bG}}}}});
+    {label:'2026',data:[10930,9957,12044,10708,9112,11926,9453,8784,8123,7728],backgroundColor:COL.accent,borderRadius:4}
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:leg},scales:{x:{grid:{color:gridColor,drawBorder:false},ticks:{color:COL.muted}},y:{grid:{color:gridColor,drawBorder:false},ticks:{color:COL.muted}}}}});
 }
 
 function renderExperiencia(){
   mC('chart-satisfacao-yoy',{type:'line',data:{labels:M,datasets:[
     {label:'2026',data:[84.6,85.4,84.4,81,81.4,76.5,88,85.5,81.8,84,80.1],borderColor:COL.accent,backgroundColor:'rgba(95,212,196,0.08)',tension:0.35,fill:true},
-    ML(90,'Meta (90%)'),
-  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{...bG,grid:{display:false}},y:{...bG,min:65,max:95,ticks:{callback:v=>v+'%'}}}}}});
+    ML(90,'Meta (90%)')
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:leg},scales:{x:{grid:{color:gridColor,drawBorder:false},ticks:{color:COL.muted}},y:{grid:{color:gridColor,drawBorder:false},ticks:{color:COL.muted},min:65,max:95,ticks:{callback:function(v){return v+'%'}}}}}});
   mC('chart-csat-tel-yoy',{type:'line',data:{labels:M,datasets:[
     {label:'2026',data:[87.3,87.3,90.9,92.8,92.2,89.3,86,95,92,94,null],borderColor:COL.good,backgroundColor:'rgba(111,207,151,0.1)',tension:0.35,fill:true},
-    ML(92,'Meta (92%)',COL.warn),
-  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{...bG,grid:{display:false}},y:{...bG,min:50,max:100,ticks:{callback:v=>v+'%'}}}}}});
+    ML(92,'Meta (92%)',COL.warn)
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:leg},scales:{x:{grid:{color:gridColor,drawBorder:false},ticks:{color:COL.muted}},y:{grid:{color:gridColor,drawBorder:false},min:50,max:100,ticks:{color:COL.muted,callback:function(v){return v+'%'}}}}}});
   mC('chart-nps',{type:'bar',data:{
     labels:['Darwin','Atend.','A24h','Vidros','Sinistro','CR'],
     datasets:[
       {label:'Set',data:[28,43,81,81,70,6],backgroundColor:'rgba(95,212,196,0.4)',borderRadius:4},
       {label:'Out',data:[42,56,46,56,50,71],backgroundColor:[COL.accent2,COL.accent2,COL.bad,COL.bad,COL.bad,COL.accent2],borderRadius:4},
-      {label:'Meta',data:[75,80,85,85,75,85],backgroundColor:'rgba(242,201,76,0.15)',borderRadius:4,borderWidth:1,borderColor:COL.warn},
+      {label:'Meta',data:[75,80,85,85,75,85],backgroundColor:'rgba(242,201,76,0.15)',borderRadius:4,borderWidth:1,borderColor:COL.warn}
     ]
-  },options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{...bG,min:-10,max:110,ticks:{callback:v=>v+'%'}},y:{...bG,grid:{display:false}}}}}});
+  },options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:leg},scales:{x:{grid:{color:gridColor,drawBorder:false},ticks:{color:COL.muted,callback:function(v){return v+'%'}},min:-10,max:110},y:{grid:{display:false},ticks:{color:COL.muted}}}}});
 }
 
 function renderEficiencia(){
@@ -744,55 +747,54 @@ function renderEficiencia(){
     {label:'NS CE',data:[59,72,77,78,66,83.8,85,95.3,92,96.8,null],borderColor:COL.blue,backgroundColor:'transparent',tension:0.3},
     {label:'NS SAC',data:[91,92,89,94,90,97.4,96,94.2,92,97,null],borderColor:COL.good,backgroundColor:'transparent',tension:0.3},
     {label:'NS Ouvidoria',data:[83,91,91,100,92,100,100,100,100,100,null],borderColor:COL.accent2,backgroundColor:'transparent',tension:0.3},
-    ML(80,'Meta Geral (80%)','rgba(95,212,196,0.4)'),
-  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:12,font:{size:11}}}},scales:{x:{...bG,grid:{display:false}},y:{...bG,min:45,max:108,ticks:{callback:v=>v+'%'}}}}}});
+    ML(80,'Meta Geral (80%)','rgba(95,212,196,0.4)')
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:12,font:{size:11}}}},scales:{x:{grid:{color:gridColor,drawBorder:false},ticks:{color:COL.muted}},y:{grid:{color:gridColor,drawBorder:false},min:45,max:108,ticks:{color:COL.muted,callback:function(v){return v+'%'}}}}}});
   mC('chart-tme-abandono',{type:'bar',data:{labels:M,datasets:[
-    {type:'bar',label:'TMA (s)',data:[424,450,433,420,383,550,537,395,446,390,330],backgroundColor:M.map((_,i)=>i===5||i===6?COL.bad:i>=7?COL.good:COL.accent),borderRadius:4,yAxisID:'y'},
+    {type:'bar',label:'TMA (s)',data:[424,450,433,420,383,550,537,395,446,390,330],backgroundColor:['#5fd4c4','#5fd4c4','#5fd4c4','#5fd4c4','#5fd4c4','#eb5757','#eb5757','#6fcf97','#5fd4c4','#6fcf97','#6fcf97'],borderRadius:4,yAxisID:'y'},
     {type:'line',label:'% Abandono',data:[10.2,6.7,5.9,4.2,8.1,16.2,4.73,4.74,4.57,3,4],borderColor:COL.bad,backgroundColor:'transparent',tension:0.3,yAxisID:'y1'},
-    {type:'line',label:'Meta Abandono (3%)',data:Array(11).fill(3),borderColor:COL.warn,borderDash:[6,4],borderWidth:1.5,pointRadius:0,fill:false,yAxisID:'y1'},
-  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{...bG,grid:{display:false}},y:{...bG,position:'left',title:{display:true,text:'TMA (s)',color:COL.muted,font:{size:10}}},y1:{position:'right',grid:{display:false},ticks:{callback:v=>v+'%',color:COL.muted}}}}}});
+    {type:'line',label:'Meta Abandono (3%)',data:[3,3,3,3,3,3,3,3,3,3,3],borderColor:COL.warn,borderDash:[6,4],borderWidth:1.5,pointRadius:0,fill:false,yAxisID:'y1'}
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:leg},scales:{x:{grid:{color:gridColor,drawBorder:false},ticks:{color:COL.muted}},y:{grid:{color:gridColor,drawBorder:false},position:'left',ticks:{color:COL.muted},title:{display:true,text:'TMA (s)',color:COL.muted,font:{size:10}}},y1:{position:'right',grid:{display:false},ticks:{color:COL.muted,callback:function(v){return v+'%'}}}}}});
   mC('chart-ns-digital',{type:'bar',data:{
     labels:['TMPR E-mail','TTR E-mail','TMPR Wpp','TTR Wpp'],
     datasets:[
       {label:'Set',data:[11.65,79.62,92.61,97],backgroundColor:'rgba(95,212,196,0.4)',borderRadius:4},
       {label:'Out',data:[83,16.7,67,17],backgroundColor:[COL.good,COL.bad,COL.warn,COL.bad],borderRadius:4},
-      {label:'Meta',data:[85,80,85,80],backgroundColor:'rgba(242,201,76,0.15)',borderRadius:4,borderWidth:1,borderColor:COL.warn},
+      {label:'Meta',data:[85,80,85,80],backgroundColor:'rgba(242,201,76,0.15)',borderRadius:4,borderWidth:1,borderColor:COL.warn}
     ]
-  },options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{...bG,grid:{display:false}},y:{...bG,min:0,max:110,ticks:{callback:v=>v+'%'}}}}}});
+  },options:{responsive:true,maintainAspectRatio:false,plugins:{legend:leg},scales:{x:{grid:{color:gridColor,drawBorder:false},ticks:{color:COL.muted}},y:{grid:{color:gridColor,drawBorder:false},min:0,max:110,ticks:{color:COL.muted,callback:function(v){return v+'%'}}}}}});
 }
 
 function renderTecnologia(){
   mC('chart-retencao-ia',{type:'bar',data:{labels:M,datasets:[
-    {label:'% Retenção Kat.IA',data:[35,33,35.9,39,40.75,50.96,49,50,56.6,68.3,73.1],
-      backgroundColor:M.map((_,i)=>i>=5?COL.good:COL.accent),borderRadius:4},
-    ML(50,'Meta (50%)',COL.warn),
-  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{...bG,grid:{display:false}},y:{...bG,min:25,max:85,ticks:{callback:v=>v+'%'}}}}}});
+    {label:'% Retenção IA',data:[35,33,35.9,39,40.75,50.96,49,50,56.6,68.3,73.1],backgroundColor:['#5fd4c4','#5fd4c4','#5fd4c4','#5fd4c4','#5fd4c4','#6fcf97','#6fcf97','#6fcf97','#6fcf97','#6fcf97','#6fcf97'],borderRadius:4},
+    ML(50,'Meta (50%)',COL.warn)
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:leg},scales:{x:{grid:{color:gridColor,drawBorder:false},ticks:{color:COL.muted}},y:{grid:{color:gridColor,drawBorder:false},min:25,max:85,ticks:{color:COL.muted,callback:function(v){return v+'%'}}}}}});
   mC('chart-sat-ia',{type:'line',data:{labels:M,datasets:[
-    {label:'Satisfação Kat.IA',data:[79.5,77,73,82.2,81.6,64.1,70.8,88.5,75,76,72],borderColor:COL.purple,backgroundColor:'rgba(183,148,246,0.1)',tension:0.35,fill:true},
-    ML(85,'Meta (85%)',COL.warn),
-  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{...bG,grid:{display:false}},y:{...bG,min:55,max:100,ticks:{callback:v=>v+'%'}}}}}});
+    {label:'Satisfação IA',data:[79.5,77,73,82.2,81.6,64.1,70.8,88.5,75,76,72],borderColor:COL.purple,backgroundColor:'rgba(183,148,246,0.1)',tension:0.35,fill:true},
+    ML(85,'Meta (85%)',COL.warn)
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:leg},scales:{x:{grid:{color:gridColor,drawBorder:false},ticks:{color:COL.muted}},y:{grid:{color:gridColor,drawBorder:false},min:55,max:100,ticks:{color:COL.muted,callback:function(v){return v+'%'}}}}}});
 }
 
 function renderQualidade(){
   mC('chart-qa',{type:'line',data:{labels:M,datasets:[
     {label:'Score de Precisão',data:[93,91.5,92.3,93,76.84,90.87,91,82,79,88,null],borderColor:COL.accent,backgroundColor:'rgba(95,212,196,0.08)',fill:true,tension:0.3},
-    ML(90,'Meta Precisão (90%)',COL.warn),
-  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{...bG,grid:{display:false}},y:{...bG,min:65,max:100,ticks:{callback:v=>v+'%'}}}}}});
+    ML(90,'Meta Precisão (90%)',COL.warn)
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:leg},scales:{x:{grid:{color:gridColor,drawBorder:false},ticks:{color:COL.muted}},y:{grid:{color:gridColor,drawBorder:false},min:65,max:100,ticks:{color:COL.muted,callback:function(v){return v+'%'}}}}}});
   mC('chart-qa-volume',{type:'bar',data:{labels:M,datasets:[
-    {label:'Conversas avaliadas',data:[5235,4576,5582,5077,2443,3493,3628,2850,2319,1980,null],backgroundColor:M.map((_,i)=>i===4?COL.bad:COL.purple),borderRadius:4},
-  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{...bG,grid:{display:false}},y:{...bG}}}}});
+    {label:'Conversas avaliadas',data:[5235,4576,5582,5077,2443,3493,3628,2850,2319,1980,null],backgroundColor:['#5fd4c4','#5fd4c4','#5fd4c4','#5fd4c4','#eb5757','#b794f6','#b794f6','#b794f6','#b794f6','#b794f6','#b794f6'],borderRadius:4}
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{grid:{color:gridColor,drawBorder:false},ticks:{color:COL.muted}},y:{grid:{color:gridColor,drawBorder:false},ticks:{color:COL.muted}}}}});
 }
 
 function renderPessoas(){
   mC('chart-pessoas',{type:'bar',data:{labels:M,datasets:[
     {label:'Agentes Darwin',data:[5,5,5,6,6,6,6,6,3,2,2],backgroundColor:COL.accent,borderRadius:4},
     {label:'Agentes Pluris',data:[6,9,8,7,7,0,0,0,0,0,0],backgroundColor:COL.accent2,borderRadius:4},
-    {label:'Agentes B4B',data:[0,0,0,0,0,8,8,8,8,8,8],backgroundColor:COL.blue,borderRadius:4},
-  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{stacked:true,...bG,grid:{display:false}},y:{stacked:true,...bG}}}}});
+    {label:'Agentes B4B',data:[0,0,0,0,0,8,8,8,8,8,8],backgroundColor:COL.blue,borderRadius:4}
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:leg},scales:{x:{stacked:true,grid:{color:gridColor,drawBorder:false},ticks:{color:COL.muted}},y:{stacked:true,grid:{color:gridColor,drawBorder:false},ticks:{color:COL.muted}}}}});
 }
 
 const renderers={'visao-geral':renderVisaoGeral,'experiencia':renderExperiencia,'eficiencia':renderEficiencia,'tecnologia':renderTecnologia,'qualidade':renderQualidade,'pessoas':renderPessoas};
-window.renderChartsFor=function(tab){const fn=renderers[tab];if(fn)setTimeout(fn,30);};
+window.renderChartsFor=function(tab){var fn=renderers[tab];if(fn)setTimeout(fn,30);};
 </script>
 <script>
 (function(){
@@ -809,7 +811,7 @@ window.renderChartsFor=function(tab){const fn=renderers[tab];if(fn)setTimeout(fn
       if(window.renderChartsFor)window.renderChartsFor(btn.dataset.tab);
     });
   });
-  setTimeout(function(){if(window.renderChartsFor)window.renderChartsFor('visao-geral');},120);
+  setTimeout(function(){if(window.renderChartsFor)window.renderChartsFor('visao-geral');},400);
 })();
 </script>
 </body>
