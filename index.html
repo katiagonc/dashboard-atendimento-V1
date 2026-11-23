@@ -127,34 +127,35 @@ tr:last-child td{border-bottom:none;}
 .footnote{margin-top:32px;padding-top:18px;border-top:1px solid var(--border);font-size:12px;color:var(--muted);display:flex;gap:10px;}
 </style>
 </head>
+
 <body>
 <div class="wrap">
   <header class="hero">
     <div class="eyebrow">Dashboard Executivo · Operação de Atendimento · 2026</div>
-    <h1>NS em alta, IA recuperando, <em>agosto em curso.</em></h1>
-    <p class="hero-sub">Leitura analítica Jan–Ago/2026 com metas e faróis. Agosto é parcial — indicadores marcados com <span class="parcial-tag">⏳ parcial</span> devem ser relidos no fechamento do mês.</p>
+    <h1>IA em 73%, <em>automação consolidada.</em></h1>
+    <p class="hero-sub">Leitura analítica Jan–Nov/2026 · Retenção Kat.IA em 73,1% — praticamente o dobro da meta · NS Geral sustentado acima de 90% há 5 meses · TMA em mínimo histórico. Indicadores com <strong>⏳</strong> são parciais de novembro.</p>
     <div class="hero-meta">
-      <div>Período: <b>Jan–Ago 2026</b></div>
-      <div>Carteira Auto: <b>Em apuração</b></div>
-      <div>Tickets acum. Jan–Jul: <b>74.130</b></div>
-      <div>Tickets Ago (parcial): <b>7.466</b></div>
+      <div>Período: <b>Jan–Nov 2026</b></div>
+      <div>Carteira Auto (nov): <b>19.483 veículos</b></div>
+      <div>Tickets acum. Jan–Out: <b>94.765</b></div>
+      <div>Tickets Nov (parcial): <b>6.901</b></div>
     </div>
     <div class="stat-strip">
       <div class="stat">
-        <div class="stat-label">NS Geral Tel. (Ago)</div>
-        <div class="stat-val">95,6% <small>meta: 80% ✔</small></div>
+        <div class="stat-label">RETENÇÃO KAT.IA (NOV ⏳)</div>
+        <div class="stat-val">73,1% <small>meta: 50% ✔</small></div>
       </div>
       <div class="stat">
-        <div class="stat-label">Csat Telefonia (Ago)</div>
-        <div class="stat-val">95% <small>meta: 92% ✔</small></div>
+        <div class="stat-label">NS GERAL TEL. (NOV ⏳)</div>
+        <div class="stat-val">92% <small>meta: 80% ✔</small></div>
       </div>
       <div class="stat">
-        <div class="stat-label">Sat. IA (Ago)</div>
-        <div class="stat-val">88,5% <small>meta: 85% ✔</small></div>
+        <div class="stat-label">TMA (NOV ⏳)</div>
+        <div class="stat-val">330s <small>mínimo do ano ▼</small></div>
       </div>
       <div class="stat">
-        <div class="stat-label">TMA (Ago)</div>
-        <div class="stat-val">426s <small>vs 537s jul ▼</small></div>
+        <div class="stat-label">COPILOT ENRIQ. (OUT)</div>
+        <div class="stat-val">89,4% <small>meta: 85% ✔ 1ª vez!</small></div>
       </div>
     </div>
   </header>
@@ -164,10 +165,10 @@ tr:last-child td{border-bottom:none;}
     <button class="tab-btn active" data-tab="visao-geral">Visão Geral</button>
     <button class="tab-btn" data-tab="experiencia">Experiência</button>
     <button class="tab-btn" data-tab="eficiencia">Eficiência</button>
-    <button class="tab-btn" data-tab="tecnologia">Tecnologia & IA</button>
+    <button class="tab-btn" data-tab="tecnologia">Tecnologia &amp; IA</button>
     <button class="tab-btn" data-tab="qualidade">Qualidade</button>
     <button class="tab-btn" data-tab="pessoas">Pessoas</button>
-    <button class="tab-btn" data-tab="contexto">Destaques Ago</button>
+    <button class="tab-btn" data-tab="contexto">Destaques Set–Nov</button>
     <button class="tab-btn" data-tab="swot">SWOT</button>
     <button class="tab-btn" data-tab="diretoria">Diretoria</button>
   </div>
@@ -175,171 +176,159 @@ tr:last-child td{border-bottom:none;}
 <div class="wrap"><div id="sections-root"></div></div>
 <script>
 document.getElementById('sections-root').innerHTML = `
-
-<!-- ===== 1. VISÃO GERAL ===== -->
+<!-- 1. VISÃO GERAL -->
 <section id="visao-geral" class="active">
   <div class="section-head">
     <div class="section-tag">Bloco 01 — O tamanho e o ritmo da operação</div>
     <div class="section-title">Visão Geral da Operação</div>
-    <p class="section-desc">Agosto parcial com 7.466 tickets (~79% do volume de julho). Os sinais estruturais são positivos: TMA cai 21% (B4B amadurecendo), NS de telefonia atinge 95,6%, Csat sobe para 95% e satisfação da IA entra acima da meta de 85% pela primeira vez.</p>
+    <p class="section-desc">Novembro parcial: 6.901 tickets. Retenção Kat.IA atinge 73,1% — maior do ano, o dobro da meta. NS Geral telefonia 92%. Carteira Auto em queda estrutural: 38.657 (jan) → 19.483 (nov). Acumulado Jan–Out: 94.765 tickets.</p>
   </div>
-
-  <div class="alert-bar warn">⏳ Agosto é parcial. Indicadores marcados com <strong>⏳ parcial</strong> devem ser relidos no fechamento. Custo/ticket parcial não reflete o custo real do mês.</div>
-
+  <div class="alert-bar warn">⏳ Novembro é parcial. Indicadores com <strong>⏳</strong> devem ser relidos no fechamento. Carteira Auto em queda estrutural (-50% no ano).</div>
   <div class="grid grid-4">
     <div class="card kpi">
-      <div class="label">Total de Tickets (Ago — parcial)</div>
-      <div class="value">7.466</div>
-      <div class="delta flat">~79% do volume de julho</div>
+      <div class="label">Total Tickets (Nov — parcial)</div>
+      <div class="value">6.901</div>
+      <div class="delta flat">Acum. Jan–Out: 94.765</div>
       <span class="meta-badge meta-parcial">⏳ Parcial</span>
     </div>
     <div class="card kpi">
-      <div class="label">Custo médio/ticket (acum. Jan–Jul)</div>
-      <div class="value">R$10,53</div>
-      <div class="delta flat">Custo total: R$99,5k/mês</div>
-      <div class="note">BPO R$64,6k + Interno R$34,9k</div>
+      <div class="label">Carteira Auto (Nov)</div>
+      <div class="value">19.483</div>
+      <div class="delta down">▼ vs 38.657 em jan — -50%</div>
+      <div class="note">Queda estrutural da base segurada</div>
     </div>
     <div class="card kpi">
-      <div class="label">% Atendimento Digital (Ago)</div>
-      <div class="value">67,3%</div>
-      <div class="delta flat">≈ vs 67,1% jul</div>
-      <span class="meta-badge meta-miss">✗ Meta: 80% — gap -12,7pp</span>
+      <div class="label">% Atend. Digital (Out)</div>
+      <div class="value">76,4%</div>
+      <div class="delta up">▲ vs 67,3% ago</div>
+      <span class="meta-badge meta-miss">✗ Meta: 80% — gap -3,6pp</span>
     </div>
     <div class="card kpi">
-      <div class="label">TTR Geral (Ago)</div>
-      <div class="value">39 min</div>
-      <div class="delta up">▼ vs 49 min jul</div>
-      <div class="note">Melhor resultado do 2º semestre</div>
+      <div class="label">Retenção Kat.IA (Nov ⏳)</div>
+      <div class="value">73,1%</div>
+      <div class="delta up">▲ vs 68,3% out — maior do ano!</div>
+      <span class="meta-badge meta-hit">✔ Meta: 50% — +23pp acima!</span>
     </div>
   </div>
-
   <div class="grid grid-2" style="margin-top:16px;">
     <div class="card">
       <div class="block-title"><span class="accent-bar"></span>Volume de Tickets por Mês — 2026</div>
       <div class="chart-box"><canvas id="chart-tickets-mes"></canvas></div>
     </div>
     <div class="card">
-      <div class="block-title"><span class="accent-bar"></span>Distribuição por Canal — Acumulado Jan–Jul</div>
+      <div class="block-title"><span class="accent-bar"></span>Distribuição por Canal — Acumulado Jan–Out</div>
       <div class="chart-box"><canvas id="chart-canais"></canvas></div>
     </div>
   </div>
-
   <div class="grid grid-2" style="margin-top:16px;">
     <div class="card">
-      <div class="block-title"><span class="accent-bar"></span>Tickets YoY — 2025 vs 2026 (Jan–Jul)</div>
+      <div class="block-title"><span class="accent-bar"></span>Comparativo YoY — Jan–Out 2025 vs 2026</div>
       <div class="chart-box"><canvas id="chart-yoy-tickets"></canvas></div>
     </div>
     <div class="read-panel" style="display:flex;flex-direction:column;justify-content:center;">
       <div class="ptitle"><span class="badge info"><span class="dot"></span>LEITURA EXECUTIVA</span></div>
-      <p>Os maiores destaques de agosto não estão no volume — estão na <strong>qualidade operacional</strong>: TMA caiu de 537s para 426s (B4B atingindo maturidade), Csat de telefonia subiu de 86% para 95% e a satisfação da IA ultrapassou a meta de 85% pela primeira vez.</p>
-      <p>O <strong>% atendimento digital segue abaixo da meta</strong> (67,3% vs 80%) — padrão que persiste desde julho. Investigar se há contatos que saíram do fluxo digital e migraram para telefonia estruturalmente.</p>
+      <p>O destaque estrutural de novembro é a <strong>retenção da IA em 73,1%</strong> — praticamente o dobro da meta de 50%. A evolução acumulada (35% em janeiro → 73% em novembro) representa uma redução expressiva no volume humano e na carga de BPO.</p>
+      <p>A <strong>carteira Auto continua em queda</strong> (19.483 veículos vs 38.657 em janeiro, -50%). Essa dinâmica reduz o volume de tickets mês a mês e precisa ser monitorada em conjunto com o dimensionamento da equipe.</p>
     </div>
   </div>
 </section>
 
-<!-- ===== 2. EXPERIÊNCIA ===== -->
+<!-- 2. EXPERIÊNCIA -->
 <section id="experiencia">
   <div class="section-head">
-    <div class="section-tag">Bloco 02 — Como o cliente está percebendo o atendimento</div>
+    <div class="section-tag">Bloco 02 — Como o cliente percebe o atendimento</div>
     <div class="section-title">Experiência do Cliente</div>
-    <p class="section-desc">Satisfação geral estável em 88% (mesmo patamar de julho). Csat de telefonia sobe para 95% — acima da meta de 92%. NPS A24h e Vidros sobem para 91,7%. Atenção: NPS Sinistro caiu para -20% em agosto (vs 100% em julho) — base pequena, mas sinaliza volatilidade.</p>
+    <p class="section-desc">Satisfação geral 80,1% em nov parcial. Csat telefonia 94% em out — acima da meta. NPS A24h e Vidros em queda em outubro (46% e 56%). NPS Sinistro se recupera após -20% em agosto.</p>
   </div>
-
-  <div class="alert-bar">⚠ NPS Sinistro: <strong>-20% em agosto</strong> (vs 100% em julho). Queda brusca — verificar se é base amostral pequena ou problema real de experiência no processo de sinistro.</div>
-
+  <div class="alert-bar warn">⚠ NPS A24h caiu para 46% (meta 85%) e NPS Vidros para 56% (meta 85%) em outubro. Queda relevante — investigar causas.</div>
   <div class="grid grid-4">
     <div class="card kpi">
-      <div class="label">Satisfação Geral (Ago)</div>
-      <div class="value">88%</div>
-      <div class="delta flat">≈ vs 88% jul — estável</div>
-      <span class="meta-badge meta-warn">≈ Meta: 90% — gap -2pp</span>
+      <div class="label">Satisfação Geral (Nov ⏳)</div>
+      <div class="value">80,1%</div>
+      <div class="delta down">▼ vs 84% out</div>
+      <span class="meta-badge meta-miss">✗ Meta: 90% — parcial</span>
     </div>
     <div class="card kpi">
-      <div class="label">Csat Telefonia (Ago)</div>
-      <div class="value">95%</div>
-      <div class="delta up">▲ +9pp vs jul (86%)</div>
+      <div class="label">Csat Telefonia (Out)</div>
+      <div class="value">94%</div>
+      <div class="delta up">▲ vs 92% set</div>
       <span class="meta-badge meta-hit">✔ Meta: 92%</span>
     </div>
     <div class="card kpi">
-      <div class="label">Satisfação WhatsApp (Ago)</div>
-      <div class="value">87%</div>
-      <div class="delta flat">▼ vs 89% jul</div>
-      <span class="meta-badge meta-miss">✗ Meta: 90% — gap -3pp</span>
+      <div class="label">Satisfação WhatsApp (Nov ⏳)</div>
+      <div class="value">76%</div>
+      <div class="delta down">▼ vs 83% out</div>
+      <span class="meta-badge meta-miss">✗ Meta: 90% — parcial</span>
     </div>
     <div class="card kpi">
-      <div class="label">Satisfação IA (Ago)</div>
-      <div class="value">88,5%</div>
-      <div class="delta up">▲ +17,7pp vs jul (70,8%)</div>
-      <span class="meta-badge meta-hit">✔ Meta: 85% — 1ª vez acima!</span>
+      <div class="label">Satisfação IA (Nov ⏳)</div>
+      <div class="value">72%</div>
+      <div class="delta down">▼ vs 76% out</div>
+      <span class="meta-badge meta-miss">✗ Meta: 85% — parcial</span>
     </div>
   </div>
-
   <div class="grid grid-2" style="margin-top:16px;">
     <div class="card">
-      <div class="block-title"><span class="accent-bar"></span>Satisfação Geral — Jan–Ago/2026 + Meta</div>
+      <div class="block-title"><span class="accent-bar"></span>Satisfação Geral — Jan–Nov/2026 + Meta</div>
       <div class="chart-box"><canvas id="chart-satisfacao-yoy"></canvas></div>
     </div>
     <div class="card">
-      <div class="block-title"><span class="accent-bar"></span>Csat Telefonia — Jan–Ago/2026 + Meta</div>
+      <div class="block-title"><span class="accent-bar"></span>Csat Telefonia — Jan–Nov/2026 + Meta</div>
       <div class="chart-box"><canvas id="chart-csat-tel-yoy"></canvas></div>
     </div>
   </div>
-
   <div class="grid grid-2" style="margin-top:16px;">
     <div class="card">
-      <div class="block-title"><span class="accent-bar"></span>NPS por Linha — Ago/2026 vs Metas</div>
+      <div class="block-title"><span class="accent-bar"></span>NPS por Linha — Set vs Out/2026 + Metas</div>
       <div class="chart-box tall"><canvas id="chart-nps"></canvas></div>
     </div>
     <div>
       <div class="read-panel">
-        <div class="ptitle"><span class="badge good"><span class="dot"></span>SATISFAÇÃO IA ACIMA DA META PELA 1ª VEZ</span></div>
-        <p>Satisfação da IA atingiu <strong>88,5% em agosto — acima da meta de 85% pela primeira vez</strong>. Após a queda para 64,1% em junho (efeito da integração URA) e recuperação gradual em julho (70,8%), o indicador agora supera a meta. Sinal de que os ajustes de escopo e script da IA produziram resultado.</p>
+        <div class="ptitle"><span class="badge warn"><span class="dot"></span>NPS A24h E VIDROS EM QUEDA EM OUTUBRO</span></div>
+        <p>NPS A24h caiu de 81% (set) para <strong>46% (out)</strong>. NPS Vidros de 81% para <strong>56%</strong>. As duas linhas de assistência que se mantinham acima da meta ao longo de 2026 sofreram queda expressiva simultânea em outubro. Investigar se houve problema sistêmico nas assistências ou na régua de NPS.</p>
       </div>
       <div class="read-panel">
-        <div class="ptitle"><span class="badge bad"><span class="dot"></span>ATENÇÃO — NPS SINISTRO -20%</span></div>
-        <p>NPS Sinistro caiu de 100% (jul) para -20% (ago). Antes de qualquer conclusão, verificar o <strong>tamanho da amostra</strong> — NPS de sinistro historicamente tem base pequena e sofre variação extrema por poucos respondentes negativos. Se a amostra for relevante, investigar se houve algum problema pontual no processo de sinistro em agosto.</p>
+        <div class="ptitle"><span class="badge good"><span class="dot"></span>NPS SINISTRO — RECUPERAÇÃO APÓS AGOSTO</span></div>
+        <p>Após -20% em agosto, o NPS Sinistro se recuperou: <strong>70% em setembro</strong> e <strong>50% em outubro</strong>. Embora ainda abaixo da meta de 75%, a recuperação confirma que agosto foi pontual. Manter monitoramento em novembro.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== 3. EFICIÊNCIA ===== -->
+<!-- 3. EFICIÊNCIA -->
 <section id="eficiencia">
   <div class="section-head">
     <div class="section-tag">Bloco 03 — Capacidade de resposta e absorção de demanda</div>
     <div class="section-title">Eficiência Operacional &amp; Telefonia</div>
-    <p class="section-desc">Agosto consolida os ganhos de NS com novos máximos: NS Geral 95,6%, NS CE 95,3%, SAC 98,7%, Ouvidoria 100%. TME cai para 11s (menor do ano). TMA cai de 537s para 426s — B4B atingindo maturidade operacional. Abandono ligeiramente acima da meta (5,5% vs 3%).</p>
+    <p class="section-desc">NS Geral acima de 90% desde julho: Set 95%, Out 96,9%, Nov 92%. TMA em 330s em novembro — mínimo histórico. Abandono: Out 3% (na meta), Nov 4%. TME de 10s em novembro — menor do ano.</p>
   </div>
-
-  <div class="alert-bar good">✔ TMA caiu de 537s (jul) para 426s (ago) — queda de 21%. B4B atingindo maturidade. Meta implícita de &lt;450s atingida.</div>
-
+  <div class="alert-bar good">✔ TMA em queda contínua: 550s (jun) → 330s (nov parcial). TME em 10s — mínimo do ano. Abandono na meta de 3% em outubro pela primeira vez.</div>
   <div class="grid grid-4">
     <div class="card kpi">
-      <div class="label">NS Geral Telefonia (Ago)</div>
-      <div class="value">95,6%</div>
-      <div class="delta up">▲ vs 91% jul — novo máximo</div>
+      <div class="label">NS Geral Telefonia (Nov ⏳)</div>
+      <div class="value">92%</div>
+      <div class="delta flat">≈ vs 96,9% out — sustentado</div>
       <span class="meta-badge meta-hit">✔ Meta: 80%</span>
     </div>
     <div class="card kpi">
-      <div class="label">TME (Ago)</div>
-      <div class="value">11s</div>
-      <div class="delta up">▼ vs 20s jul — menor do ano</div>
+      <div class="label">TME (Nov ⏳)</div>
+      <div class="value">10s</div>
+      <div class="delta up">▼ vs 32s out — mínimo do ano</div>
       <span class="meta-badge meta-hit">✔ Meta: &lt;60s</span>
     </div>
     <div class="card kpi">
-      <div class="label">TMA (Ago)</div>
-      <div class="value">426s</div>
-      <div class="delta up">▼ vs 537s jul (-21%)</div>
-      <span class="meta-badge meta-hit">✔ Abaixo de 450s — B4B maduro</span>
+      <div class="label">TMA (Nov ⏳)</div>
+      <div class="value">330s</div>
+      <div class="delta up">▼ vs 390s out — mínimo histórico</div>
+      <span class="meta-badge meta-hit">✔ Mínimo histórico 2026</span>
     </div>
     <div class="card kpi">
-      <div class="label">% Abandono (Ago)</div>
-      <div class="value">5,5%</div>
-      <div class="delta down">▲ vs 4,7% jul</div>
-      <span class="meta-badge meta-warn">≈ Meta: 3% — gap +2,5pp</span>
+      <div class="label">% Abandono (Nov ⏳)</div>
+      <div class="value">4%</div>
+      <div class="delta up">▲ vs 3% out (na meta)</div>
+      <span class="meta-badge meta-warn">≈ Meta: 3% — ligeiramente acima</span>
     </div>
   </div>
-
   <div class="grid grid-2" style="margin-top:16px;">
     <div class="card">
       <div class="block-title"><span class="accent-bar"></span>Nível de Serviço — Geral / CE / SAC / Ouvidoria</div>
@@ -350,85 +339,80 @@ document.getElementById('sections-root').innerHTML = `
       <div class="chart-box tall"><canvas id="chart-tme-abandono"></canvas></div>
     </div>
   </div>
-
   <div class="grid grid-2" style="margin-top:16px;">
     <div class="card">
-      <div class="block-title"><span class="accent-bar"></span>NS Canais Digitais — Ago vs Metas</div>
+      <div class="block-title"><span class="accent-bar"></span>Canais Digitais — Set vs Out vs Metas</div>
       <div class="chart-box"><canvas id="chart-ns-digital"></canvas></div>
     </div>
     <div>
       <div class="read-panel">
-        <div class="ptitle"><span class="badge good"><span class="dot"></span>TMA — MATURIDADE DO B4B CONFIRMADA</span></div>
-        <p>O TMA caiu de <strong>537s (jul) para 426s (ago)</strong> — queda de 21% em um único mês. Isso confirma que o B4B atingiu a maturidade operacional esperada: o time está mais rápido, mais seguro nos processos e usando melhor as ferramentas (Copilot e Kat.IA). O indicador de referência era TMA abaixo de 450s — <strong>atingido</strong>.</p>
+        <div class="ptitle"><span class="badge good"><span class="dot"></span>TMA — MÍNIMO HISTÓRICO EM NOVEMBRO</span></div>
+        <p>O TMA chegou a <strong>330s em novembro parcial</strong> — o menor do ano. A trajetória de queda é consistente desde o pico de 550s em junho. Com o volume diminuindo (carteira Auto em queda), a operação fica mais ágil e o custo por ticket cai estruturalmente.</p>
       </div>
       <div class="read-panel">
-        <div class="ptitle"><span class="badge warn"><span class="dot"></span>NS CANAIS DIGITAIS — TMPR E-MAIL CRÍTICO</span></div>
-        <p>TMPR de e-mail segue em <strong>11% de atendimento dentro do prazo</strong> (meta 85%) — o indicador mais distante da meta em toda a operação. Canal com menor volume (462 tickets em ago) mas com SLA sistematicamente descumprido. Vale avaliar se o e-mail deve ter um prazo-meta diferente ou um processo dedicado de resposta.</p>
+        <div class="ptitle"><span class="badge warn"><span class="dot"></span>ABANDONO NA META EM OUTUBRO — 1ª VEZ NO ANO</span></div>
+        <p>O abandono atingiu <strong>3% em outubro</strong> — exatamente na meta, pela primeira vez em 2026. Combinado com NS Geral em 96,9% e TMA em 390s, outubro foi o mês com melhor equilíbrio entre velocidade e qualidade de atendimento telefônico.</p>
       </div>
     </div>
   </div>
-
   <div class="card" style="margin-top:16px;">
-    <div class="block-title"><span class="accent-bar"></span>Telefonia — Tabela Consolidada 2026 (com metas)</div>
+    <div class="block-title"><span class="accent-bar"></span>Telefonia — Tabela Consolidada 2026</div>
     <div style="overflow-x:auto;">
     <table>
-      <thead><tr><th>Indicador</th><th>Meta</th><th class="num">Jan</th><th class="num">Fev</th><th class="num">Mar</th><th class="num">Abr</th><th class="num">Mai</th><th class="num">Jun</th><th class="num">Jul</th><th class="num">Ago ⏳</th></tr></thead>
+      <thead><tr><th>Indicador</th><th>Meta</th><th class="num">Jan</th><th class="num">Fev</th><th class="num">Mar</th><th class="num">Abr</th><th class="num">Mai</th><th class="num">Jun</th><th class="num">Jul</th><th class="num">Ago</th><th class="num">Set</th><th class="num">Out</th><th class="num">Nov ⏳</th></tr></thead>
       <tbody>
-        <tr><td>NS Geral</td><td>80%</td><td class="num row-bad">64%</td><td class="num row-bad">75%</td><td class="num row-warn">79%</td><td class="num row-good">80,9%</td><td class="num row-bad">71,8%</td><td class="num row-good">84,1%</td><td class="num row-good">91%</td><td class="num row-good">95,6% ✔</td></tr>
-        <tr><td>NS CE</td><td>85%</td><td class="num row-bad">59%</td><td class="num row-bad">72%</td><td class="num row-bad">77%</td><td class="num row-bad">78%</td><td class="num row-bad">66%</td><td class="num row-bad">83,8%</td><td class="num row-good">85%</td><td class="num row-good">95,3% ✔</td></tr>
-        <tr><td>NS SAC</td><td>90%</td><td class="num row-good">91%</td><td class="num row-good">92%</td><td class="num row-warn">89%</td><td class="num row-good">94%</td><td class="num row-good">90%</td><td class="num row-good">97,4%</td><td class="num row-good">96%</td><td class="num row-good">98,7% ✔</td></tr>
-        <tr><td>NS Ouvidoria</td><td>90%</td><td class="num row-warn">83%</td><td class="num row-good">91%</td><td class="num row-good">91%</td><td class="num row-good">100%</td><td class="num row-good">92%</td><td class="num row-good">100%</td><td class="num row-good">100%</td><td class="num row-good">100% ✔</td></tr>
-        <tr><td>TME (s)</td><td>&lt;60s</td><td class="num row-bad">83</td><td class="num row-good">50</td><td class="num row-good">43</td><td class="num row-good">38</td><td class="num row-warn">59</td><td class="num row-good">39</td><td class="num row-good">20</td><td class="num row-good">11 ✔</td></tr>
-        <tr><td>TMA (s)</td><td>—</td><td class="num">424</td><td class="num">450</td><td class="num">433</td><td class="num">420</td><td class="num row-good">383</td><td class="num row-bad">550</td><td class="num row-bad">537</td><td class="num row-good">426 ✔</td></tr>
-        <tr><td>% Abandono</td><td>3%</td><td class="num row-bad">10,2%</td><td class="num row-bad">6,7%</td><td class="num row-bad">5,9%</td><td class="num row-bad">4,2%</td><td class="num row-bad">8,1%</td><td class="num row-bad">16,2%</td><td class="num row-warn">4,7%</td><td class="num row-warn">5,5%</td></tr>
-        <tr><td>% ≤60s</td><td>98%</td><td class="num row-bad">76%</td><td class="num row-bad">83%</td><td class="num row-bad">86%</td><td class="num row-bad">87%</td><td class="num row-bad">82%</td><td class="num row-good">100%</td><td class="num row-good">100%</td><td class="num row-good">100% ✔</td></tr>
-        <tr><td>Csat</td><td>92%</td><td class="num row-bad">87,3%</td><td class="num row-bad">87,3%</td><td class="num row-warn">90,9%</td><td class="num row-good">92,8%</td><td class="num row-good">92,2%</td><td class="num row-warn">89,3%</td><td class="num row-bad">86%</td><td class="num row-good">95% ✔</td></tr>
+        <tr><td>NS Geral</td><td>80%</td><td class="num row-bad">64%</td><td class="num row-bad">75%</td><td class="num row-warn">79%</td><td class="num row-good">80,9%</td><td class="num row-bad">71,8%</td><td class="num row-good">84,1%</td><td class="num row-good">91%</td><td class="num row-good">95,2%</td><td class="num row-good">95%</td><td class="num row-good">96,9%</td><td class="num row-good">92%</td></tr>
+        <tr><td>NS CE</td><td>85%</td><td class="num row-bad">59%</td><td class="num row-bad">72%</td><td class="num row-bad">77%</td><td class="num row-bad">78%</td><td class="num row-bad">66%</td><td class="num row-warn">83,8%</td><td class="num row-good">85%</td><td class="num row-good">95,3%</td><td class="num row-good">92%</td><td class="num row-good">96,8%</td><td class="num">—</td></tr>
+        <tr><td>NS SAC</td><td>90%</td><td class="num row-good">91%</td><td class="num row-good">92%</td><td class="num row-warn">89%</td><td class="num row-good">94%</td><td class="num row-good">90%</td><td class="num row-good">97,4%</td><td class="num row-good">96%</td><td class="num row-good">94,2%</td><td class="num row-good">92%</td><td class="num row-good">97%</td><td class="num">—</td></tr>
+        <tr><td>NS Ouvidoria</td><td>90%</td><td class="num row-warn">83%</td><td class="num row-good">91%</td><td class="num row-good">91%</td><td class="num row-good">100%</td><td class="num row-good">92%</td><td class="num row-good">100%</td><td class="num row-good">100%</td><td class="num row-good">100%</td><td class="num row-good">100%</td><td class="num row-good">100%</td><td class="num">—</td></tr>
+        <tr><td>TME (s)</td><td>&lt;60s</td><td class="num row-bad">83</td><td class="num row-good">50</td><td class="num row-good">43</td><td class="num row-good">38</td><td class="num row-warn">59</td><td class="num row-good">39</td><td class="num row-good">20</td><td class="num row-good">14</td><td class="num row-good">16</td><td class="num row-good">32</td><td class="num row-good">10 ✔</td></tr>
+        <tr><td>TMA (s)</td><td>—</td><td class="num">424</td><td class="num">450</td><td class="num">433</td><td class="num">420</td><td class="num row-good">383</td><td class="num row-bad">550</td><td class="num row-bad">537</td><td class="num row-good">395</td><td class="num">446</td><td class="num row-good">390</td><td class="num row-good">330 ✔</td></tr>
+        <tr><td>% Abandono</td><td>3%</td><td class="num row-bad">10,2%</td><td class="num row-bad">6,7%</td><td class="num row-bad">5,9%</td><td class="num row-bad">4,2%</td><td class="num row-bad">8,1%</td><td class="num row-bad">16,2%</td><td class="num row-warn">4,7%</td><td class="num row-warn">4,7%</td><td class="num row-warn">4,6%</td><td class="num row-good">3%</td><td class="num row-warn">4%</td></tr>
+        <tr><td>Atend. ≤60s</td><td>98%</td><td class="num row-bad">76%</td><td class="num row-bad">83%</td><td class="num row-bad">86%</td><td class="num row-bad">87%</td><td class="num row-bad">82%</td><td class="num row-good">100%</td><td class="num row-good">100%</td><td class="num row-good">100%</td><td class="num row-warn">96%</td><td class="num row-warn">97%</td><td class="num row-good">98%</td></tr>
+        <tr><td>Csat</td><td>92%</td><td class="num row-bad">87,3%</td><td class="num row-bad">87,3%</td><td class="num row-warn">90,9%</td><td class="num row-good">92,8%</td><td class="num row-good">92,2%</td><td class="num row-warn">89,3%</td><td class="num row-bad">86%</td><td class="num row-good">95%</td><td class="num row-good">92%</td><td class="num row-good">94%</td><td class="num">—</td></tr>
       </tbody>
     </table>
     </div>
   </div>
 </section>
 
-<!-- ===== 4. TECNOLOGIA & IA ===== -->
+<!-- 4. TECNOLOGIA & IA -->
 <section id="tecnologia">
   <div class="section-head">
     <div class="section-tag">Bloco 04 — O motor de eficiência da operação</div>
     <div class="section-title">Tecnologia &amp; Automação</div>
-    <p class="section-desc">Satisfação da IA atinge 88,5% pela primeira vez acima da meta de 85%. Retenção em 48% (parcial, próxima da meta de 50%). Copilot com enriquecimento parcial em 63% — aguardar fechamento antes de concluir sobre tendência.</p>
+    <p class="section-desc">Retenção Kat.IA em 73,1% em novembro parcial — maior do ano, o dobro da meta de 50%. Evolução: 35% (jan) → 73,1% (nov). Copilot enriquecimento: 89,4% em outubro — acima da meta de 85% pela primeira vez.</p>
   </div>
-
-  <div class="alert-bar good">✔ Satisfação Kat.IA: 88,5% em agosto — acima da meta de 85% pela PRIMEIRA VEZ. Após queda para 64% em junho e recuperação gradual, o indicador finalmente supera a meta.</div>
-
+  <div class="alert-bar good">✔ Retenção IA: 73,1% em novembro — maior do ano. Copilot enriquecimento: 89,4% em outubro — acima da meta de 85% pela primeira vez.</div>
   <div class="grid grid-4">
     <div class="card kpi">
-      <div class="label">Retenção Kat.IA (Ago — parcial)</div>
-      <div class="value">48%</div>
-      <div class="delta flat">≈ vs 49% jul</div>
-      <span class="meta-badge meta-parcial">⏳ Meta: 50% — parcial</span>
+      <div class="label">Retenção Kat.IA (Nov ⏳)</div>
+      <div class="value">73,1%</div>
+      <div class="delta up">▲ vs 68,3% out — maior do ano</div>
+      <span class="meta-badge meta-hit">✔ Meta: 50% — +23pp acima!</span>
     </div>
     <div class="card kpi">
-      <div class="label">Satisfação Kat.IA (Ago)</div>
-      <div class="value">88,5%</div>
-      <div class="delta up">▲ +17,7pp vs jul (70,8%)</div>
-      <span class="meta-badge meta-hit">✔ Meta: 85% — 1ª vez acima!</span>
+      <div class="label">Satisfação Kat.IA (Nov ⏳)</div>
+      <div class="value">72%</div>
+      <div class="delta down">▼ vs 76% out</div>
+      <span class="meta-badge meta-miss">✗ Meta: 85% — parcial</span>
     </div>
     <div class="card kpi">
-      <div class="label">Tickets Copilot (Ago — parcial)</div>
-      <div class="value">2.816</div>
-      <div class="delta flat">Parcial do mês</div>
-      <span class="meta-badge meta-parcial">⏳ Enriq.: 63,2% — parcial</span>
+      <div class="label">Copilot Enriquecimento (Out)</div>
+      <div class="value">89,4%</div>
+      <div class="delta up">▲ vs 49% set — 1ª vez acima da meta!</div>
+      <span class="meta-badge meta-hit">✔ Meta: 85% — 1ª vez!</span>
     </div>
     <div class="card kpi">
-      <div class="label">Acumulado Copilot (Jan–Ago)</div>
-      <div class="value">50.552</div>
+      <div class="label">Copilot Acumulado (Jan–Out)</div>
+      <div class="value">61.068</div>
       <div class="delta up">▲ vs 1.322 em todo 2025</div>
-      <div class="note">+2.816 parcial de agosto</div>
+      <div class="note">+46x comparado ao ano anterior</div>
     </div>
   </div>
-
   <div class="grid grid-2" style="margin-top:16px;">
     <div class="card">
-      <div class="block-title"><span class="accent-bar"></span>% Retenção Kat.IA — Jan–Ago/2026 vs Meta (50%)</div>
+      <div class="block-title"><span class="accent-bar"></span>% Retenção Kat.IA — Jan–Nov/2026 vs Meta (50%)</div>
       <div class="chart-box"><canvas id="chart-retencao-ia"></canvas></div>
     </div>
     <div class="card">
@@ -436,55 +420,51 @@ document.getElementById('sections-root').innerHTML = `
       <div class="chart-box"><canvas id="chart-sat-ia"></canvas></div>
     </div>
   </div>
-
   <div class="grid grid-2" style="margin-top:16px;">
     <div class="read-panel">
-      <div class="ptitle"><span class="badge good"><span class="dot"></span>POR QUE A SATISFAÇÃO DA IA RECUPEROU</span></div>
-      <p>A satisfação da IA saiu de 64,1% (jun) → 70,8% (jul) → <strong>88,5% (ago)</strong>. A hipótese confirmada: em junho a IA passou a reter contatos mais complexos (sinistro com alta carga emocional), o que pressionou a satisfação. Com o ajuste de escopo e scripts nos meses seguintes, o cliente voltou a perceber valor na resolução autônoma.</p>
+      <div class="ptitle"><span class="badge good"><span class="dot"></span>RETENÇÃO IA — ACELERAÇÃO SEM PRECEDENTES</span></div>
+      <p>A retenção saiu de <strong>50,96% em junho</strong> (primeira vez acima da meta) para <strong>73,1% em novembro</strong>. A cada mês a IA retém mais contatos sem intervenção humana. Com cada +1pp de retenção representando ~R$610/mês de economia, o salto de junho a novembro representa aproximadamente <strong>R$13,5k/mês adicionais</strong> em redução de custo operacional.</p>
     </div>
     <div class="read-panel">
-      <div class="ptitle"><span class="badge parcial"><span class="dot"></span>COPILOT — AGUARDAR FECHAMENTO</span></div>
-      <p>O enriquecimento parcial de 63,2% em agosto está abaixo do patamar de julho (72,3%) e bem abaixo da meta de 85%. Como é dado parcial, não é possível concluir sobre tendência. O volume de 2.816 tickets também é parcial. <strong>Aguardar fechamento do mês para leitura definitiva.</strong></p>
+      <div class="ptitle"><span class="badge good"><span class="dot"></span>COPILOT — ENRIQUECIMENTO ACIMA DE 85% EM OUTUBRO</span></div>
+      <p>O enriquecimento atingiu <strong>89,4% em outubro</strong> — pela primeira vez acima da meta de 85%. Após o mínimo de 49% em setembro, a recuperação expressiva sugere que o treinamento do B4B e ajustes de processo surtiram efeito. Monitorar novembro para confirmar sustentação.</p>
     </div>
   </div>
 </section>
 
-<!-- ===== 5. QUALIDADE ===== -->
+<!-- 5. QUALIDADE -->
 <section id="qualidade">
   <div class="section-head">
     <div class="section-tag">Bloco 05 — Consistência e precisão do atendimento</div>
     <div class="section-title">Qualidade (QA)</div>
-    <p class="section-desc">Score de precisão parcial em 80,3% — abaixo da meta de 90%. Com 1.784 conversas avaliadas (vs 3.628 em julho fechado), o dado é parcial e deve ser lido com cautela. O padrão histórico de recuperação no fechamento sugere não antecipar conclusões.</p>
+    <p class="section-desc">Score de precisão em 88% em outubro — próximo da meta de 90%, recuperando da queda de setembro (79%). IQI em 92,4% em outubro. Novembro em apuração.</p>
   </div>
-
-  <div class="alert-bar warn">⏳ QA Precisão em 80,3% é dado parcial (1.784 conversas vs ~3.600 no fechamento de julho). Aguardar fechamento antes de concluir sobre tendência. Em maio o mesmo efeito ocorreu e o score fechou em patamar diferente.</div>
-
+  <div class="alert-bar warn">⏳ QA Precisão e IQI de novembro em apuração. Outubro mostra recuperação: Precisão 88% e IQI 92,4%.</div>
   <div class="grid grid-4">
     <div class="card kpi">
-      <div class="label">Score de Precisão (Ago — parcial)</div>
-      <div class="value">80,3%</div>
-      <div class="delta down">▼ vs 91% jul</div>
-      <span class="meta-badge meta-parcial">⏳ Meta: 90% — parcial</span>
+      <div class="label">Score de Precisão (Out)</div>
+      <div class="value">88%</div>
+      <div class="delta up">▲ vs 79% set — recuperando</div>
+      <span class="meta-badge meta-warn">≈ Meta: 90% — gap -2pp</span>
     </div>
     <div class="card kpi">
-      <div class="label">IQI (Ago — parcial)</div>
-      <div class="value">88,2%</div>
-      <div class="delta flat">≈ vs 89% jul</div>
-      <span class="meta-badge meta-parcial">⏳ Meta: 93% — parcial</span>
+      <div class="label">IQI (Out)</div>
+      <div class="value">92,4%</div>
+      <div class="delta up">▲ vs 92% set</div>
+      <span class="meta-badge meta-warn">≈ Meta: 93% — gap -0,6pp</span>
     </div>
     <div class="card kpi">
-      <div class="label">Conversas Avaliadas (Ago — parcial)</div>
-      <div class="value">1.784</div>
-      <div class="delta flat">~49% do vol. de jul fechado</div>
-      <span class="meta-badge meta-parcial">⏳ Parcial</span>
+      <div class="label">Conversas Avaliadas (Out)</div>
+      <div class="value">1.980</div>
+      <div class="delta flat">▼ vs 2.319 set</div>
+      <span class="meta-badge meta-parcial">⏳ Nov em apuração</span>
     </div>
     <div class="card kpi">
-      <div class="label">Conversas Avaliadas (acum. Jan–Jul)</div>
-      <div class="value">30.034</div>
+      <div class="label">Conversas Avaliadas (Jan–Out)</div>
+      <div class="value">37.183</div>
       <div class="delta up">▲ vs 8.581 em todo 2025</div>
     </div>
   </div>
-
   <div class="grid grid-2" style="margin-top:16px;">
     <div class="card">
       <div class="block-title"><span class="accent-bar"></span>Score de Precisão — 2026 vs Meta (90%)</div>
@@ -497,351 +477,322 @@ document.getElementById('sections-root').innerHTML = `
   </div>
 </section>
 
-<!-- ===== 6. PESSOAS ===== -->
+<!-- 6. PESSOAS -->
 <section id="pessoas">
   <div class="section-head">
     <div class="section-tag">Bloco 06 — Estrutura e estabilidade do time</div>
     <div class="section-title">Pessoas</div>
-    <p class="section-desc">Estrutura mantida em 14 agentes. A queda do TMA de 537s para 426s em agosto é o indicador mais relevante sobre o time: o B4B atingiu a maturidade operacional esperada em 3 meses — dentro do prazo previsto.</p>
+    <p class="section-desc">Equipe em redução: 2 agentes Darwin + 8 B4B em novembro (total 10). Redução é consequência da queda de carteira Auto e da automação via IA — operação mais enxuta com mesma qualidade.</p>
   </div>
-
   <div class="grid grid-4">
     <div class="card kpi">
-      <div class="label">Total de Agentes (Ago)</div>
-      <div class="value">14</div>
-      <div class="delta flat">≈ estável (6 Darwin + 8 B4B)</div>
+      <div class="label">Total de Agentes (Nov)</div>
+      <div class="value">10</div>
+      <div class="delta down">▼ vs 14 ago (2 Darwin + 8 B4B)</div>
+      <div class="note">Redução alinhada à queda de carteira</div>
     </div>
     <div class="card kpi">
-      <div class="label">Vol. por Agente (Ago — parcial)</div>
-      <div class="value">533</div>
-      <div class="delta flat">Parcial do mês</div>
-      <span class="meta-badge meta-parcial">⏳ Parcial</span>
+      <div class="label">Agentes Darwin</div>
+      <div class="value">2</div>
+      <div class="delta down">▼ vs 6 até agosto</div>
+      <span class="meta-badge meta-warn">Redução estrutural em curso</span>
     </div>
     <div class="card kpi">
-      <div class="label">TMA — Evolução B4B</div>
-      <div class="value">426s</div>
-      <div class="delta up">▼ 550s (jun) → 537s (jul) → 426s (ago)</div>
-      <span class="meta-badge meta-hit">✔ Meta &lt;450s atingida</span>
+      <div class="label">TMA — Evolução</div>
+      <div class="value">330s</div>
+      <div class="delta up">▼ 550s (jun) → 330s (nov) — -40%</div>
+      <span class="meta-badge meta-hit">✔ Mínimo histórico</span>
     </div>
     <div class="card kpi">
       <div class="label">% Absenteísmo</div>
-      <div class="value">—</div>
-      <div class="delta flat">Dado não disponível no parcial</div>
+      <div class="value">0%</div>
+      <div class="delta up">✔ Meta: 3%</div>
+      <span class="meta-badge meta-hit">✔ Meta atingida</span>
     </div>
   </div>
-
   <div class="grid grid-2" style="margin-top:16px;">
     <div class="card">
       <div class="block-title"><span class="accent-bar"></span>Composição da Equipe — 2026</div>
       <div class="chart-box tall"><canvas id="chart-pessoas"></canvas></div>
     </div>
     <div class="read-panel" style="display:flex;flex-direction:column;justify-content:center;">
-      <div class="ptitle"><span class="badge good"><span class="dot"></span>B4B — MATURIDADE CONFIRMADA EM 3 MESES</span></div>
-      <p>O TMA de 426s em agosto confirma que o B4B atingiu maturidade operacional. A trajetória foi: <strong>550s (jun, 1º mês) → 537s (jul) → 426s (ago)</strong> — queda consistente mês a mês. O time chegou ao patamar esperado (<450s) dentro do prazo de 2-3 meses que é o padrão para onboarding de BPO.</p>
-      <p>Com o TMA normalizado, o foco do time agora pode se voltar para aumentar o enriquecimento via Copilot (atualmente em 63-72%, meta 85%) — ganho de qualidade sem custo adicional.</p>
+      <div class="ptitle"><span class="badge warn"><span class="dot"></span>REDUÇÃO DO TIME DARWIN — CONTEXTO</span></div>
+      <p>A equipe Darwin passou de 6 agentes (jan–ago) para 3 (set), 2 (out/nov). Essa redução está diretamente ligada à <strong>queda da carteira Auto</strong> (-50% desde janeiro) e à <strong>automação crescente da IA</strong> (retenção 73%). Com menos tickets entrando e mais sendo retidos pela IA, o dimensionamento humano é naturalmente menor.</p>
+      <p>O <strong>B4B se mantém com 8 agentes</strong>, garantindo a cobertura do atendimento humano restante. A operação está mais enxuta, mais rápida (TMA 330s) e com mesma qualidade.</p>
     </div>
   </div>
 </section>
 
-<!-- ===== 7. DESTAQUES DE AGOSTO ===== -->
+<!-- 7. DESTAQUES SET–NOV -->
 <section id="contexto">
   <div class="section-head">
-    <div class="section-tag">Bloco 07 — Leitura do parcial de agosto</div>
-    <div class="section-title">Destaques e Pontos de Atenção — Agosto/2026</div>
-    <p class="section-desc">Agosto parcial com sinais majoritariamente positivos nas métricas de eficiência e qualidade de atendimento. Pontos de atenção: abandono ainda acima da meta, % digital abaixo da meta, e NPS Sinistro negativo.</p>
+    <div class="section-tag">Bloco 07 — Leitura do período Set–Nov/2026</div>
+    <div class="section-title">Destaques e Pontos de Atenção — Set–Nov/2026</div>
+    <p class="section-desc">Três meses de consolidação com destaque para a aceleração da retenção IA e o primeiro Copilot acima da meta. Pontos de atenção: NPS das assistências em queda em outubro e satisfação de IA abaixo da meta em novembro.</p>
   </div>
-
   <div class="card">
     <div class="tl">
       <div class="tl-item">
-        <div class="tl-date">AGOSTO — MARCO POSITIVO</div>
-        <div class="tl-title">TMA abaixo de 450s — B4B atingiu maturidade</div>
-        <div class="tl-body">
-          <p><strong>426s em agosto</strong> vs 550s em junho (primeiro mês completo do B4B). Queda de 22,5% em 2 meses, atingindo o patamar de referência para maturidade operacional. Isso significa que o B4B agora opera em velocidade compatível com a operação esperada — sem comprometer qualidade (QA Precisão acima de 90% nos dois meses anteriores).</p>
-        </div>
+        <div class="tl-date">OUTUBRO — MARCO POSITIVO</div>
+        <div class="tl-title">Copilot enriquecimento acima de 85% pela primeira vez (89,4%)</div>
+        <div class="tl-body"><p>Após meses abaixo da meta (49% em set), o enriquecimento chegou a <strong>89,4% em outubro</strong>. A recuperação expressiva sugere que o treinamento do B4B no uso do Copilot surtiu efeito. Com o time processando mais tickets via assistência automática, a qualidade das interações tende a subir.</p></div>
       </div>
       <div class="tl-item">
-        <div class="tl-date">AGOSTO — MARCO POSITIVO</div>
-        <div class="tl-title">Satisfação IA acima de 85% pela primeira vez</div>
-        <div class="tl-body">
-          <p><strong>88,5%</strong> vs meta de 85% — resultado que encerra um ciclo de 3 meses de recuperação após a queda para 64,1% em junho. A trajetória 64% → 70,8% → 88,5% confirma que o ajuste de escopo e scripts da IA produziu resultado consistente.</p>
-        </div>
+        <div class="tl-date">NOVEMBRO — MARCO POSITIVO</div>
+        <div class="tl-title">Retenção IA em 73,1% — praticamente o dobro da meta de 50%</div>
+        <div class="tl-body"><p>A retenção saiu de 35% em janeiro para <strong>73,1% em novembro</strong>. Mais de 7 em cada 10 contatos com a IA são resolvidos sem intervenção humana. Isso representa uma transformação estrutural na operação: o crescimento de automação compensa diretamente a redução da equipe Darwin e reduz o custo por ticket.</p></div>
       </div>
       <div class="tl-item">
-        <div class="tl-date">AGOSTO — MÁXIMOS DO ANO</div>
-        <div class="tl-title">NS Geral 95,6% e Csat 95% — melhores resultados do semestre</div>
-        <div class="tl-body">
-          <p>NS Geral chegou a <strong>95,6%</strong> (meta 80%) e Csat de telefonia atingiu <strong>95%</strong> (meta 92%) — ambos os maiores valores do ano. TME de 11s é o menor do ano. A operação de telefonia está no melhor momento de 2026 em todos os indicadores de serviço.</p>
-        </div>
+        <div class="tl-date">OUTUBRO — ATENÇÃO</div>
+        <div class="tl-title">NPS A24h e Vidros em queda — abaixo das metas</div>
+        <div class="tl-body"><p>NPS A24h caiu de 81,2% (set) para <strong>46% (out)</strong> e NPS Vidros de 81,2% para <strong>56%</strong>. As duas linhas que se mantinham consistentemente acima das metas caíram simultaneamente em outubro. Verificar se há problema no processo de prestação das assistências ou na régua de NPS.</p></div>
       </div>
       <div class="tl-item">
-        <div class="tl-date">AGOSTO — ATENÇÃO</div>
-        <div class="tl-title">% Atendimento Digital segue abaixo da meta (67,3% vs 80%)</div>
-        <div class="tl-body">
-          <p>Terceiro mês consecutivo abaixo de 70% no indicador que media o mix de canais. O canal interno caiu expressivamente (854 em jul → 239 em ago), enquanto telefonia se manteve estável (2.252 → 2.200). Vale investigar se há contatos que deveriam ser digitais mas estão chegando via telefone — especialmente após a implementação do chute WPP→URA.</p>
-        </div>
+        <div class="tl-date">OUTUBRO — RESULTADO POSITIVO</div>
+        <div class="tl-title">Abandono atingiu a meta de 3% em outubro — pela primeira vez no ano</div>
+        <div class="tl-body"><p>Depois de meses acima da meta (pico de 16,2% em junho), o abandono atingiu <strong>3% em outubro</strong>. Combinado com NS Geral 96,9% e TMA 390s, outubro foi o mês com melhor equilíbrio entre velocidade e qualidade de atendimento telefônico.</p></div>
       </div>
       <div class="tl-item">
-        <div class="tl-date">AGOSTO — INVESTIGAR</div>
-        <div class="tl-title">NPS Sinistro: -20% (vs 100% em julho)</div>
-        <div class="tl-body">
-          <p>Queda brusca que pode refletir base amostral pequena (1-3 respondentes negativos já invertem o NPS em amostras pequenas) ou problema real no processo de sinistro em agosto. Recomenda-se verificar o número de respostas coletadas antes de qualquer ação.</p>
-        </div>
+        <div class="tl-date">NOVEMBRO — MONITORAR</div>
+        <div class="tl-title">Satisfação WhatsApp e IA abaixo das metas (dados parciais)</div>
+        <div class="tl-body"><p>Satisfação WhatsApp em 76% (meta 90%) e Satisfação IA em 72% (meta 85%) em novembro parcial. Com a retenção crescendo rapidamente, a IA está absorvendo contatos mais complexos — o que pode pressionar a satisfação. Monitorar o fechamento para avaliar se é tendência.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== 8. SWOT ===== -->
+<!-- 8. SWOT -->
 <section id="swot">
   <div class="section-head">
     <div class="section-tag">Bloco 08 — Leitura estratégica da operação</div>
-    <div class="section-title">Análise SWOT — Atualizada Ago/2026</div>
-    <p class="section-desc">Síntese estratégica acumulando os aprendizados do semestre Jan–Ago/2026.</p>
+    <div class="section-title">Análise SWOT — Atualizada Nov/2026</div>
+    <p class="section-desc">Síntese estratégica acumulando os aprendizados de Jan–Nov/2026.</p>
   </div>
   <div class="swot-grid">
     <div class="swot-card swot-s">
       <h3>Forças (Strengths)</h3>
       <ul>
-        <li><strong>NS Telefonia em máximos históricos</strong> (95,6% em ago) — resultado sustentado por 3 meses consecutivos acima da meta.</li>
-        <li><strong>B4B com maturidade operacional confirmada</strong> — TMA abaixo de 450s em 3 meses, QA acima de 90% por 2 meses consecutivos.</li>
-        <li><strong>Satisfação da IA acima da meta (88,5%)</strong> — primeira vez no ano, após recuperação consistente.</li>
-        <li><strong>Csat Telefonia 95%</strong> — acima da meta de 92% após queda em julho.</li>
-        <li><strong>Custo médio de R$10,53/ticket</strong> — operação mais eficiente à medida que a IA amadurece.</li>
+        <li><strong>Retenção IA em 73,1%</strong> — praticamente o dobro da meta de 50%.</li>
+        <li><strong>NS Telefonia sustentado acima de 90%</strong> desde julho — 5 meses consecutivos.</li>
+        <li><strong>TMA em mínimo histórico (330s)</strong> — operação mais rápida do ano.</li>
+        <li><strong>Copilot acima de 85% pela 1ª vez</strong> em outubro (89,4%).</li>
+        <li><strong>Abandono na meta de 3%</strong> em outubro — resultado de 7 meses de evolução.</li>
       </ul>
     </div>
     <div class="swot-card swot-w">
       <h3>Fraquezas (Weaknesses)</h3>
       <ul>
-        <li><strong>% Atendimento Digital abaixo da meta</strong> (67,3% vs 80%) — 3º mês consecutivo abaixo de 70%.</li>
-        <li><strong>Abandono de telefonia acima da meta</strong> (5,5% vs 3%) — melhora lenta desde o pico de 16,2% em junho.</li>
-        <li><strong>TMPR E-mail sistematicamente crítico</strong> (~11% vs meta 85%) — canal com SLA cronicamente descumprido.</li>
-        <li><strong>NPS Darwin crônico</strong> (26,3% vs meta 75%) — problema estrutural de percepção de marca.</li>
-        <li><strong>Copilot enriquecimento</strong> ainda abaixo da meta (parcial 63%) — potencial não realizado pelo B4B.</li>
+        <li><strong>% Atendimento Digital</strong> ainda abaixo de 80% (76,4% em out).</li>
+        <li><strong>NPS Darwin crônico</strong> (42% out vs meta 75%).</li>
+        <li><strong>Satisfação IA abaixo da meta</strong> em nov parcial (72% vs 85%).</li>
+        <li><strong>Satisfação WhatsApp abaixo da meta</strong> (76% nov vs 90%).</li>
+        <li><strong>Carteira Auto -50% no ano</strong> — pressão estrutural sobre volume e receita.</li>
       </ul>
     </div>
     <div class="swot-card swot-o">
       <h3>Oportunidades (Opportunities)</h3>
       <ul>
-        <li><strong>Novos fluxos de IA</strong> (vistoria + Pix) com potencial de +5pp de retenção — meta de 55% ao alcance.</li>
-        <li><strong>Treinamento B4B no Copilot</strong> — com TMA normalizado, o time tem capacidade para aumentar enriquecimento para 85%+.</li>
-        <li><strong>POC Zendesk WFM + IA</strong> pode automatizar gestão de workforce e reduzir % abandono estruturalmente.</li>
-        <li><strong>WhatsApp A24h exclusivo Darwin</strong> pode recuperar % digital para acima de 80%.</li>
-        <li><strong>Processo de e-mail dedicado</strong> — com SLA próprio pode resolver o gap crítico de TMPR.</li>
+        <li><strong>Sustentação da retenção IA acima de 70%</strong> — cada pp adicional = ~R$610/mês.</li>
+        <li><strong>Manter Copilot enriquecimento acima de 85%</strong> — outubro confirmou viabilidade.</li>
+        <li><strong>WhatsApp A24h exclusivo Darwin</strong> pode recuperar % digital para &gt;80%.</li>
+        <li><strong>Revisão do processo de NPS das assistências</strong> — queda de outubro pode revelar problema tratável.</li>
+        <li><strong>POC Zendesk WFM</strong> pode automatizar gestão de workforce e reduzir ainda mais o abandono.</li>
       </ul>
     </div>
     <div class="swot-card swot-t">
       <h3>Riscos (Threats)</h3>
       <ul>
-        <li><strong>% Digital cronicamente abaixo da meta</strong> — se a migração para telefonia for estrutural, aumenta custo operacional.</li>
-        <li><strong>NPS Sinistro negativo em agosto</strong> — se confirmado com amostra relevante, pode indicar problema no processo.</li>
-        <li><strong>Carteira Auto em queda</strong> desde maio — risco de superdimensionamento da operação se a queda for real e contínua.</li>
-        <li><strong>QA parcial em 80,3%</strong> — se o fechamento confirmar queda, B4B pode ter perdido consistência no 3º mês.</li>
+        <li><strong>Satisfação IA em queda com alta retenção</strong> — risco de que a IA resolva mais mas com menor qualidade percebida.</li>
+        <li><strong>NPS A24h e Vidros em queda simultânea</strong> em outubro — se for tendência, compromete pontos fortes históricos.</li>
+        <li><strong>Carteira Auto -50%</strong> — se a queda continuar, operação pode ficar superdimensionada.</li>
+        <li><strong>QA Precisão abaixo de 90%</strong> em set/out — se não houver recuperação, qualidade do atendimento deteriora.</li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- ===== 9. DIRETORIA ===== -->
+<!-- 9. DIRETORIA -->
 <section id="diretoria">
   <div class="section-head">
     <div class="section-tag">Bloco 09 — Síntese para apresentação executiva</div>
     <div class="section-title">Mensagens-Chave &amp; Scorecard</div>
-    <p class="section-desc">Síntese executiva Jan–Ago/2026 para apresentação à diretoria. Indicadores marcados como ⏳ são parciais de agosto.</p>
+    <p class="section-desc">Síntese executiva Jan–Nov/2026. Indicadores com ⏳ são parciais de novembro.</p>
   </div>
-
   <div class="msg-grid">
     <div class="msg-card">
       <span class="mtag" style="color:var(--blue);">O que a diretoria precisa saber</span>
       <ul>
-        <li>Agosto parcial com sinais positivos: <strong>TMA do B4B abaixo de 450s</strong>, <strong>NS Geral em 95,6%</strong> e <strong>satisfação IA acima de 85%</strong> pela primeira vez.</li>
-        <li>Custo médio consolidado Jan–Jul: <strong>R$10,53/ticket</strong> — operação se tornando mais eficiente com a maturação da IA.</li>
+        <li>Retenção Kat.IA em <strong>73,1%</strong> — praticamente o dobro da meta de 50%. A IA resolve 7 em cada 10 contatos sem humano.</li>
+        <li>NS Geral de telefonia sustentado acima de 90% há 5 meses consecutivos. TMA em mínimo histórico (330s).</li>
+        <li>Carteira Auto: <strong>-50% no ano</strong> (38.657 → 19.483). Redução de equipe (14 → 10 agentes) está alinhada.</li>
       </ul>
     </div>
     <div class="msg-card">
       <span class="mtag" style="color:var(--good);">O que merece reconhecimento</span>
       <ul>
-        <li><strong>B4B com maturidade confirmada</strong> em 3 meses — TMA, QA e Csat todos em patamar positivo.</li>
-        <li><strong>NS de telefonia em máximos do ano</strong> (95,6%) com Csat de 95%.</li>
-        <li><strong>Satisfação IA acima de 85%</strong> pela primeira vez — resultado de meses de ajuste de escopo.</li>
+        <li><strong>Copilot enriquecimento acima de 85%</strong> em outubro — 1ª vez no ano. Time B4B amadureceu na ferramenta.</li>
+        <li><strong>Abandono de 3%</strong> em outubro — na meta pela 1ª vez no ano.</li>
+        <li><strong>Retenção IA saltou de 35% (jan) para 73% (nov)</strong> — resultado de transformação digital real.</li>
       </ul>
     </div>
     <div class="msg-card">
       <span class="mtag" style="color:var(--warn);">O que exige monitoramento</span>
       <ul>
-        <li><strong>NPS Sinistro -20%</strong> — verificar tamanho de amostra e investigar se há problema no processo.</li>
-        <li><strong>% Digital (67,3%)</strong> — 3º mês abaixo de 70%, abaixo da meta de 80%.</li>
-        <li><strong>QA Precisão parcial (80,3%)</strong> — aguardar fechamento para conclusão.</li>
-        <li><strong>Abandono (5,5%)</strong> — melhorando lentamente, mas ainda acima da meta de 3%.</li>
+        <li><strong>NPS A24h e Vidros em queda</strong> em outubro (46% e 56%). Investigar causa.</li>
+        <li><strong>Satisfação IA em 72%</strong> em novembro parcial — abaixo da meta de 85%. Risco com contatos mais complexos sendo retidos.</li>
+        <li><strong>Satisfação WhatsApp em 76%</strong> (meta 90%) — canal de maior volume com qualidade abaixo do esperado.</li>
       </ul>
     </div>
     <div class="msg-card">
       <span class="mtag" style="color:var(--purple);">Próximos passos</span>
       <ul>
-        <li><strong>Novos fluxos IA</strong> (vistoria + Pix) → +5pp retenção estimados.</li>
-        <li><strong>Treinamento Copilot B4B</strong> → meta de 85% de enriquecimento.</li>
-        <li><strong>WhatsApp A24h exclusivo</strong> → recuperar % digital acima de 80%.</li>
-        <li><strong>Processo dedicado de e-mail</strong> → resolver gap crítico de TMPR.</li>
+        <li><strong>Sustentar Copilot enriquecimento &gt;85%</strong> — novembro é o teste de sustentação.</li>
+        <li><strong>Investigar queda NPS assistências</strong> — A24h e Vidros em outubro exigem análise de processo.</li>
+        <li><strong>WhatsApp A24h exclusivo Darwin</strong> → recuperar % digital acima de 80%.</li>
+        <li><strong>Monitorar satisfação IA vs retenção</strong> — garantir que maior retenção não comprometa qualidade percebida.</li>
       </ul>
     </div>
   </div>
-
   <div class="card" style="margin-top:24px;">
-    <div class="block-title"><span class="accent-bar"></span>Scorecard de Metas — Agosto/2026 (parcial)</div>
+    <div class="block-title"><span class="accent-bar"></span>Scorecard de Metas — Out/2026 (fechado) e Nov ⏳ parcial</div>
     <div style="overflow-x:auto;">
     <table>
-      <thead><tr><th>Indicador</th><th>Meta</th><th class="num">Jul (fechado)</th><th class="num">Ago ⏳ parcial</th><th>Status Ago</th></tr></thead>
+      <thead><tr><th>Indicador</th><th>Meta</th><th class="num">Set</th><th class="num">Out (fechado)</th><th class="num">Nov ⏳</th><th>Status Out</th></tr></thead>
       <tbody>
-        <tr><td>% Atendimento Digital</td><td>80%</td><td class="num">67,1%</td><td class="num row-bad">67,3%</td><td><span class="meta-badge meta-miss">✗ Abaixo</span></td></tr>
-        <tr><td>Satisfação Geral</td><td>90%</td><td class="num row-warn">88%</td><td class="num row-warn">88%</td><td><span class="meta-badge meta-warn">≈ Próximo</span></td></tr>
-        <tr><td>Csat Telefonia</td><td>92%</td><td class="num row-bad">86%</td><td class="num row-good">95%</td><td><span class="meta-badge meta-hit">✔ Atingido</span></td></tr>
-        <tr><td>Satisfação WhatsApp</td><td>90%</td><td class="num row-warn">89%</td><td class="num row-bad">87%</td><td><span class="meta-badge meta-miss">✗ Abaixo</span></td></tr>
-        <tr><td>Satisfação Kat.IA</td><td>85%</td><td class="num row-bad">70,8%</td><td class="num row-good">88,5%</td><td><span class="meta-badge meta-hit">✔ Atingido</span></td></tr>
-        <tr><td>NS Geral Telefonia</td><td>80%</td><td class="num row-good">91%</td><td class="num row-good">95,6%</td><td><span class="meta-badge meta-hit">✔ Atingido</span></td></tr>
-        <tr><td>NS CE</td><td>85%</td><td class="num row-good">85%</td><td class="num row-good">95,3%</td><td><span class="meta-badge meta-hit">✔ Atingido</span></td></tr>
-        <tr><td>NS SAC</td><td>90%</td><td class="num row-good">96%</td><td class="num row-good">98,7%</td><td><span class="meta-badge meta-hit">✔ Atingido</span></td></tr>
-        <tr><td>NS Ouvidoria</td><td>90%</td><td class="num row-good">100%</td><td class="num row-good">100%</td><td><span class="meta-badge meta-hit">✔ Atingido</span></td></tr>
-        <tr><td>TME (&lt;60s)</td><td>&lt;60s</td><td class="num row-good">20s</td><td class="num row-good">11s</td><td><span class="meta-badge meta-hit">✔ Atingido</span></td></tr>
-        <tr><td>TMA</td><td>—</td><td class="num row-bad">537s</td><td class="num row-good">426s</td><td><span class="meta-badge meta-hit">✔ &lt;450s atingido</span></td></tr>
-        <tr><td>% Abandono</td><td>3%</td><td class="num row-warn">4,7%</td><td class="num row-warn">5,5%</td><td><span class="meta-badge meta-warn">≈ Próximo</span></td></tr>
-        <tr><td>% Atend. ≤60s</td><td>98%</td><td class="num row-good">100%</td><td class="num row-good">100%</td><td><span class="meta-badge meta-hit">✔ Atingido</span></td></tr>
-        <tr><td>Retenção Kat.IA</td><td>50%</td><td class="num row-warn">49%</td><td class="num row-parcial">48% ⏳</td><td><span class="meta-badge meta-parcial">⏳ Parcial</span></td></tr>
-        <tr><td>Copilot Enriquecimento</td><td>85%</td><td class="num row-bad">72,3%</td><td class="num row-parcial">63,2% ⏳</td><td><span class="meta-badge meta-parcial">⏳ Parcial</span></td></tr>
-        <tr><td>QA Precisão</td><td>90%</td><td class="num row-good">91%</td><td class="num row-parcial">80,3% ⏳</td><td><span class="meta-badge meta-parcial">⏳ Parcial</span></td></tr>
-        <tr><td>NPS Darwin</td><td>75%</td><td class="num row-bad">45%</td><td class="num row-bad">26,3%</td><td><span class="meta-badge meta-miss">✗ Abaixo</span></td></tr>
-        <tr><td>NPS A24h</td><td>85%</td><td class="num row-good">92,3%</td><td class="num row-good">91,7%</td><td><span class="meta-badge meta-hit">✔ Atingido</span></td></tr>
-        <tr><td>NPS Vidros</td><td>85%</td><td class="num row-good">92,3%</td><td class="num row-good">91,7%</td><td><span class="meta-badge meta-hit">✔ Atingido</span></td></tr>
-        <tr><td>NPS Sinistro</td><td>75%</td><td class="num row-good">100%</td><td class="num row-bad">-20%</td><td><span class="meta-badge meta-miss">✗ Verificar amostra</span></td></tr>
-        <tr><td>NPS CR</td><td>85%</td><td class="num row-bad">66,7%</td><td class="num row-bad">50%</td><td><span class="meta-badge meta-miss">✗ Abaixo</span></td></tr>
-        <tr><td>Custo médio/ticket</td><td>≤R$12,03</td><td class="num row-good">R$10,53</td><td class="num row-parcial">— ⏳</td><td><span class="meta-badge meta-hit">✔ Atingido (Jul)</span></td></tr>
-        <tr><td>Chargeback (taxa sucesso)</td><td>50%</td><td class="num row-bad">38%</td><td class="num row-good">73%</td><td><span class="meta-badge meta-hit">✔ Atingido</span></td></tr>
-        <tr><td>Inadimplência</td><td>75%</td><td class="num row-warn">70%</td><td class="num row-bad">42%</td><td><span class="meta-badge meta-miss">✗ Abaixo</span></td></tr>
+        <tr><td>% Atend. Digital</td><td>80%</td><td class="num row-bad">78,8%</td><td class="num row-bad">76,4%</td><td class="num row-parcial">42,2% ⏳</td><td><span class="meta-badge meta-miss">✗ Abaixo</span></td></tr>
+        <tr><td>Satisfação Geral</td><td>90%</td><td class="num row-bad">81,8%</td><td class="num row-bad">84%</td><td class="num row-parcial">80,1% ⏳</td><td><span class="meta-badge meta-miss">✗ Abaixo</span></td></tr>
+        <tr><td>Csat Telefonia</td><td>92%</td><td class="num row-good">92%</td><td class="num row-good">94%</td><td class="num">—</td><td><span class="meta-badge meta-hit">✔ Atingido</span></td></tr>
+        <tr><td>Satisfação WhatsApp</td><td>90%</td><td class="num row-bad">81,6%</td><td class="num row-bad">83%</td><td class="num row-parcial">76% ⏳</td><td><span class="meta-badge meta-miss">✗ Abaixo</span></td></tr>
+        <tr><td>Satisfação Kat.IA</td><td>85%</td><td class="num row-bad">75%</td><td class="num row-bad">76%</td><td class="num row-parcial">72% ⏳</td><td><span class="meta-badge meta-miss">✗ Abaixo</span></td></tr>
+        <tr><td>NS Geral Telefonia</td><td>80%</td><td class="num row-good">95%</td><td class="num row-good">96,9%</td><td class="num row-good">92% ⏳</td><td><span class="meta-badge meta-hit">✔ Atingido</span></td></tr>
+        <tr><td>NS CE</td><td>85%</td><td class="num row-good">92%</td><td class="num row-good">96,8%</td><td class="num">—</td><td><span class="meta-badge meta-hit">✔ Atingido</span></td></tr>
+        <tr><td>NS SAC</td><td>90%</td><td class="num row-good">92%</td><td class="num row-good">97%</td><td class="num">—</td><td><span class="meta-badge meta-hit">✔ Atingido</span></td></tr>
+        <tr><td>NS Ouvidoria</td><td>90%</td><td class="num row-good">100%</td><td class="num row-good">100%</td><td class="num">—</td><td><span class="meta-badge meta-hit">✔ Atingido</span></td></tr>
+        <tr><td>TME</td><td>&lt;60s</td><td class="num row-good">16s</td><td class="num row-good">32s</td><td class="num row-good">10s ⏳</td><td><span class="meta-badge meta-hit">✔ Atingido</span></td></tr>
+        <tr><td>TMA</td><td>—</td><td class="num">446s</td><td class="num row-good">390s</td><td class="num row-good">330s ⏳</td><td><span class="meta-badge meta-hit">✔ Mínimo histórico</span></td></tr>
+        <tr><td>% Abandono</td><td>3%</td><td class="num row-warn">4,6%</td><td class="num row-good">3%</td><td class="num row-warn">4% ⏳</td><td><span class="meta-badge meta-hit">✔ Na meta em out</span></td></tr>
+        <tr><td>Atend. ≤60s</td><td>98%</td><td class="num row-warn">96%</td><td class="num row-warn">97%</td><td class="num row-good">98% ⏳</td><td><span class="meta-badge meta-hit">✔ Atingido</span></td></tr>
+        <tr><td>Retenção Kat.IA</td><td>50%</td><td class="num row-good">56,6%</td><td class="num row-good">68,3%</td><td class="num row-good">73,1% ⏳</td><td><span class="meta-badge meta-hit">✔ +23pp acima!</span></td></tr>
+        <tr><td>Copilot Enriquecimento</td><td>85%</td><td class="num row-bad">49%</td><td class="num row-good">89,4%</td><td class="num">—</td><td><span class="meta-badge meta-hit">✔ 1ª vez acima!</span></td></tr>
+        <tr><td>QA Precisão</td><td>90%</td><td class="num row-bad">79%</td><td class="num row-warn">88%</td><td class="num">—</td><td><span class="meta-badge meta-warn">≈ Próximo da meta</span></td></tr>
+        <tr><td>IQI</td><td>93%</td><td class="num row-warn">92%</td><td class="num row-warn">92,4%</td><td class="num">—</td><td><span class="meta-badge meta-warn">≈ Próximo da meta</span></td></tr>
+        <tr><td>NPS Darwin</td><td>75%</td><td class="num row-bad">28%</td><td class="num row-bad">42%</td><td class="num">—</td><td><span class="meta-badge meta-miss">✗ Abaixo</span></td></tr>
+        <tr><td>NPS A24h</td><td>85%</td><td class="num row-warn">81%</td><td class="num row-bad">46%</td><td class="num">—</td><td><span class="meta-badge meta-miss">✗ Queda em out</span></td></tr>
+        <tr><td>NPS Vidros</td><td>85%</td><td class="num row-warn">81%</td><td class="num row-bad">56%</td><td class="num">—</td><td><span class="meta-badge meta-miss">✗ Queda em out</span></td></tr>
+        <tr><td>NPS Sinistro</td><td>75%</td><td class="num row-bad">70%</td><td class="num row-bad">50%</td><td class="num">—</td><td><span class="meta-badge meta-miss">✗ Abaixo</span></td></tr>
+        <tr><td>NPS CR</td><td>85%</td><td class="num row-bad">6%</td><td class="num row-bad">71%</td><td class="num">—</td><td><span class="meta-badge meta-miss">✗ Abaixo</span></td></tr>
+        <tr><td>Inadimplência</td><td>75%</td><td class="num row-warn">45%</td><td class="num row-warn">44%</td><td class="num">—</td><td><span class="meta-badge meta-miss">✗ Abaixo</span></td></tr>
+        <tr><td>Chargeback</td><td>50%</td><td class="num row-good">63%</td><td class="num row-warn">40%</td><td class="num">—</td><td><span class="meta-badge meta-miss">✗ Abaixo em out</span></td></tr>
       </tbody>
     </table>
     </div>
   </div>
-
   <div class="footnote">
     <span>ⓘ</span>
-    <span>Custos: BPO R$64,6k + Interno R$34,9k = R$99,5k/mês (jun/jul) · Meta: ≤R$12,03/ticket. Custo médio/ticket calculado sobre o acumulado Jan–Jul (74.130 tickets). Agosto é parcial — custo/ticket do mês não deve ser usado como referência. Indicadores NPS com base amostral pequena sujeitos a alta volatilidade mensal.</span>
+    <span>Acumulado Jan–Out: 94.765 tickets. Novembro parcial: 6.901 tickets. Retenção Kat.IA: evolução de 35% (jan) → 73,1% (nov). Copilot: 61.068 tickets acumulados Jan–Out. NPS com base amostral variável — cautela em meses com poucos respondentes.</span>
   </div>
 </section>
 `;
-
 </script>
 <script>
 const COL={accent:'#5fd4c4',accent2:'#f2b35c',good:'#6fcf97',warn:'#f2c94c',bad:'#eb5757',blue:'#6c9bf2',purple:'#b794f6',muted:'#9aa7c2',grid:'rgba(255,255,255,0.06)'};
 Chart.defaults.font.family="'Inter',sans-serif";
-Chart.defaults.color=COL.muted;Chart.defaults.font.size=11.5;
-const M=['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago⏳'];
+Chart.defaults.color=COL.muted;
+Chart.defaults.font.size=11.5;
+const M=['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov⏳'];
 const bG={grid:{color:COL.grid,drawBorder:false},ticks:{color:COL.muted}};
 const charts={};
 function mC(id,cfg){const el=document.getElementById(id);if(!el)return;if(charts[id])charts[id].destroy();charts[id]=new Chart(el,cfg);}
-function ML(v,lbl,c,len){const d=Array(len||8).fill(v);return{type:'line',label:lbl||'Meta',data:d,borderColor:c||COL.warn,borderDash:[6,4],borderWidth:1.5,pointRadius:0,fill:false};}
+function ML(v,lbl,c,len){const d=Array(len||11).fill(v);return{type:'line',label:lbl||'Meta',data:d,borderColor:c||COL.warn,borderDash:[6,4],borderWidth:1.5,pointRadius:0,fill:false};}
 
 function renderVisaoGeral(){
   mC('chart-tickets-mes',{type:'bar',data:{labels:M,datasets:[
-    {label:'WhatsApp',data:[7664,6949,8551,7512,6294,7692,5526,4565],backgroundColor:COL.accent,borderRadius:4},
-    {label:'Telefone',data:[2045,1954,2434,2452,1954,2154,2252,2200],backgroundColor:COL.blue,borderRadius:4},
-    {label:'E-mail',data:[270,259,220,404,612,1526,821,462],backgroundColor:COL.accent2,borderRadius:4},
-    {label:'Interno',data:[951,795,839,340,252,554,854,239],backgroundColor:COL.purple,borderRadius:4},
+    {label:'WhatsApp',data:[7664,6949,8551,7512,6294,7692,5526,4960,4731,4802,2592],backgroundColor:COL.accent,borderRadius:4},
+    {label:'Telefone',data:[2045,1954,2434,2452,1954,2154,2252,2364,1719,1533,1923],backgroundColor:COL.blue,borderRadius:4},
+    {label:'E-mail',data:[270,259,220,404,612,1526,821,707,637,625,322],backgroundColor:COL.accent2,borderRadius:4},
+    {label:'Interno',data:[951,795,839,340,252,554,854,427,620,478,0],backgroundColor:COL.purple,borderRadius:4},
   ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{stacked:true,...bG,grid:{display:false}},y:{stacked:true,...bG}}}});
-
-  mC('chart-canais',{type:'doughnut',data:{labels:['WhatsApp (49.714)','Telefone (15.245)','Interno (5.439)','E-mail (4.933)'],datasets:[{data:[49714,15245,5439,4933],backgroundColor:[COL.accent,COL.blue,COL.purple,COL.accent2],borderColor:'#161e2e',borderWidth:3}]},options:{responsive:true,maintainAspectRatio:false,cutout:'62%',plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:12,font:{size:11}}}}}});
-
-  mC('chart-yoy-tickets',{type:'bar',data:{labels:['Jan','Fev','Mar','Abr','Mai','Jun','Jul'],datasets:[
-    {label:'2025',data:[7203,7072,10523,12432,12562,12934,13870],backgroundColor:'rgba(154,167,194,0.35)',borderRadius:4},
-    {label:'2026',data:[10930,9957,12044,10708,9112,11926,9453],backgroundColor:COL.accent,borderRadius:4},
-  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{...bG,grid:{display:false}},y:{...bG}}}});
+  mC('chart-canais',{type:'doughnut',data:{labels:['WhatsApp (64,681)','Telefone (20,861)','Interno (6,110)','E-mail (6,081)'],datasets:[{data:[64681,20861,6110,6081],backgroundColor:[COL.accent,COL.blue,COL.purple,COL.accent2],borderColor:'#161e2e',borderWidth:3}]},options:{responsive:true,maintainAspectRatio:false,cutout:'62%',plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:12,font:{size:11}}}}}}});
+  mC('chart-yoy-tickets',{type:'bar',data:{labels:['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out'],datasets:[
+    {label:'2025',data:[7203,7072,10523,12432,12562,12934,13870,12470,12568,14271],backgroundColor:'rgba(154,167,194,0.35)',borderRadius:4},
+    {label:'2026',data:[10930,9957,12044,10708,9112,11926,9453,8784,8123,7728],backgroundColor:COL.accent,borderRadius:4},
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{...bG,grid:{display:false}},y:{...bG}}}}});
 }
 
 function renderExperiencia(){
   mC('chart-satisfacao-yoy',{type:'line',data:{labels:M,datasets:[
-    {label:'2026',data:[84.6,85.4,84.4,81,81.4,76.5,88,88],borderColor:COL.accent,backgroundColor:'rgba(95,212,196,0.08)',tension:0.35,fill:true},
+    {label:'2026',data:[84.6,85.4,84.4,81,81.4,76.5,88,85.5,81.8,84,80.1],borderColor:COL.accent,backgroundColor:'rgba(95,212,196,0.08)',tension:0.35,fill:true},
     ML(90,'Meta (90%)'),
-  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{...bG,grid:{display:false}},y:{...bG,min:65,max:95,ticks:{callback:v=>v+'%'}}}}});
-
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{...bG,grid:{display:false}},y:{...bG,min:65,max:95,ticks:{callback:v=>v+'%'}}}}}});
   mC('chart-csat-tel-yoy',{type:'line',data:{labels:M,datasets:[
-    {label:'2026',data:[87.3,87.3,90.9,92.8,92.2,89.3,86,95],borderColor:COL.good,backgroundColor:'rgba(111,207,151,0.1)',tension:0.35,fill:true},
+    {label:'2026',data:[87.3,87.3,90.9,92.8,92.2,89.3,86,95,92,94,null],borderColor:COL.good,backgroundColor:'rgba(111,207,151,0.1)',tension:0.35,fill:true},
     ML(92,'Meta (92%)',COL.warn),
-  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{...bG,grid:{display:false}},y:{...bG,min:50,max:100,ticks:{callback:v=>v+'%'}}}}});
-
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{...bG,grid:{display:false}},y:{...bG,min:50,max:100,ticks:{callback:v=>v+'%'}}}}}});
   mC('chart-nps',{type:'bar',data:{
     labels:['Darwin','Atend.','A24h','Vidros','Sinistro','CR'],
     datasets:[
-      {label:'Jul',data:[45,null,92.3,92.3,100,66.7],backgroundColor:'rgba(95,212,196,0.5)',borderRadius:4},
-      {label:'Ago⏳',data:[26.3,100,91.7,91.7,-20,50],backgroundColor:[COL.bad,COL.good,COL.good,COL.good,COL.bad,COL.warn],borderRadius:4},
+      {label:'Set',data:[28,43,81,81,70,6],backgroundColor:'rgba(95,212,196,0.4)',borderRadius:4},
+      {label:'Out',data:[42,56,46,56,50,71],backgroundColor:[COL.accent2,COL.accent2,COL.bad,COL.bad,COL.bad,COL.accent2],borderRadius:4},
       {label:'Meta',data:[75,80,85,85,75,85],backgroundColor:'rgba(242,201,76,0.15)',borderRadius:4,borderWidth:1,borderColor:COL.warn},
     ]
-  },options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{...bG,min:-30,ticks:{callback:v=>v+'%'}},y:{...bG,grid:{display:false}}}}});
+  },options:{indexAxis:'y',responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{...bG,min:-10,max:110,ticks:{callback:v=>v+'%'}},y:{...bG,grid:{display:false}}}}}});
 }
 
 function renderEficiencia(){
   mC('chart-ns',{type:'line',data:{labels:M,datasets:[
-    {label:'NS Geral',data:[64,75,79,80.9,71.8,84.1,91,95.6],borderColor:COL.accent,backgroundColor:'transparent',tension:0.3},
-    {label:'NS CE',data:[59,72,77,78,66,83.8,85,95.3],borderColor:COL.blue,backgroundColor:'transparent',tension:0.3},
-    {label:'NS SAC',data:[91,92,89,94,90,97.4,96,98.7],borderColor:COL.good,backgroundColor:'transparent',tension:0.3},
-    {label:'NS Ouvidoria',data:[83,91,91,100,92,100,100,100],borderColor:COL.accent2,backgroundColor:'transparent',tension:0.3},
+    {label:'NS Geral',data:[64,75,79,80.9,71.8,84.1,91,95.2,95,96.9,92],borderColor:COL.accent,backgroundColor:'transparent',tension:0.3},
+    {label:'NS CE',data:[59,72,77,78,66,83.8,85,95.3,92,96.8,null],borderColor:COL.blue,backgroundColor:'transparent',tension:0.3},
+    {label:'NS SAC',data:[91,92,89,94,90,97.4,96,94.2,92,97,null],borderColor:COL.good,backgroundColor:'transparent',tension:0.3},
+    {label:'NS Ouvidoria',data:[83,91,91,100,92,100,100,100,100,100,null],borderColor:COL.accent2,backgroundColor:'transparent',tension:0.3},
     ML(80,'Meta Geral (80%)','rgba(95,212,196,0.4)'),
-  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:12,font:{size:11}}}},scales:{x:{...bG,grid:{display:false}},y:{...bG,min:45,max:108,ticks:{callback:v=>v+'%'}}}}});
-
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:12,font:{size:11}}}},scales:{x:{...bG,grid:{display:false}},y:{...bG,min:45,max:108,ticks:{callback:v=>v+'%'}}}}}});
   mC('chart-tme-abandono',{type:'bar',data:{labels:M,datasets:[
-    {type:'bar',label:'TMA (s)',data:[424,450,433,420,383,550,537,426],backgroundColor:M.map((_,i)=>i===5||i===6?COL.bad:COL.good),borderRadius:4,yAxisID:'y'},
-    {type:'line',label:'% Abandono',data:[10.2,6.7,5.9,4.2,8.1,16.2,4.73,5.47],borderColor:COL.bad,backgroundColor:'transparent',tension:0.3,yAxisID:'y1'},
-    ML(3,'Meta Abandono (3%)',COL.warn,8),
-  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{...bG,grid:{display:false}},y:{...bG,position:'left',title:{display:true,text:'TMA (s)',color:COL.muted,font:{size:10}}},y1:{position:'right',grid:{display:false},ticks:{callback:v=>v+'%',color:COL.muted}}}}});
-
+    {type:'bar',label:'TMA (s)',data:[424,450,433,420,383,550,537,395,446,390,330],backgroundColor:M.map((_,i)=>i===5||i===6?COL.bad:i>=7?COL.good:COL.accent),borderRadius:4,yAxisID:'y'},
+    {type:'line',label:'% Abandono',data:[10.2,6.7,5.9,4.2,8.1,16.2,4.73,4.74,4.57,3,4],borderColor:COL.bad,backgroundColor:'transparent',tension:0.3,yAxisID:'y1'},
+    {type:'line',label:'Meta Abandono (3%)',data:Array(11).fill(3),borderColor:COL.warn,borderDash:[6,4],borderWidth:1.5,pointRadius:0,fill:false,yAxisID:'y1'},
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{...bG,grid:{display:false}},y:{...bG,position:'left',title:{display:true,text:'TMA (s)',color:COL.muted,font:{size:10}}},y1:{position:'right',grid:{display:false},ticks:{callback:v=>v+'%',color:COL.muted}}}}}});
   mC('chart-ns-digital',{type:'bar',data:{
     labels:['TMPR E-mail','TTR E-mail','TMPR Wpp','TTR Wpp'],
     datasets:[
-      {label:'Jul',data:[10.8,75.9,89.6,97.7],backgroundColor:'rgba(95,212,196,0.4)',borderRadius:4},
-      {label:'Ago⏳',data:[11,79,92,97],backgroundColor:[COL.bad,COL.warn,COL.good,COL.good],borderRadius:4},
+      {label:'Set',data:[11.65,79.62,92.61,97],backgroundColor:'rgba(95,212,196,0.4)',borderRadius:4},
+      {label:'Out',data:[83,16.7,67,17],backgroundColor:[COL.good,COL.bad,COL.warn,COL.bad],borderRadius:4},
       {label:'Meta',data:[85,80,85,80],backgroundColor:'rgba(242,201,76,0.15)',borderRadius:4,borderWidth:1,borderColor:COL.warn},
     ]
-  },options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{...bG,grid:{display:false}},y:{...bG,min:0,max:105,ticks:{callback:v=>v+'%'}}}}});
+  },options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{...bG,grid:{display:false}},y:{...bG,min:0,max:110,ticks:{callback:v=>v+'%'}}}}}});
 }
 
 function renderTecnologia(){
   mC('chart-retencao-ia',{type:'bar',data:{labels:M,datasets:[
-    {label:'% Retenção Kat.IA',data:[35,33,35.9,39,40.75,50.96,49,48],
-      backgroundColor:M.map((_,i)=>i===5?COL.good:i===7?'rgba(95,212,196,0.5)':COL.accent),
-      borderRadius:4},
+    {label:'% Retenção Kat.IA',data:[35,33,35.9,39,40.75,50.96,49,50,56.6,68.3,73.1],
+      backgroundColor:M.map((_,i)=>i>=5?COL.good:COL.accent),borderRadius:4},
     ML(50,'Meta (50%)',COL.warn),
-  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{...bG,grid:{display:false}},y:{...bG,min:25,max:60,ticks:{callback:v=>v+'%'}}}}});
-
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{...bG,grid:{display:false}},y:{...bG,min:25,max:85,ticks:{callback:v=>v+'%'}}}}}});
   mC('chart-sat-ia',{type:'line',data:{labels:M,datasets:[
-    {label:'Satisfação Kat.IA',data:[null,null,null,null,81.6,64.1,70.8,88.5],borderColor:COL.purple,backgroundColor:'rgba(183,148,246,0.1)',tension:0.35,fill:true},
+    {label:'Satisfação Kat.IA',data:[79.5,77,73,82.2,81.6,64.1,70.8,88.5,75,76,72],borderColor:COL.purple,backgroundColor:'rgba(183,148,246,0.1)',tension:0.35,fill:true},
     ML(85,'Meta (85%)',COL.warn),
-  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{...bG,grid:{display:false}},y:{...bG,min:55,max:95,ticks:{callback:v=>v+'%'}}}}});
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{...bG,grid:{display:false}},y:{...bG,min:55,max:100,ticks:{callback:v=>v+'%'}}}}}});
 }
 
 function renderQualidade(){
   mC('chart-qa',{type:'line',data:{labels:M,datasets:[
-    {label:'Score de Precisão',data:[93,91.5,92.3,93,76.84,90.87,91,80.3],
-      borderColor:COL.accent,
-      segment:{borderColor:ctx=>ctx.p1DataIndex===7?'rgba(95,212,196,0.4)':COL.accent},
-      backgroundColor:'rgba(95,212,196,0.08)',fill:true,tension:0.3},
+    {label:'Score de Precisão',data:[93,91.5,92.3,93,76.84,90.87,91,82,79,88,null],borderColor:COL.accent,backgroundColor:'rgba(95,212,196,0.08)',fill:true,tension:0.3},
     ML(90,'Meta Precisão (90%)',COL.warn),
-  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{...bG,grid:{display:false}},y:{...bG,min:65,max:100,ticks:{callback:v=>v+'%'}}}}});
-
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{...bG,grid:{display:false}},y:{...bG,min:65,max:100,ticks:{callback:v=>v+'%'}}}}}});
   mC('chart-qa-volume',{type:'bar',data:{labels:M,datasets:[
-    {label:'Conversas avaliadas',data:[5235,4576,5582,5077,2443,3493,3628,1784],
-      backgroundColor:M.map((_,i)=>i===4?COL.bad:i===7?'rgba(183,148,246,0.5)':COL.purple),
-      borderRadius:4},
-  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{...bG,grid:{display:false}},y:{...bG}}}});
+    {label:'Conversas avaliadas',data:[5235,4576,5582,5077,2443,3493,3628,2850,2319,1980,null],backgroundColor:M.map((_,i)=>i===4?COL.bad:COL.purple),borderRadius:4},
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{x:{...bG,grid:{display:false}},y:{...bG}}}}});
 }
 
 function renderPessoas(){
   mC('chart-pessoas',{type:'bar',data:{labels:M,datasets:[
-    {label:'Agentes Darwin',data:[5,5,5,6,6,6,6,6],backgroundColor:COL.accent,borderRadius:4},
-    {label:'Agentes Pluris',data:[6,9,8,7,7,0,0,0],backgroundColor:COL.accent2,borderRadius:4},
-    {label:'Agentes B4B',data:[0,0,0,0,0,8,8,8],backgroundColor:COL.blue,borderRadius:4},
-  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{stacked:true,...bG,grid:{display:false}},y:{stacked:true,...bG}}}});
+    {label:'Agentes Darwin',data:[5,5,5,6,6,6,6,6,3,2,2],backgroundColor:COL.accent,borderRadius:4},
+    {label:'Agentes Pluris',data:[6,9,8,7,7,0,0,0,0,0,0],backgroundColor:COL.accent2,borderRadius:4},
+    {label:'Agentes B4B',data:[0,0,0,0,0,8,8,8,8,8,8],backgroundColor:COL.blue,borderRadius:4},
+  ]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{position:'bottom',labels:{boxWidth:10,padding:14}}},scales:{x:{stacked:true,...bG,grid:{display:false}},y:{stacked:true,...bG}}}}});
 }
 
 const renderers={'visao-geral':renderVisaoGeral,'experiencia':renderExperiencia,'eficiencia':renderEficiencia,'tecnologia':renderTecnologia,'qualidade':renderQualidade,'pessoas':renderPessoas};
 window.renderChartsFor=function(tab){const fn=renderers[tab];if(fn)setTimeout(fn,30);};
-
 </script>
 <script>
 (function(){
